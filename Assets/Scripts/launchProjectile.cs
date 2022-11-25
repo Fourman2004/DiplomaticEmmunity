@@ -19,7 +19,7 @@ public class launchProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && count < 5)
+        if(Input.GetKeyDown("space") && count < 5)
         {
             GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
             ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(100, launchVelocity, 0));
