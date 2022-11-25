@@ -22,7 +22,7 @@ public class launchProjectile : MonoBehaviour
         if(Input.GetKeyDown("space") && count < 5)
         {
             GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(100, launchVelocity, 0));
+            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector2(1, launchVelocity));
             count += 1;
         }
 
