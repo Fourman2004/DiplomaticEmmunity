@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
         {
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
             GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity, 0));
+            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(launchVelocity, 0, 0));
             Capacity--;
         }
         //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
