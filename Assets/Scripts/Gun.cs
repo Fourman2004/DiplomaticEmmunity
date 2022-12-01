@@ -5,9 +5,12 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GameObject projectile;
+    public GameObject projectile2d;
     public float launchVelocity = 700f;
+    public float Trejectory = 1f;
     public int MaxCapacity;
     int Capacity;
+    public bool ThirdDimensionEnviroment;
     // Start is called before the first frame update
     private void Start()
     {
@@ -21,16 +24,25 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Capacity != 0)
         {
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
-            GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(launchVelocity, 0, 0));
+            
+            if (ThirdDimensionEnviroment == true)
+            {
+                GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
+                ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(launchVelocity, 0, 0));
+            }
+            else
+            {
+                GameObject ball2d = Instantiate(projectile2d, transform.position, transform.rotation);
+                ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(Trejectory, launchVelocity));
+            }
             Capacity--;
         }
         //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
-        //if (Input.GetButtonDown("Reload") && Capacity == 0)
-        //{
-        //    //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
-        //    Debug.Log("reloaded");
-        //    Capacity = MaxCapacity;
-        //}
+        if (Input.GetButtonDown("Reload") && Capacity == 0)
+        {
+           //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+            Debug.Log("reloaded");
+            Capacity = MaxCapacity;
+        }
     }
 }
