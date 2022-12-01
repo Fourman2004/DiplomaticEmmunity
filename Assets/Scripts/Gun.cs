@@ -26,11 +26,11 @@ public class Gun : MonoBehaviour
             Capacity--;
         }
         //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
-        if (Input.GetButtonDown("Reload") && Capacity == 0)
-        {
-            //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
-            Debug.Log("reloaded");
-            Capacity = MaxCapacity;
-        }
+        //if (Input.GetButtonDown("Reload") && Capacity == 0)
+        //{
+        //    //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+        //    Debug.Log("reloaded");
+        //    Capacity = MaxCapacity;
+        //}
     }
 }
