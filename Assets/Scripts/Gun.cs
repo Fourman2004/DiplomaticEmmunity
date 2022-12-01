@@ -7,7 +7,6 @@ public class Gun : MonoBehaviour
     public GameObject projectile;
     public GameObject projectile2d;
     public float launchVelocity = 700f;
-    public float Trejectory = 1f;
     public int MaxCapacity;
     int Capacity;
     public bool ThirdDimensionEnviroment;
@@ -33,7 +32,7 @@ public class Gun : MonoBehaviour
             else
             {
                 GameObject ball2d = Instantiate(projectile2d, transform.position, transform.rotation);
-                ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(Trejectory, launchVelocity));
+                ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity,0));
             }
             Capacity--;
         }

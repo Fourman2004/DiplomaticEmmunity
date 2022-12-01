@@ -188,7 +188,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   projectile2d: {fileID: 0}
   launchVelocity: 700
-  Trejectory: 1
   MaxCapacity: 0
   ThirdDimensionEnviroment: 0
 --- !u!1 &405593596
@@ -647,8 +646,7 @@ MonoBehaviour:
     type: 3}
   projectile2d: {fileID: 1828012586343125152, guid: be2e3753334fb11438e5a0932fdeb080,
     type: 3}
-  launchVelocity: 1000
-  Trejectory: 10
+  launchVelocity: 700
   MaxCapacity: 10
   ThirdDimensionEnviroment: 0
 --- !u!1 &1100306981
@@ -1125,7 +1123,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   projectile2d: {fileID: 0}
   launchVelocity: 700
-  Trejectory: 1
   MaxCapacity: 0
   ThirdDimensionEnviroment: 0
 --- !u!114 &1385347379
