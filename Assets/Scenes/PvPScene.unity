@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,7 +172,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   launchVelocity: 700
-  count: 0
+  launchAngle: 0
+  reloadTimer: 2
+  reloading: 0
 --- !u!114 &377355983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +555,7 @@ GameObject:
   - component: {fileID: 678326988}
   - component: {fileID: 678326992}
   - component: {fileID: 678326993}
+  - component: {fileID: 678326994}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -649,6 +652,24 @@ MonoBehaviour:
   launchVelocity: 700
   MaxCapacity: 10
   ThirdDimensionEnviroment: 0
+--- !u!114 &678326994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678326986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabc0012aa162e24b85c92e90020a147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 3147762718986834637, guid: e2698c80522930042bd5585291ff545e,
+    type: 3}
+  launchVelocity: 700
+  launchAngle: 0
+  reloadTimer: 2
+  reloading: 0
 --- !u!1 &1100306981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   launchVelocity: 700
-  count: 0
+  launchAngle: 0
+  reloadTimer: 2
+  reloading: 0
 --- !u!1 &2014765785
 GameObject:
   m_ObjectHideFlags: 0
