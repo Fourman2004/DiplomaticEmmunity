@@ -18,8 +18,8 @@ public class EmuController : MonoBehaviour
     void Update()
     {
         // refers to player 1's input axes from the input manager (WASD)
-        movement.x = Input.GetAxisRaw("Horizontal1");
-        movement.y = Input.GetAxisRaw("Vertical1");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
