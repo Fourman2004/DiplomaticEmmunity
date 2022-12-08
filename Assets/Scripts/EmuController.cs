@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class EmuController : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    public Rigidbody2D playerRB;
-    Vector2 movement;
+    public float moveSpeed = 1f; // movement speed
+    public Rigidbody2D playerRB; // reference to player 1 rigidbody
+    Vector2 movement; // movement vector
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,14 @@ public class EmuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // refers to player 1's input axes from the input manager (WASD)
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
+        // moves the player
         playerRB.MovePosition(playerRB.position + movement * moveSpeed * Time.deltaTime);
     }
 }
