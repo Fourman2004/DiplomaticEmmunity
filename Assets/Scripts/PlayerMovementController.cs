@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// this script gets controller input
 public class PlayerMovementController : MonoBehaviour
 {
     private Rigidbody2D playerBody;
@@ -15,6 +17,11 @@ public class PlayerMovementController : MonoBehaviour
 
     // Update is called once per frame
     private void FixedUpdate()
+    {
+        GetControllerInput();
+    }
+
+    private void GetControllerInput()
     {
         Vector2 movement = Vector2.zero;
         Debug.Log(Input.GetAxis("HorizontalController"));

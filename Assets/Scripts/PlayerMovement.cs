@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// this script takes keyboard input
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
@@ -21,13 +22,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = Vector2.zero; 
         switch(controllerSettings)
         {
-            case 0:
+            case 1: // player 1's input
                 movement += Vector2.up * Convert.ToInt32(Input.GetKey("w"));
                 movement += Vector2.left * Convert.ToInt32(Input.GetKey("a"));
                 movement += Vector2.down * Convert.ToInt32(Input.GetKey("s"));
                 movement += Vector2.right * Convert.ToInt32(Input.GetKey("d"));
                 break;
-            case 1:
+            case 2: // player 2's input
                 movement += Vector2.up * Convert.ToInt32(Input.GetKey("up"));
                 movement += Vector2.left * Convert.ToInt32(Input.GetKey("left"));
                 movement += Vector2.down * Convert.ToInt32(Input.GetKey("down"));

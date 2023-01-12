@@ -135,7 +135,9 @@ GameObject:
   - component: {fileID: 346862376}
   - component: {fileID: 346862375}
   - component: {fileID: 346862374}
+  - component: {fileID: 346862380}
   - component: {fileID: 346862378}
+  - component: {fileID: 346862379}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -259,6 +261,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+--- !u!114 &346862379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346862373}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb21d1ab9258554bb4d9c87c2021a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 3147762718986834637, guid: e2698c80522930042bd5585291ff545e,
+    type: 3}
+  projectile2d: {fileID: 1828012586343125152, guid: be2e3753334fb11438e5a0932fdeb080,
+    type: 3}
+  launchVelocity: 700
+  MaxCapacity: 0
+  ThirdDimensionEnviroment: 0
+--- !u!114 &346862380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346862373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabc0012aa162e24b85c92e90020a147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 3147762718986834637, guid: e2698c80522930042bd5585291ff545e,
+    type: 3}
+  launchVelocity: 700
+  launchAngle: 0
+  reloadTimer: 2
+  reloading: 0
 --- !u!1 &1051860487
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,13 +346,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051860487}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e17c3181d17619478093a930cad8a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  controllerSettings: 0
+  controllerSettings: 2
 --- !u!212 &1051860490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -389,7 +428,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051860487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c6d9ee15e92bf48a726e651e1d09ae, type: 3}
   m_Name: 
