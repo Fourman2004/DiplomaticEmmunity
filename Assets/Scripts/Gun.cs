@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour
     public bool ThirdDimensionEnviroment;
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     public int reloadTimer = 2;
-    public bool reloading;
+    private bool reloading;
     public int playerNo;
     // Start is called before the first frame update
 
@@ -45,11 +45,11 @@ public class Gun : MonoBehaviour
 
     private void GetReloadInput(string button)
     {
-        //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
+        //if Reload button pressed and the Capacity int from before is 0.
         if (Input.GetButtonDown(button) && Capacity == 0)
         {
             //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
-            Debug.Log("reloaded");
+            Debug.Log("Player " + playerNo + " has reloaded");
             Capacity = MaxCapacity;
         }
     }
