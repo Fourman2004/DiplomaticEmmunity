@@ -25,14 +25,16 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // checks player number and sends shoot input name accordingly
+        // checks player number and sends shoot/reload input name accordingly
         switch (playerNo)
         {
             case 1:
                 GetShootInput("TestFire1"); // space to shoot for player 1
+                GetReloadInput("TestReload1"); // R to reload for player 1
                 break;
             case 2:
                 GetShootInput("TestFire2"); // left click to shoot for player 2
+                GetReloadInput("TestReload2"); // right click to reload for player 2
                 break;
             default:
                 Debug.LogError("No player number given");
@@ -41,9 +43,20 @@ public class Gun : MonoBehaviour
         
     }
 
+    private void GetReloadInput(string button)
+    {
+        //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
+        if (Input.GetButtonDown(button) && Capacity == 0)
+        {
+            //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+            Debug.Log("reloaded");
+            Capacity = MaxCapacity;
+        }
+    }
+
     private void GetShootInput(string button)
     {
-        //when it gets TestFire1(Space) or TestFire2(Left Click) and The int is not 0, it will spawn the projectile
+        //when it gets the input button and the int is not 0, it will spawn the projectile
         if (Input.GetButtonDown(button) && Capacity != 0)
         {
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
@@ -70,13 +83,7 @@ public class Gun : MonoBehaviour
             Debug.Log(Capacity);
             Capacity--;
         }
-        //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
-        if (Input.GetButtonDown("Reload") && Capacity == 0)
-        {
-            //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
-            Debug.Log("reloaded");
-            Capacity = MaxCapacity;
-        }
+        
         StartCoroutine(Countdown());
     }
 
