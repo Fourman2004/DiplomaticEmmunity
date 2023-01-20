@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Gun : MonoBehaviour
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     public int reloadTimer = 2;
     public bool reloading;
+    public int playerNo;
     // Start is called before the first frame update
 
     private void Start()
@@ -23,11 +25,29 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //when it gets TestFire1(Mouse 1) and The int is not 0, it will spawn the projectile
-        if (Input.GetButtonDown("TestFire1") && Capacity != 0)
+        // checks player number and sends shoot input name accordingly
+        switch (playerNo)
+        {
+            case 1:
+                GetShootInput("TestFire1"); // space to shoot for player 1
+                break;
+            case 2:
+                GetShootInput("TestFire2"); // left click to shoot for player 2
+                break;
+            default:
+                Debug.LogError("No player number given");
+                break;
+        }
+        
+    }
+
+    private void GetShootInput(string button)
+    {
+        //when it gets TestFire1(Space) or TestFire2(Left Click) and The int is not 0, it will spawn the projectile
+        if (Input.GetButtonDown(button) && Capacity != 0)
         {
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
-            
+
             if (ThirdDimensionEnviroment == true)
             {
                 GameObject ball = Instantiate(projectile, FirePoint.position, transform.rotation);
@@ -36,7 +56,7 @@ public class Gun : MonoBehaviour
             else
             {
                 GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
-                
+
                 if (transform.rotation.y > 0) // checks if player was facing right
                 {
                     launchVelocity *= 1;
@@ -45,7 +65,7 @@ public class Gun : MonoBehaviour
                 {
                     launchVelocity *= -1;
                 }
-                ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity,0));
+                ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity, 0));
             }
             Debug.Log(Capacity);
             Capacity--;
@@ -53,12 +73,13 @@ public class Gun : MonoBehaviour
         //if Reload (needs to be added to input manager) and the Capacity int from before is 0.
         if (Input.GetButtonDown("Reload") && Capacity == 0)
         {
-           //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+            //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
             Debug.Log("reloaded");
             Capacity = MaxCapacity;
         }
         StartCoroutine(Countdown());
     }
+
     IEnumerator Countdown()
     {
         //Creates a delay for "reloadTimer" seconds (currently 2 seconds)
