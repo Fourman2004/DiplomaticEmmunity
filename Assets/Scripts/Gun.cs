@@ -60,7 +60,6 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown(button) && Capacity != 0)
         {
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
-
             if (ThirdDimensionEnviroment == true)
             {
                 GameObject ball = Instantiate(projectile, FirePoint.position, transform.rotation);
@@ -68,7 +67,19 @@ public class Gun : MonoBehaviour
             }
             else
             {
-                GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
+                //GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
+
+                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.forward, 100f);
+                if (hit2D)
+                {
+                    Debug.Log("I hit " + hit2D.collider.name);
+                    if (hit2D.transform.tag == "Emu")
+                    {
+                        SpriteRenderer emu = hit2D.transform.GetComponent<SpriteRenderer>();
+                        emu.color = Color.green;
+                        Debug.Log("I killed an emu called " + emu.gameObject.name);
+                    }
+                }
 
                 if (transform.rotation.y > 0) // checks if player was facing right
                 {
@@ -78,9 +89,11 @@ public class Gun : MonoBehaviour
                 {
                     launchVelocity *= -1;
                 }
-                ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity, 0));
+
+                //ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity, 0));
+
+                
             }
-            Debug.Log(Capacity);
             Capacity--;
         }
         
