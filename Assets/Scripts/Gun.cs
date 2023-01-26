@@ -75,9 +75,7 @@ public class Gun : MonoBehaviour
                     Debug.Log("I hit " + hit2D.collider.name);
                     if (hit2D.transform.tag == "Emu")
                     {
-                        SpriteRenderer emu = hit2D.transform.GetComponent<SpriteRenderer>();
-                        emu.color = Color.green;
-                        Debug.Log("I killed an emu called " + emu.gameObject.name);
+                        Destroy(hit2D.transform.gameObject);
                     }
                 }
 
