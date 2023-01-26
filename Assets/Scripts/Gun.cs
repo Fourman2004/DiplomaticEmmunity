@@ -69,6 +69,7 @@ public class Gun : MonoBehaviour
             {
                 //GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
 
+                // casts a ray at game object and if it has the tag "Emu", destroy it
                 RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.forward, 100f);
                 if (hit2D)
                 {
