@@ -80,14 +80,14 @@ public class Gun : MonoBehaviour
                     }
                 }
 
-                if (transform.rotation.y > 0) // checks if player was facing right
-                {
-                    launchVelocity *= 1;
-                }
-                else if (transform.rotation.y < 0) // checks if player was facing left
-                {
-                    launchVelocity *= -1;
-                }
+                //if (transform.rotation.y > 0) // checks if player was facing right
+                //{
+                //    launchVelocity *= 1;
+                //}
+                //else if (transform.rotation.y < 0) // checks if player was facing left
+                //{
+                //    launchVelocity *= -1;
+                //}
 
                 //ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity, 0));
 
