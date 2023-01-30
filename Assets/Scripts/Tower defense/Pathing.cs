@@ -24,9 +24,11 @@ public class Pathing : MonoBehaviour
         actualPosition = obj.transform.position;
         obj.transform.position = Vector3.MoveTowards(actualPosition, pathPoints[x].transform.position, speed * Time.deltaTime);
 
-        if(actualPosition == pathPoints[x].transform.position && x != numberOfPoints - 1)
+        if (actualPosition == pathPoints[x].transform.position && x != numberOfPoints - 1)
         {
             x++;
         }
+
     }
+    
 }
