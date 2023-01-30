@@ -8,12 +8,14 @@ public class Wallhealth : MonoBehaviour
     public int currentWallHP;
     void Start()
     {
+        //setting the walls hp
         currentWallHP = wallHP;
     }
 
-
+    //public void which can be accessed by the emu damage script to lower the walls health.
     public void takeDamage(int damage)
     {
+        //deducting walls health
         currentWallHP -= damage;
         if (currentWallHP <= 0)
         {
