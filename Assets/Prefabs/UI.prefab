@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 597239448827767878}
   - component: {fileID: 711363328246855282}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
