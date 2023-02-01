@@ -23,7 +23,7 @@ public class UIMoneyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Moneydisplay.text =("Money : "+ Internalmoney.ToString());
+        Moneydisplay.text =(Internalmoney.ToString());
     }
     public void emuIncrement()
     {
