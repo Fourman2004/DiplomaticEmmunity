@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
     public int reloadTimer = 2;
     private bool reloading;
     public int playerNo;
+    public float shootRange = 100f;
     // Start is called before the first frame update
 
     private void Start()
@@ -70,7 +71,7 @@ public class Gun : MonoBehaviour
                 //GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
 
                 // casts a ray at game object and if it has the tag "Emu", destroy it
-                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.forward, 100f);
+                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.forward, shootRange);
                 if (hit2D)
                 {
                     Debug.Log("I hit " + hit2D.collider.name);
@@ -93,6 +94,7 @@ public class Gun : MonoBehaviour
 
                 
             }
+            //Debug.Log("Player " + playerNo + " has shot");
             Capacity--;
         }
         
