@@ -42,18 +42,18 @@ public class PlayerAim : MonoBehaviour
         {
             firePoint.transform.RotateAround(this.transform.position, new Vector3(0,180,0) , 180);
         }
-        else if (Input.GetKeyDown("k")) // down
+        else if (Input.GetKeyDown("k") && (this.transform.rotation.z == 0)) // down
         {
-            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 0, 90), 90);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 0, 90), -90);
         }
-        else if (Input.GetKeyDown("l") && (firePoint.transform.rotation.y == 180)) // right
+        else if (Input.GetKeyDown("l") && (firePoint.transform.rotation.y != 0)) // right
         {
-            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 180, 0), 180);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 180, 0), -180);
             Debug.Log("Player 1 is facing right");
         }
-        else if (Input.GetKeyDown("i")) // up
+        else if (Input.GetKeyDown("i") && (this.transform.position.z == 90)) // up
         {
-            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 0, 90), 90);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 0, 90), 180);
         }
     }
 }
