@@ -16,12 +16,15 @@ public class Gun : MonoBehaviour
     private bool reloading;
     public int playerNo;
     public float shootRange = 100f;
+    private LineRenderer laserLine;
     // Start is called before the first frame update
 
     private void Start()
     {
         //makes the capacity the amount "Maxcapacity", which can be edited within engine. 
         Capacity = MaxCapacity;
+
+        laserLine = GetComponent<LineRenderer>();
     }
     // Update is called once per frame
     void Update()
@@ -74,6 +77,7 @@ public class Gun : MonoBehaviour
                 RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.forward, shootRange);
                 if (hit2D)
                 {
+                    laserLine.SetPosition(0, hit2D.point);
                     Debug.Log("I hit " + hit2D.collider.name);
                     if (hit2D.transform.tag == "Emu")
                     {
