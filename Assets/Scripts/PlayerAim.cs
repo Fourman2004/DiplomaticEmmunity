@@ -16,10 +16,6 @@ public class PlayerAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
         switch (playerNo)
         {
             case 1:
@@ -32,27 +28,32 @@ public class PlayerAim : MonoBehaviour
                 break;
         }
     }
+    private void FixedUpdate()
+    {
+        
+    }
 
     private void KeyboardInput()
     {
         Vector2 thisPosition = this.transform.position;
         float x = firePoint.transform.position.x;
         float y = firePoint.transform.position.y;
-        if (Input.GetKey("j"))
+        if (Input.GetKeyDown("j") && (firePoint.transform.rotation.y == 0)) // left
         {
-            firePoint.transform.position = new Vector2(x * 1, y);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0,180,0) , 180);
         }
-        else if (Input.GetKey("k"))
+        else if (Input.GetKeyDown("k")) // down
         {
-            firePoint.transform.position = new Vector2(thisPosition.x, x * -1);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 0, 90), 90);
         }
-        else if (Input.GetKey("l"))
+        else if (Input.GetKeyDown("l") && (firePoint.transform.rotation.y == 180)) // right
         {
-            firePoint.transform.position = new Vector2(x* -1, y);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 180, 0), 180);
+            Debug.Log("Player 1 is facing right");
         }
-        else if (Input.GetKey("i"))
+        else if (Input.GetKeyDown("i")) // up
         {
-            firePoint.transform.position = new Vector2(thisPosition.x, x * 1);
+            firePoint.transform.RotateAround(this.transform.position, new Vector3(0, 0, 90), 90);
         }
     }
 }

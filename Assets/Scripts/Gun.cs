@@ -17,6 +17,9 @@ public class Gun : MonoBehaviour
     public int playerNo;
     public float shootRange = 100f;
     private LineRenderer laserLine;
+    private Vector2 startVector;
+    private Vector2 endVector;
+    private float direction;
     // Start is called before the first frame update
 
     private void Start()
@@ -25,6 +28,10 @@ public class Gun : MonoBehaviour
         Capacity = MaxCapacity;
 
         laserLine = GetComponent<LineRenderer>();
+
+        startVector = Vector2.zero;
+        endVector = Vector2.zero;
+        direction = 0f;
     }
     // Update is called once per frame
     void Update()
@@ -48,7 +55,7 @@ public class Gun : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+
     }
 
     private void GetReloadInput(string button)
@@ -64,6 +71,7 @@ public class Gun : MonoBehaviour
 
     private void GetShootInput(string button)
     {
+        
         //when it gets the input button and the int is not 0, it will spawn the projectile
         if (Input.GetButtonDown(button) && Capacity != 0)
         {
@@ -75,7 +83,7 @@ public class Gun : MonoBehaviour
             }
             else
             {
-                //GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
+                startVector = FirePoint.transform.position;
 
                 // casts a ray at game object and if it has the tag "Emu", destroy it
                 
@@ -90,12 +98,17 @@ public class Gun : MonoBehaviour
                     {
                         Destroy(hit2D.transform.gameObject);
                     }
+                    endVector = hit2D.point;
                 }
                 else
                 {
                     laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * shootRange));
+                    endVector = laserLine.transform.position;
                 }
-                Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.forward);
+                //Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
+                Debug.DrawLine(Vector2.zero, startVector);
+                Debug.DrawLine(Vector2.zero, endVector);
+                //Debug.Log(direction);
                 //if (transform.rotation.y > 0) // checks if player was facing right
                 //{
                 //    launchVelocity *= 1;

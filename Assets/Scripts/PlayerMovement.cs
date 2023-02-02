@@ -9,12 +9,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerBody;
     public float moveSpeed = 1f; // movement speed
     public int controllerSettings = 0;
-    public bool facingRight = true; // checks if player is facing right
-    
+    //public bool facingRight = true; // checks if player is facing right
+    private GameObject firePoint;
     // Start is called before the first frame update
     void Start()
     {
         playerBody = this.GetComponent<Rigidbody2D>();
+        
     }
 
 
@@ -49,10 +50,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void Flip()
-    {
-        facingRight =! facingRight;
-        transform.Rotate(0f, 180f, 0f); // rotates the player horizontally
-    }
+    //private void Flip()
+    //{
+    //    facingRight =! facingRight;
+    //    transform.Rotate(0f, 180f, 0f); // rotates the player horizontally
+    //}
 
 }

@@ -387,7 +387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   controllerSettings: 1
-  facingRight: 1
 --- !u!212 &346862376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -492,7 +491,7 @@ MonoBehaviour:
   FirePoint: {fileID: 1681266008}
   reloadTimer: 2
   playerNo: 1
-  shootRange: 100
+  shootRange: 10000
 --- !u!114 &346862380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1023,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   controllerSettings: 2
-  facingRight: 1
 --- !u!212 &1051860490
 SpriteRenderer:
   m_ObjectHideFlags: 0
