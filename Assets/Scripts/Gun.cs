@@ -46,6 +46,10 @@ public class Gun : MonoBehaviour
         }
         
     }
+    private void FixedUpdate()
+    {
+        
+    }
 
     private void GetReloadInput(string button)
     {
@@ -74,17 +78,24 @@ public class Gun : MonoBehaviour
                 //GameObject ball2d = Instantiate(projectile2d, FirePoint.position, transform.rotation);
 
                 // casts a ray at game object and if it has the tag "Emu", destroy it
-                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.forward, shootRange);
+                
+
+                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, shootRange);
                 if (hit2D)
                 {
                     laserLine.SetPosition(0, hit2D.point);
+                    
                     Debug.Log("I hit " + hit2D.collider.name);
                     if (hit2D.transform.tag == "Emu")
                     {
                         Destroy(hit2D.transform.gameObject);
                     }
                 }
-
+                else
+                {
+                    laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * shootRange));
+                }
+                Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.forward);
                 //if (transform.rotation.y > 0) // checks if player was facing right
                 //{
                 //    launchVelocity *= 1;
@@ -96,7 +107,7 @@ public class Gun : MonoBehaviour
 
                 //ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity, 0));
 
-                
+
             }
             //Debug.Log("Player " + playerNo + " has shot");
             Capacity--;

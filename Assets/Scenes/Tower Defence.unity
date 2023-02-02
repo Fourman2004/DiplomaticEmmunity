@@ -492,7 +492,7 @@ MonoBehaviour:
   FirePoint: {fileID: 1681266008}
   reloadTimer: 2
   playerNo: 1
-  shootRange: 10000
+  shootRange: 100
 --- !u!114 &346862380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +593,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
@@ -1211,6 +1212,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
