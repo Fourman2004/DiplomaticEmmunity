@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
         playerBody = this.GetComponent<Rigidbody2D>();
     }
 
-
     private void FixedUpdate()
     {
         Vector2 movement = Vector2.zero; 
@@ -46,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
         }
         movement.Normalize();
         playerBody.MovePosition(playerBody.position + movement * moveSpeed * Time.deltaTime);
-        
     }
 
     private void Flip()

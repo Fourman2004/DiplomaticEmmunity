@@ -1,0 +1,69 @@
+{
+    "BaseTowers" : [
+        {
+            "Name" : "Dart Monkey",
+            "Price" : 50.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : [
+                "Super Dart Monkey",
+                "Dart Monkey Ace"
+            ]
+        },
+
+        {
+            "Name": "Tack Shooter",
+            "Price" : 100.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : [
+                "Better Tack Shooter"
+            ]
+        },
+
+        {
+            "Name" : "Super Monkey",
+            "Price" : 9999.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : []
+        }
+    ],
+
+
+    "UpgradedTowers" : [
+        {
+            "Name" : "Super Dart Monkey",
+            "Price" : 90.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : [
+                "Ultimate Dart Monkey"
+            ]
+        },
+
+        {
+            "Name" : "Dart Monkey Ace",
+            "Price" : 125.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : []
+        },
+
+        {
+            "Name" : "Ultimate Dart Monkey",
+            "Price" : 600.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : []
+        },
+        
+        {
+            "Name" : "Better Tack Shooter",
+            "Price" : 425.0,
+            "Image" : "",
+            "Path" : "",
+            "Upgrades" : []
+        }
+    ]
+}
