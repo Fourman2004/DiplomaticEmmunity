@@ -18,16 +18,27 @@ public class PlayerAim : MonoBehaviour
     {
         switch (playerNo)
         {
-            case 1:
-                KeyboardInput();
-                break;
-            case 2:
-                break;
+            //case 1:
+            //    // removed keyboard input
+            //    Debug.Log("no");
+            //    break;
+            //case 2:
+            //    break;
             default:
-                Debug.LogError("Not a valid player number.");
+                MouseInput();
                 break;
         }
     }
+
+    private void MouseInput()
+    {
+        // rotates player based on mouse position
+        var pos = Camera.main.WorldToScreenPoint(transform.position);
+        var dir = Input.mousePosition - pos;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
     private void FixedUpdate()
     {
         
