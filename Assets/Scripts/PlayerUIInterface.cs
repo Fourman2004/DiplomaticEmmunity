@@ -113,7 +113,7 @@ public class PlayerUIInterface : MonoBehaviour
 
     public void SetTower(int Player)
     {
-        Transform TowerPanel = GameObject.Find("Canvas").transform.Find("Set Tower Player " + (Player + 1) + " Panel");
+        Transform TowerPanel = GameObject.Find("Select menu").transform.Find("Set Tower Player " + (Player + 1) + " Panel");
         TowerPanel.gameObject.SetActive(true);
 
         if (TowerPanel.childCount > 2)
@@ -139,12 +139,10 @@ public class PlayerUIInterface : MonoBehaviour
 
     public void UpgradeTower(int Player)
     {
-        Transform TowerPanel = GameObject.Find("Canvas").transform.Find("Upgrade Tower Player " + (Player + 1) + " Panel");
+        Transform TowerPanel = GameObject.Find("Select menu").transform.Find("Upgrade Tower Player " + (Player + 1) + " Panel");
         TowerPanel.gameObject.SetActive(true);
 
         GameObject CurrentTower = GameObject.Find("Tower place " + PlayersInteract[Player]).transform.GetChild(0).gameObject;
-
-        Debug.Log(TowerPanel.childCount);
         if (TowerPanel.childCount > 2)
         {
             int RemainingButtons = TowerPanel.childCount - 2;
