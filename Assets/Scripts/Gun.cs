@@ -17,9 +17,6 @@ public class Gun : MonoBehaviour
     public int playerNo;
     public float shootRange = 100f;
     private LineRenderer laserLine;
-    private Vector2 startVector;
-    private Vector2 endVector;
-    private float direction;
     // Start is called before the first frame update
 
     private void Start()
@@ -28,10 +25,6 @@ public class Gun : MonoBehaviour
         Capacity = MaxCapacity;
 
         laserLine = GetComponent<LineRenderer>();
-
-        startVector = Vector2.zero;
-        endVector = Vector2.zero;
-        direction = 0f;
     }
     // Update is called once per frame
     void Update()
@@ -40,7 +33,7 @@ public class Gun : MonoBehaviour
         switch (playerNo)
         {
             case 1:
-                GetShootInput("TestFire1"); // space to shoot for player 1
+                GetShootInput("TestFire2"); // left click to shoot
                 GetReloadInput("TestReload1"); // R to reload for player 1
                 break;
             case 2:
@@ -83,11 +76,7 @@ public class Gun : MonoBehaviour
             }
             else
             {
-                startVector = FirePoint.transform.position;
-
                 // casts a ray at game object and if it has the tag "Emu", destroy it
-                
-
                 RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, shootRange);
                 if (hit2D)
                 {
@@ -96,33 +85,16 @@ public class Gun : MonoBehaviour
                     Debug.Log("I hit " + hit2D.collider.name);
                     if (hit2D.transform.tag == "Emu")
                     {
-                        Destroy(hit2D.transform.gameObject);
+                        Destroy(hit2D.transform.gameObject); // need an emu script that has public take damage function
                     }
-                    endVector = hit2D.point;
                 }
                 else
                 {
                     laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * shootRange));
-                    endVector = laserLine.transform.position;
                 }
-                //Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
-                Debug.DrawLine(Vector2.zero, startVector);
-                Debug.DrawLine(Vector2.zero, endVector);
-                //Debug.Log(direction);
-                //if (transform.rotation.y > 0) // checks if player was facing right
-                //{
-                //    launchVelocity *= 1;
-                //}
-                //else if (transform.rotation.y < 0) // checks if player was facing left
-                //{
-                //    launchVelocity *= -1;
-                //}
-
-                //ball2d.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(launchVelocity, 0));
-
-
+                Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
             }
-            //Debug.Log("Player " + playerNo + " has shot");
+            Debug.Log("Player " + playerNo + " has shot");
             Capacity--;
         }
         
