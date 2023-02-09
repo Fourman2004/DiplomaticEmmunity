@@ -43,7 +43,7 @@ public class Pathing : MonoBehaviour
             // using Vector 2 to move towards the points in the list
             obj.transform.position = Vector2.MoveTowards(actualPosition2D, pathPoints[x].transform.position, speed * Time.deltaTime);
             //increments x to change which point the obj is moving towards
-            if (actualPosition == pathPoints[x].transform.position && x != numberOfPoints - 1)
+            if (actualPosition2D == (Vector2)pathPoints[x].transform.position && x != numberOfPoints - 1)
             {
                 x++;
             }
