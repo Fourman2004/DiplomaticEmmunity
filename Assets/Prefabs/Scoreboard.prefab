@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2747973671028593361}
   - component: {fileID: 4453859855505698300}
   - component: {fileID: 8853484433805812798}
+  - component: {fileID: 791381169604630457}
   m_Layer: 0
   m_Name: Scoreboard
   m_TagString: Untagged
@@ -82,3 +83,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &791381169604630457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220053429988303654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e90feac6b05e0d4486e3e75ba58e118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreHolder: {fileID: 4900000, guid: cadb06979260db743b52502b49cdbbe9, type: 3}
+  myScoreList:
+    scores: []
