@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject projectile;
-    public GameObject projectile2d;
+    //public GameObject projectile;
+    //public GameObject projectile2d;
     public float launchVelocity = 700f;
     public int MaxCapacity;
     int Capacity;
     public bool ThirdDimensionEnviroment;
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     public int reloadTimer = 2;
-    private bool reloading;
+    private bool reloading = true;
     public int playerNo;
     public float shootRange = 100f;
     private LineRenderer laserLine;
@@ -25,6 +25,7 @@ public class Gun : MonoBehaviour
         Capacity = MaxCapacity;
 
         laserLine = GetComponent<LineRenderer>();
+        
     }
     // Update is called once per frame
     void Update()
@@ -57,6 +58,7 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown(button) && Capacity == 0)
         {
             //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+            reloading = true;
             Debug.Log("Player " + playerNo + " has reloaded");
             Capacity = MaxCapacity;
         }
@@ -71,8 +73,16 @@ public class Gun : MonoBehaviour
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
             if (ThirdDimensionEnviroment == true)
             {
-                GameObject ball = Instantiate(projectile, FirePoint.position, transform.rotation);
-                ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(launchVelocity, 0, 0));
+                RaycastHit hit;
+                if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, shootRange))
+                {
+                    laserLine.SetPosition(0, hit.point);
+                    Debug.Log("I hit " + hit.transform.name);
+                    if (hit.transform.tag == "Emu")
+                    {
+                        Destroy(hit.transform.gameObject);
+                    }
+                }
             }
             else
             {
@@ -82,7 +92,7 @@ public class Gun : MonoBehaviour
                 {
                     laserLine.SetPosition(0, hit2D.point);
                     
-                    Debug.Log("I hit " + hit2D.collider.name);
+                    Debug.Log("I hit " + hit2D.transform.name);
                     if (hit2D.transform.tag == "Emu")
                     {
                         Destroy(hit2D.transform.gameObject); // need an emu script that has public take damage function
