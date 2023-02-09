@@ -17,6 +17,8 @@ public class Gun : MonoBehaviour
     public int playerNo;
     public float shootRange = 100f;
     private LineRenderer laserLine;
+    private EmuTakeDamage damageScript;
+    public float projectileDamge = 10;
     // Start is called before the first frame update
 
     private void Start()
@@ -95,7 +97,8 @@ public class Gun : MonoBehaviour
                     Debug.Log("I hit " + hit2D.transform.name);
                     if (hit2D.transform.tag == "Emu")
                     {
-                        Destroy(hit2D.transform.gameObject); // need an emu script that has public take damage function
+                        damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
+                        damageScript.TakeDamge(projectileDamge);
                     }
                 }
                 else
