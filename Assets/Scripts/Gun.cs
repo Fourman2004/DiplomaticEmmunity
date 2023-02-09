@@ -82,7 +82,8 @@ public class Gun : MonoBehaviour
                     Debug.Log("I hit " + hit.transform.name);
                     if (hit.transform.tag == "Emu")
                     {
-                        Destroy(hit.transform.gameObject);
+                        damageScript = hit.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
+                        damageScript.TakeDamge(projectileDamge);
                     }
                 }
             }
