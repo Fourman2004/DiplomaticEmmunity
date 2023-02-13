@@ -7,8 +7,10 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour
 {
     private Rigidbody2D playerBody;
+    private GameObject firePoint;
     public float moveSpeed = 1f; // movement speed
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +26,9 @@ public class PlayerMovementController : MonoBehaviour
     private void GetControllerInput()
     {
         Vector2 movement = Vector2.zero;
-        Debug.Log(Input.GetAxis("HorizontalController"));
-        Debug.Log(Input.GetAxis("VerticalController"));
         movement += Vector2.right * Input.GetAxis("HorizontalController");
         movement += Vector2.down * Input.GetAxis("VerticalController");
+        movement.Normalize();
         playerBody.MovePosition(playerBody.position + movement * moveSpeed * Time.deltaTime);
     }
 }

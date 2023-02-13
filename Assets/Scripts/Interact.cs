@@ -17,13 +17,16 @@ public class Interact : MonoBehaviour
         PlayerMovement = GetComponent<PlayerMovement>();
     }
 
-
-    void Update()
+    void OnTriggerStay2D(Collider2D collisionInfo) 
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKey("e"))
         {
-            int PlayerNum = (int)Char.GetNumericValue(transform.name[7]);
-            UIManager.StartInteraction(PlayerNum-1, 0);
-        }
+            if (collisionInfo.gameObject.tag == "Tower Spot")
+            {
+                int PlayerNum = (int)Char.GetNumericValue(transform.name[transform.name.Length-1]);
+                int TowerNum = (int)Char.GetNumericValue(collisionInfo.transform.name[collisionInfo.transform.name.Length-1]);
+                UIManager.StartInteraction(PlayerNum-1, TowerNum);
+            }
+        }   
     }
 }

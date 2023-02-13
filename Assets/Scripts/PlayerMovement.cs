@@ -36,22 +36,7 @@ public class PlayerMovement : MonoBehaviour
                 movement += Vector2.right * Convert.ToInt32(Input.GetKey("right"));
                 break;
         }
-        //if (movement.x < 0 && facingRight == true) // flips the character if the player is facing right and is moving left
-        //{
-        //    Flip();
-        //}
-        //else if (movement.x > 0 && facingRight == false) // flips the character if the player is facing left and is moving right
-        //{
-        //    Flip();
-        //}
         movement.Normalize();
         playerBody.MovePosition(playerBody.position + movement * moveSpeed * Time.deltaTime);
     }
-
-    //private void Flip()
-    //{
-    //    facingRight =! facingRight;
-    //    transform.Rotate(0f, 180f, 0f); // rotates the player horizontally
-    //}
-
 }

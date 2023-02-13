@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Emu
   - Wall
+  - Tower Spot
   layers:
   - Default
   - TransparentFX
