@@ -8,6 +8,7 @@ public class bulletScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force = 5;
     private float timer;
+    private EmuTakeDamage damageScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,9 @@ public class bulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Emu"))
         {
-            Destroy(gameObject);
+            Debug.Log("A tower hit an emu");
+            damageScript = other.transform.gameObject.GetComponent<EmuTakeDamage>();
+            damageScript.TakeDamge(10);
         }
         
     }

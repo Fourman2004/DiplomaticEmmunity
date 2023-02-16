@@ -98,7 +98,7 @@ public class Gun : MonoBehaviour
                     Debug.Log("I hit " + hit2D.transform.name);
                     if (hit2D.transform.tag == "Emu")
                     {
-                        damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
+                        damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>();
                         damageScript.TakeDamge(projectileDamge);
                     }
                 }

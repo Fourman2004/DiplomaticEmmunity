@@ -20,11 +20,11 @@ public class TowerShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, Emu.transform.position);
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if(distance > 2)
         {
-            Debug.Log(timer);
+            //Debug.Log(timer);
             timer += Time.deltaTime;
 
             if (timer > 2)
