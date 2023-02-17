@@ -25,12 +25,8 @@ public class PlayerUIInterface : MonoBehaviour
         PlayerOneUI.SetActive(false);
         PlayerTwoUI.SetActive(false);
 
-<<<<<<< Updated upstream
-        using (StreamReader stream = new StreamReader("Assets/Resources/Towers.json"))
-=======
         // Loads all the tower data
-        using (StreamReader stream = new StreamReader("Assets/Towers.json"))
->>>>>>> Stashed changes
+        using (StreamReader stream = new StreamReader("Assets/Resources/Towers.json"))
         {
             string TowersDataString = stream.ReadToEnd();
             Towers = JsonConvert.DeserializeObject<TowerDataSet>(TowersDataString);
