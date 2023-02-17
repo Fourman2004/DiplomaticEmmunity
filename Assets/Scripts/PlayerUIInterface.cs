@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 public class PlayerUIInterface : MonoBehaviour
 {
+    private List<int> PlayersInteract = new List<int> {-1, -1}; // Keeps track of what each player is interacting with. -1 = nothing, 0> = tower number
     private List<GameObject> PlayerUIs;
     private TowerDataSet Towers;
     public Button TowerButton;
