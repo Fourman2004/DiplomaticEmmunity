@@ -23,7 +23,7 @@ public class PlayerUIInterface : MonoBehaviour
         PlayerOneUI.SetActive(false);
         PlayerTwoUI.SetActive(false);
 
-        using (StreamReader stream = new StreamReader("Assets/Towers.json"))
+        using (StreamReader stream = new StreamReader("Assets/Resources/Towers.json"))
         {
             string TowersDataString = stream.ReadToEnd();
             Towers = JsonConvert.DeserializeObject<TowerDataSet>(TowersDataString);

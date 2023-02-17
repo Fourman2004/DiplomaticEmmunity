@@ -19,20 +19,28 @@ public class TowerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, Emu.transform.position);
-        //Debug.Log(distance);
-
-        if(distance > 2)
+        try
         {
-            //Debug.Log(timer);
-            timer += Time.deltaTime;
-
-            if (timer > 2)
+            float distance = Vector2.Distance(transform.position, Emu.transform.position);
+            //Debug.Log(distance);
+            if (distance > 2)
             {
-                timer = 0;
-                shoot();
+                //Debug.Log(timer);
+                timer += Time.deltaTime;
+
+                if (timer > 2)
+                {
+                    timer = 0;
+                    shoot();
+                }
             }
         }
+        catch (System.Exception)
+        {
+            Debug.Log("No emu to hit");
+        }
+        
+
         
     }
 
