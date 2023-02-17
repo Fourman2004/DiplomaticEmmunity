@@ -26,11 +26,8 @@ public class PlayerUIInterface : MonoBehaviour
         PlayerTwoUI.SetActive(false);
 
         // Loads all the tower data
-        using (StreamReader stream = new StreamReader("Assets/Resources/Towers.json"))
-        {
-            string TowersDataString = stream.ReadToEnd();
-            Towers = JsonConvert.DeserializeObject<TowerDataSet>(TowersDataString);
-        }
+        string TowersDataString = Resources.Load("Towers").ToString();
+        Towers = JsonConvert.DeserializeObject<TowerDataSet>(TowersDataString);
     }
 
 
