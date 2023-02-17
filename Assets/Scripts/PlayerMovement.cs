@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// this script takes keyboard input
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
+<<<<<<< Updated upstream
     public float moveSpeed = 1f; // movement speed
     public int controllerSettings = 0;
     private bool facingRight = true; // checks if player is facing right
@@ -18,6 +18,16 @@ public class PlayerMovement : MonoBehaviour
         playerBody = this.GetComponent<Rigidbody2D>();
         spriteRenderer= this.GetComponent<SpriteRenderer>();
         
+=======
+    private GameObject firePoint;
+    public float moveSpeed = 1f;
+    public int controllerSettings = 0;
+
+
+    void Start()
+    {
+        playerBody = this.GetComponent<Rigidbody2D>();
+>>>>>>> Stashed changes
     }
 
     private void FixedUpdate()

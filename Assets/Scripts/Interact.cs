@@ -8,7 +8,7 @@ public class Interact : MonoBehaviour
 {
 
     private PlayerUIInterface UIManager;
-    private Behaviour PlayerMovement;
+    private Behaviour PlayerMovement; 
 
 
     void Start()
@@ -18,7 +18,7 @@ public class Interact : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D collisionInfo) 
-    {
+    {  
         if (Input.GetKey("e"))
         {
             if (collisionInfo.gameObject.tag == "Tower Spot")
@@ -27,6 +27,6 @@ public class Interact : MonoBehaviour
                 int TowerNum = (int)Char.GetNumericValue(collisionInfo.transform.name[collisionInfo.transform.name.Length-1]);
                 UIManager.StartInteraction(PlayerNum-1, TowerNum);
             }
-        }   
+        }
     }
 }

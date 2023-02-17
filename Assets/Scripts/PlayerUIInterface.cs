@@ -1,34 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEditor;
 using Newtonsoft.Json;
+
+
 
 public class PlayerUIInterface : MonoBehaviour
 {
-    private List<int> PlayersInteract = new List<int> {-1, -1};
     private List<GameObject> PlayerUIs;
     private TowerDataSet Towers;
     public Button TowerButton;
 
+
     private void Start()
     {
+        // Gets all the UI elememts it needs before turning off the UI
         GameObject PlayerOneUI = GameObject.Find("Player 1 Panel");
         GameObject PlayerTwoUI = GameObject.Find("Player 2 Panel");
         PlayerUIs = new List<GameObject> {PlayerOneUI, PlayerTwoUI};
         PlayerOneUI.SetActive(false);
         PlayerTwoUI.SetActive(false);
 
+<<<<<<< Updated upstream
         using (StreamReader stream = new StreamReader("Assets/Resources/Towers.json"))
+=======
+        // Loads all the tower data
+        using (StreamReader stream = new StreamReader("Assets/Towers.json"))
+>>>>>>> Stashed changes
         {
             string TowersDataString = stream.ReadToEnd();
             Towers = JsonConvert.DeserializeObject<TowerDataSet>(TowersDataString);
         }
     }
+
 
     private void SetupUI(int WhichUI, int TowerSpotNum)
     {
@@ -62,6 +69,7 @@ public class PlayerUIInterface : MonoBehaviour
         return;
     }
 
+
     private void SpawnTower(string TowerName, int Player, string WhichUI)
     {
         GameObject TowerSpot = GameObject.Find("Tower place " + PlayersInteract[Player]);
@@ -81,6 +89,7 @@ public class PlayerUIInterface : MonoBehaviour
 
         return;
     }
+
 
     public void StartInteraction(int Player, int TowerSpotNum) 
     {
@@ -103,6 +112,7 @@ public class PlayerUIInterface : MonoBehaviour
         return;
     }
 
+
     public void EndInteraction(int Player)
     {
         PlayersInteract[Player] = -1;
@@ -118,6 +128,7 @@ public class PlayerUIInterface : MonoBehaviour
 
         return;
     }
+
 
     public void SetTower(int Player)
     {
@@ -144,6 +155,7 @@ public class PlayerUIInterface : MonoBehaviour
 
         return;
     }
+
 
     public void UpgradeTower(int Player)
     {
@@ -188,6 +200,7 @@ public class PlayerUIInterface : MonoBehaviour
         }
     }
 
+
     public void RemoveTower(int Player)
     {
         GameObject.Destroy(GameObject.Find("Tower place " + PlayersInteract[Player]).transform.GetChild(0).gameObject);
@@ -197,6 +210,8 @@ public class PlayerUIInterface : MonoBehaviour
         return;
     }
 }
+
+
 
 [Serializable]
 public class TowerDataSet
