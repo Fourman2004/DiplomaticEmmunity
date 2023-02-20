@@ -13,6 +13,8 @@ public class TimerScript : MonoBehaviour
     int minutes = 0;
     int seconds = 1;
     public static bool pauseState = false;
+    public GameObject canvasClock;
+    public GameObject winUI;
     void Start()
     {
         textClock.text = ("00:00");
@@ -41,7 +43,16 @@ public class TimerScript : MonoBehaviour
                     textClock.text = ("0" + minutes + ":" + seconds);
                 }
                 seconds++;
+                checkEnd();
             }
+        }
+    }
+
+    public void checkEnd() {
+        if (GameObject.FindWithTag("Emu")==null) {
+            pauseState = true;
+            canvasClock.SetActive(false);
+            winUI.SetActive(true);
         }
     }
 }
