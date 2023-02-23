@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
         switch (PlayerNo)
         {
             case 1:
-                if (ControllerControls == true)
+                if (ControllerControls == false)
                 {
                     GetShootInput("Fire1"); // F to shoot
                     GetReloadInput("Reload1"); // R to reload

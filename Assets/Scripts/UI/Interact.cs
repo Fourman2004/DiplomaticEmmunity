@@ -21,7 +21,7 @@ public class Interact : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collisionInfo) 
     {  
-        if (Input.GetButton(InputKey[Convert.ToInt32(ControllerControls)]))
+        if (Input.GetButton(InputKey[Convert.ToInt32(ControllerControls)])) // false = keyboard interact, true = controller interact
         {
             if (collisionInfo.gameObject.tag == "Tower Spot")
             {
