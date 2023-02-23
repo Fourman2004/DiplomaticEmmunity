@@ -3,94 +3,93 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Gun : MonoBehaviour
 {
-    //public GameObject projectile;
-    //public GameObject projectile2d;
-    public float launchVelocity = 700f;
-    public int MaxCapacity;
-    int Capacity;
-    public bool ThirdDimensionEnviroment;
-    public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
-    public int reloadTimer = 2;
-    private bool reloading = true;
-    public int playerNo;
-    public float shootRange = 100f;
     private LineRenderer laserLine;
     private EmuTakeDamage damageScript;
-    public float projectileDamge = 10;
-    // Start is called before the first frame update
+    private bool reloading = true;
+    private int Capacity;
+    public int MaxCapacity;
+    public int PlayerNo;
+    public int reloadTimer = 2;
+    public float HitDamage = 10;
+    public float HitRange = 100f;
+    public bool ThirdDimensionEnviroment;
+    public bool ControllerControls;
+    public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
+    // public float launchVelocity = 700f;
+
 
     private void Start()
     {
-        //makes the capacity the amount "Maxcapacity", which can be edited within engine. 
+        //makes the capacity the amount "MaxCapacity", which can be edited within engine. 
         Capacity = MaxCapacity;
-
         laserLine = GetComponent<LineRenderer>();
-        
+        PlayerNo = (int)Char.GetNumericValue(transform.name[transform.name.Length-1]);
     }
-    // Update is called once per frame
+
     void Update()
     {
         // checks player number and sends shoot/reload input name accordingly
-        switch (playerNo)
+        switch (PlayerNo)
         {
             case 1:
-                GetShootInput("TestFire2"); // left click to shoot
-                GetReloadInput("TestReload1"); // R to reload for player 1
+                if (ControllerControls == true)
+                {
+                    GetShootInput("Fire1"); // F to shoot
+                    GetReloadInput("Reload1"); // R to reload
+                }
+                else
+                {
+                    GetShootInput("FireController"); // South controller button to shoot
+                    GetReloadInput("ReloadController"); // North controller button to reload
+                }
                 break;
             case 2:
-                GetShootInput("TestFire2"); // left click to shoot for player 2
-                GetReloadInput("TestReload2"); // right click to reload for player 2
-                break;
-            default:
-                Debug.LogError("No player number given");
+                GetShootInput("Fire2"); // right shift to shoot
+                GetReloadInput("Reload2"); // right ctrl to reload
                 break;
         }
-        
-    }
-    private void FixedUpdate()
-    {
-
     }
 
     private void GetReloadInput(string button)
     {
-        //if Reload button pressed and the Capacity int from before is 0.
+        // If Reload button pressed and the Capacity int from before is 0.
         if (Input.GetButtonDown(button) && Capacity == 0)
         {
-            //sets capacity back to Maxcapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+            // Sets capacity back to MaxCapacity. UI for Ammo needs to be made. Debug Log for Dev work.
             reloading = true;
-            Debug.Log("Player " + playerNo + " has reloaded");
+            Debug.Log("Player " + PlayerNo + " has reloaded");
             Capacity = MaxCapacity;
         }
     }
 
     private void GetShootInput(string button)
     {
-        
-        //when it gets the input button and the int is not 0, it will spawn the projectile
+        //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
         if (Input.GetButtonDown(button) && Capacity != 0)
         {
-            //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.
+            //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
             if (ThirdDimensionEnviroment == true)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, shootRange))
+                if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, HitRange))
                 {
                     laserLine.SetPosition(0, hit.point);
                     Debug.Log("I hit " + hit.transform.name);
                     if (hit.transform.tag == "Emu")
                     {
                         damageScript = hit.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
-                        damageScript.TakeDamge(projectileDamge);
+                        damageScript.TakeDamge(HitDamage);
                     }
                 }
             }
             else
             {
                 // casts a ray at game object and if it has the tag "Emu", destroy it
-                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, shootRange);
+                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
                 if (hit2D)
                 {
                     laserLine.SetPosition(0, hit2D.point);
@@ -99,19 +98,18 @@ public class Gun : MonoBehaviour
                     if (hit2D.transform.tag == "Emu")
                     {
                         damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>();
-                        damageScript.TakeDamge(projectileDamge);
+                        damageScript.TakeDamge(HitDamage);
                     }
                 }
                 else
                 {
-                    laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * shootRange));
+                    laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
                 }
                 Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
             }
-            Debug.Log("Player " + playerNo + " has shot");
+            Debug.Log("Player " + PlayerNo + " has shot");
             Capacity--;
         }
-        
         StartCoroutine(Countdown());
     }
 
