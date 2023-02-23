@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
-  bulletPos: {fileID: 8129935281184418137, guid: 9c4f38fa32d7f3b4585813a1534f0373,
-    type: 3}
+  bulletPos: {fileID: 4139034545211549515}
 --- !u!1001 &5306252930277314066
 PrefabInstance:
   m_ObjectHideFlags: 0
