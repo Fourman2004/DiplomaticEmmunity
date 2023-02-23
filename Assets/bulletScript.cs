@@ -9,6 +9,8 @@ public class bulletScript : MonoBehaviour
     public float force = 5;
     private float timer;
     private EmuTakeDamage damageScript;
+    public int pierce;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class bulletScript : MonoBehaviour
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
-        
+        pierce = 1;
     }
 
     // Update is called once per frame
@@ -32,7 +34,10 @@ public class bulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        if (pierce == 0)
+        {
+            Destroy(this.gameObject);
+        }
         
     }
 
@@ -43,6 +48,7 @@ public class bulletScript : MonoBehaviour
             Debug.Log("A tower hit an emu");
             damageScript = other.transform.gameObject.GetComponent<EmuTakeDamage>();
             damageScript.TakeDamge(10);
+            pierce -= 1;
         }
         
     }
