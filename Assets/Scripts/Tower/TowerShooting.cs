@@ -12,13 +12,14 @@ public class TowerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Emu = GameObject.FindGameObjectWithTag("Emu");
+        ///Emu = GameObject.FindGameObjectWithTag("Emu");
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        Emu = GameObject.FindGameObjectWithTag("Emu");
         try
         {
             float distance = Vector2.Distance(transform.position, Emu.transform.position);
