@@ -8,7 +8,9 @@ public class Interact : MonoBehaviour
 {
 
     private PlayerUIInterface UIManager;
-    private Behaviour PlayerMovement; 
+    private Behaviour PlayerMovement;
+    private List<string> InputKey = new List<string> {"KeyboardInteract", "ControllerInteract"};
+    public bool ControllerControls;
 
 
     void Start()
@@ -19,7 +21,7 @@ public class Interact : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collisionInfo) 
     {  
-        if (Input.GetKey("e"))
+        if (Input.GetButtonDown(InputKey[Convert.ToInt32(ControllerControls)]))
         {
             if (collisionInfo.gameObject.tag == "Tower Spot")
             {

@@ -7,17 +7,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
-    public float moveSpeed = 1f; // movement speed
-    public int controllerSettings = 0;
     private bool facingRight = true; // checks if player is facing right
     private GameObject firePoint;
     private SpriteRenderer spriteRenderer;
+    public float moveSpeed = 1f; // movement speed
+    public int controllerSettings = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
         playerBody = this.GetComponent<Rigidbody2D>();
         spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
+
     private void FixedUpdate()
     {
         Vector2 movement = Vector2.zero; 
@@ -36,7 +39,9 @@ public class PlayerMovement : MonoBehaviour
                 movement += Vector2.right * Convert.ToInt32(Input.GetKey("right"));
                 break;
         }
+
         movement.Normalize();
+
         if ((movement.x < 0) && (facingRight == true))
         {
             spriteRenderer.flipX = true;
@@ -47,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = false;
             facingRight = true;
         }
+
         playerBody.MovePosition(playerBody.position + movement * moveSpeed * Time.deltaTime);
     }
 }
