@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a9ecd3a3287e5409395f963d64d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ControllerControls: 1
+  ControllerControls: 0
 --- !u!50 &1976900373394496374
 Rigidbody2D:
   serializedVersion: 4

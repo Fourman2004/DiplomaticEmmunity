@@ -96,11 +96,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3098571907303139493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a7a625470f6204ea4ace4ed2ade573, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ea9e34721a6bf40afa50defa0247bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
-  bulletPos: {fileID: 4139034545211549515}
+  bulletPos: {fileID: 8129935281184418137, guid: 9c4f38fa32d7f3b4585813a1534f0373,
+    type: 3}
 --- !u!1001 &5306252930277314066
 PrefabInstance:
   m_ObjectHideFlags: 0
