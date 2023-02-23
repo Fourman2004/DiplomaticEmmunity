@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3213193321173412699}
   - component: {fileID: 1187496352464853201}
-  - component: {fileID: 3662894894343933794}
+  - component: {fileID: -764388336920384966}
   m_Layer: 0
   m_Name: Tack Shooter
   m_TagString: Untagged
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3662894894343933794
+--- !u!114 &-764388336920384966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897604632883166262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a7a625470f6204ea4ace4ed2ade573, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ea9e34721a6bf40afa50defa0247bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}

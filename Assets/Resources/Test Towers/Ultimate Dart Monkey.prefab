@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8371268472094172457}
   - component: {fileID: 7757623148491468701}
-  - component: {fileID: 5167616706156604974}
+  - component: {fileID: -5204173500847720059}
   m_Layer: 0
   m_Name: Ultimate Dart Monkey
   m_TagString: Untagged
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5167616706156604974
+--- !u!114 &-5204173500847720059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3384865929568655791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a7a625470f6204ea4ace4ed2ade573, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ea9e34721a6bf40afa50defa0247bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
