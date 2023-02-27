@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f97b2b6bae9aa46a1e0c2b640a2fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
   obj: {fileID: 636107919}
   pathPoints:
   - {fileID: 777605305}
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 250
 --- !u!1 &701446716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1598,7 @@ PrefabInstance:
     - target: {fileID: 8682827810989364152, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.19
+      value: -8.68
       objectReference: {fileID: 0}
     - target: {fileID: 8682827810989364152, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
@@ -1746,7 +1746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
 --- !u!114 &1343394188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,7 +1759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f97b2b6bae9aa46a1e0c2b640a2fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
   obj: {fileID: 1343394186}
   pathPoints:
   - {fileID: 777605305}
@@ -2913,7 +2913,12 @@ PrefabInstance:
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: controllerSettings
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -3014,7 +3019,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -3028,8 +3033,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
+      propertyPath: HitDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
       propertyPath: shootRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: MaxCapacity
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: reloadTimer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: ControllerControls
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -3060,6 +3085,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065244115877224953, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: ControllerControls
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1976900373394496380, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
