@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using System;
 using System.IO;
-
+using Newtonsoft.Json;
+using System.Linq;
 //Added a namespace to contain 
 public class Scoreboard : MonoBehaviour {
     public TextAsset ScoreHolder;
-    public TextAsset Score1;
-    public TextAsset Score2;
-    public TextAsset Score3;
+    public Text score1;
+    public Text score2;
+    public Text score3;
+    public Text score4;
+    public Text score5;
+    
     //Sets up a field for the indiidual parts of data
     [System.Serializable]
     public class ScoreBoardDataEntry
@@ -41,7 +46,13 @@ public class Scoreboard : MonoBehaviour {
         File.WriteAllText(Application.dataPath + "/Resources/Scoreholder.text", strOutput);
     }
 
-    public void displayScores() { }
+    public void displayScores() {
+        //string tempString;
+        foreach (var scores in myScoreList.scores)
+        {
+            score1.text =(scores.name);
+        }
+    }
 
 }
 
