@@ -9,7 +9,7 @@ public class Interact : MonoBehaviour
 
     private PlayerUIInterface UIManager;
     private Behaviour PlayerMovement;
-    private List<string> InputKey = new List<string> {"KeyboardInteract", "ControllerInteract"};
+    private List<string> InputKey = new List<string> {"KeyboardInteract", "ControllerInteract" };
     public bool ControllerControls;
 
 
