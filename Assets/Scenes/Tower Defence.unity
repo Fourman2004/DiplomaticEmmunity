@@ -2735,6 +2735,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1845033306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1976900372045675783, guid: e78b09f0abc51c642ae1bdd314514395,
+    type: 3}
+  m_PrefabInstance: {fileID: 1976900373724047440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1845033307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1976900372045675784, guid: e78b09f0abc51c642ae1bdd314514395,
+    type: 3}
+  m_PrefabInstance: {fileID: 1976900373724047440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1900599198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,7 +2915,12 @@ PrefabInstance:
     - target: {fileID: 1976900372045675784, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.622
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900372045675784, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496373, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -3033,6 +3050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
+      propertyPath: FirePoint
+      value: 
+      objectReference: {fileID: 1845033307}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
       propertyPath: HitDamage
       value: 5
       objectReference: {fileID: 0}
@@ -3076,6 +3098,11 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496382, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1845033306}
     - target: {fileID: 1976900373394496383, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
@@ -3092,5 +3119,5 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1976900373394496380, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
