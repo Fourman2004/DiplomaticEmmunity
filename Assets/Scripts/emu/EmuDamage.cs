@@ -21,7 +21,7 @@ public class EmuDamage : MonoBehaviour
         
     }
     //accessing OnCollisionStay as we intend to stay in contact with the object until it is destroyed
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         //making it differentiate collision based on tag
         if(collision.gameObject.tag == "Wall")
