@@ -27,10 +27,10 @@ public class Gun : MonoBehaviour
         //makes the capacity the amount "MaxCapacity", which can be edited within engine. 
         Capacity = MaxCapacity;
         laserLine = GetComponent<LineRenderer>();
-        PlayerNo = (int)Char.GetNumericValue(transform.name[transform.name.Length-1]);
+        PlayerNo = (int)Char.GetNumericValue(transform.name[transform.name.Length - 1]);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // checks player number and sends shoot/reload input name accordingly
         switch (PlayerNo)
@@ -54,71 +54,71 @@ public class Gun : MonoBehaviour
         }
     }
 
-    private void GetReloadInput(string button)
-    {
-        // If Reload button pressed and the Capacity int from before is 0.
-        if (Input.GetButtonDown(button) && Capacity == 0)
+        private void GetReloadInput(string button)
         {
-            // Sets capacity back to MaxCapacity. UI for Ammo needs to be made. Debug Log for Dev work.
-            reloading = true;
-            Debug.Log("Player " + PlayerNo + " has reloaded");
-            Capacity = MaxCapacity;
-        }
-    }
-
-    private void GetShootInput(string button)
-    {
-        //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
-        if (Input.GetButtonDown(button) && Capacity != 0)
-        {
-            //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
-            if (ThirdDimensionEnviroment == true)
+            // If Reload button pressed and the Capacity int from before is 0.
+            if (Input.GetButton(button) && Capacity == 0)
             {
-                RaycastHit hit;
-                if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, HitRange))
-                {
-                    laserLine.SetPosition(0, hit.point);
-                    Debug.Log("I hit " + hit.transform.name);
-                    if (hit.transform.tag == "Emu")
-                    {
-                        damageScript = hit.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
-                        damageScript.TakeDamge(HitDamage);
-                    }
-                }
+                // Sets capacity back to MaxCapacity. UI for Ammo needs to be made. Debug Log for Dev work.
+                reloading = true;
+                Debug.Log("Player " + PlayerNo + " has reloaded");
+                Capacity = MaxCapacity;
             }
-            else
+        }
+
+        private void GetShootInput(string button)
+        {
+            //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
+            if (Input.GetButton(button) && Capacity != 0)
             {
-                // casts a ray at game object and if it has the tag "Emu", destroy it
-                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
-                if (hit2D)
+                //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
+                if (ThirdDimensionEnviroment == true)
                 {
-                    laserLine.SetPosition(0, hit2D.point);
-                    
-                    Debug.Log("I hit " + hit2D.transform.name);
-                    if (hit2D.transform.tag == "Emu")
+                    RaycastHit hit;
+                    if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, HitRange))
                     {
-                        damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>();
-                        damageScript.TakeDamge(HitDamage);
+                        laserLine.SetPosition(0, hit.point);
+                        Debug.Log("I hit " + hit.transform.name);
+                        if (hit.transform.tag == "Emu")
+                        {
+                            damageScript = hit.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
+                            damageScript.TakeDamge(HitDamage);
+                        }
                     }
                 }
                 else
                 {
-                    laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
+                    // casts a ray at game object and if it has the tag "Emu", destroy it
+                    RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
+                    if (hit2D)
+                    {
+                        laserLine.SetPosition(0, hit2D.point);
+
+                        Debug.Log("I hit " + hit2D.transform.name);
+                        if (hit2D.transform.tag == "Emu")
+                        {
+                            damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>();
+                            damageScript.TakeDamge(HitDamage);
+                        }
+                    }
+                    else
+                    {
+                        laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
+                    }
+                    Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
                 }
-                Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
+                Debug.Log("Player " + PlayerNo + " has shot");
+                Capacity--;
             }
-            Debug.Log("Player " + PlayerNo + " has shot");
-            Capacity--;
+            StartCoroutine(Countdown());
         }
-        StartCoroutine(Countdown());
-    }
 
-    IEnumerator Countdown()
-    {
-        //Creates a delay for "reloadTimer" seconds (currently 2 seconds)
-        yield return new WaitForSeconds(reloadTimer);
+        IEnumerator Countdown()
+        {
+            //Creates a delay for "reloadTimer" seconds (currently 2 seconds)
+            yield return new WaitForSeconds(reloadTimer);
 
-        //allows for another projectile to be created, since the timer is finished
-        reloading = false;
-    }
+            //allows for another projectile to be created, since the timer is finished
+            reloading = false;
+        }
 }
