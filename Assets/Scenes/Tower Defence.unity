@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
+  health: 150
 --- !u!114 &636107925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6037,7 +6037,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1310110222
 MonoBehaviour:
@@ -6180,6 +6180,7 @@ GameObject:
   - component: {fileID: 1343394189}
   - component: {fileID: 1343394188}
   - component: {fileID: 1343394187}
+  - component: {fileID: 1343394192}
   m_Layer: 0
   m_Name: 2D Emu (1)
   m_TagString: Emu
@@ -6316,6 +6317,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1343394192
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343394186}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1408318849
 GameObject:
   m_ObjectHideFlags: 0
@@ -7200,6 +7222,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1976900373724047440}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1845033311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845033306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec42be7888e26144e93db1ca56d21b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
 --- !u!1 &1900599198
 GameObject:
   m_ObjectHideFlags: 0
@@ -7403,7 +7438,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7412,9 +7447,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300028, guid: d13f53c1f0f786e4c970a9351a37b322,
+      objectReference: {fileID: 21300000, guid: 9a1babdf4cc026745857f8cd429e63d3,
         type: 3}
     - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7434,7 +7479,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_DrawMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7456,6 +7501,11 @@ PrefabInstance:
       propertyPath: m_MaskInteraction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496376, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_RootOrder
@@ -7464,12 +7514,12 @@ PrefabInstance:
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7778
+      value: 0.34134814
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7778002
+      value: 0.27358887
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7479,12 +7529,12 @@ PrefabInstance:
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.52
+      value: -1.2555
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.31
+      value: -3.0775
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7529,7 +7579,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7569,7 +7619,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -7578,7 +7628,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
@@ -7611,11 +7691,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6454725786026381692, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454725786026381692, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8065244115877224953, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}

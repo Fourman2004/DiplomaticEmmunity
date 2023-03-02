@@ -109,6 +109,7 @@ public class Gun : MonoBehaviour
             }
             Debug.Log("Player " + PlayerNo + " has shot");
             Capacity--;
+            Debug.Log(Capacity);
         }
         StartCoroutine(Countdown());
         }
