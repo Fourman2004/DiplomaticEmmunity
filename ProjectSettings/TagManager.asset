@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Human
-  - 
+  - Environment
   - 
   - 
   - 
@@ -42,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Environment
+    uniqueID: 1216099861
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Object
+    uniqueID: 3169963765
     locked: 0
