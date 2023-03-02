@@ -10,8 +10,8 @@ public class Gun : MonoBehaviour
     private LineRenderer laserLine;
     private EmuTakeDamage damageScript;
     private bool reloading = true;
-    private int Capacity;
-    public int MaxCapacity;
+    private float Capacity;
+    public float MaxCapacity;
     public int PlayerNo;
     public int reloadTimer = 2;
     public float HitDamage = 10;
@@ -68,49 +68,49 @@ public class Gun : MonoBehaviour
 
         private void GetShootInput(string button)
         {
-            //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
-            if (Input.GetButton(button) && Capacity != 0)
+        //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
+        if (Input.GetAxis("FireController") != 0 && Capacity != 0)
+        {
+            //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
+            if (ThirdDimensionEnviroment == true)
             {
-                //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
-                if (ThirdDimensionEnviroment == true)
+                RaycastHit hit;
+                if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, HitRange))
                 {
-                    RaycastHit hit;
-                    if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, HitRange))
+                    laserLine.SetPosition(0, hit.point);
+                    Debug.Log("I hit " + hit.transform.name);
+                    if (hit.transform.tag == "Emu")
                     {
-                        laserLine.SetPosition(0, hit.point);
-                        Debug.Log("I hit " + hit.transform.name);
-                        if (hit.transform.tag == "Emu")
-                        {
-                            damageScript = hit.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
-                            damageScript.TakeDamge(HitDamage);
-                        }
+                        damageScript = hit.transform.gameObject.GetComponent<EmuTakeDamage>(); // need an emu script that has public take damage function
+                        damageScript.TakeDamge(HitDamage);
+                    }
+                }
+            }
+            else
+            {
+                // casts a ray at game object and if it has the tag "Emu", destroy it
+                RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
+                if (hit2D)
+                {
+                    laserLine.SetPosition(0, hit2D.point);
+
+                    Debug.Log("I hit " + hit2D.transform.name);
+                    if (hit2D.transform.tag == "Emu")
+                    {
+                        damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>();
+                        damageScript.TakeDamge(HitDamage);
                     }
                 }
                 else
                 {
-                    // casts a ray at game object and if it has the tag "Emu", destroy it
-                    RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
-                    if (hit2D)
-                    {
-                        laserLine.SetPosition(0, hit2D.point);
-
-                        Debug.Log("I hit " + hit2D.transform.name);
-                        if (hit2D.transform.tag == "Emu")
-                        {
-                            damageScript = hit2D.transform.gameObject.GetComponent<EmuTakeDamage>();
-                            damageScript.TakeDamge(HitDamage);
-                        }
-                    }
-                    else
-                    {
-                        laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
-                    }
-                    Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
+                    laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
                 }
-                Debug.Log("Player " + PlayerNo + " has shot");
-                Capacity--;
+                Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
             }
-            StartCoroutine(Countdown());
+            Debug.Log("Player " + PlayerNo + " has shot");
+            Capacity--;
+        }
+        StartCoroutine(Countdown());
         }
 
         IEnumerator Countdown()
