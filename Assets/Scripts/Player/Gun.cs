@@ -38,17 +38,25 @@ public class Gun : MonoBehaviour
             case 1:
                 if (ControllerControls == false)
                 {
-                    GetShootInput("Fire1"); // F to shoot
+                    // GetShootInput("Fire1"); // F to shoot
+                    if (Input.GetButton("Fire1") && Capacity != 0)
+                    {
+                        GetShootInput();
+                    }
                     GetReloadInput("Reload1"); // R to reload
                 }
                 else
                 {
-                    GetShootInput("FireController"); // South controller button to shoot
+                    // GetShootInput("FireController"); // South controller button to shoot
+                    if (Input.GetAxis("FireController") != 0 && Capacity != 0)
+                    {
+                        GetShootInput();
+                    }
                     GetReloadInput("ReloadController"); // North controller button to reload
                 }
                 break;
-            case 2:
-                GetShootInput("Fire2"); // right shift to shoot
+            case 2: // player 2 settings
+                GetShootInput(); // right shift to shoot (REMOVED BUTTON PARAMETER, WILL NOT WORK)
                 GetReloadInput("Reload2"); // right ctrl to reload
                 break;
         }
@@ -66,11 +74,9 @@ public class Gun : MonoBehaviour
             }
         }
 
-        private void GetShootInput(string button)
+        private void GetShootInput()
         {
-        //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
-        if (Input.GetAxis("FireController") != 0 && Capacity != 0)
-        {
+            //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
             if (ThirdDimensionEnviroment == true)
             {
@@ -110,8 +116,7 @@ public class Gun : MonoBehaviour
             Debug.Log("Player " + PlayerNo + " has shot");
             Capacity--;
             Debug.Log(Capacity);
-        }
-        StartCoroutine(Countdown());
+            StartCoroutine(Countdown());
         }
 
         IEnumerator Countdown()

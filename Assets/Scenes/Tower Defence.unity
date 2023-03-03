@@ -7234,7 +7234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec42be7888e26144e93db1ca56d21b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 50
   controllerSetting: 1
 --- !u!1 &1900599198
 GameObject:
@@ -7601,6 +7601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: HitDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
