@@ -9,6 +9,7 @@ public class target : MonoBehaviour
     private GameObject firePoint;
     private SpriteRenderer spriteRenderer;
     public float moveSpeed = 1f;
+    public bool controllerSetting = false;
 
     void Start()
     {
@@ -19,9 +20,16 @@ public class target : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 movement = Vector2.zero;
-        movement += Vector2.right * Input.GetAxis("targetingH");
-        movement += Vector2.down * Input.GetAxis("targetingV");
-
+        if (controllerSetting == true)
+        {
+            movement += Vector2.right * Input.GetAxis("targetingH");
+            movement += Vector2.down * Input.GetAxis("targetingV");
+        }
+        else
+        {
+            movement += Vector2.right * Input.GetAxis("Mouse X");
+            movement += Vector2.up * Input.GetAxis("Mouse Y");
+        }
         movement.Normalize();
 
         if ((movement.x < 0) && (facingRight == true))
