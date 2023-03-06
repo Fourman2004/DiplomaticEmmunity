@@ -53,7 +53,7 @@ public class RoundController : MonoBehaviour
                     isRoundOngoing = false;
 
                     timeVariable += Time.time + timeBetweenWaves;
-                    round++
+                    round++;
                 }
             }
         }
