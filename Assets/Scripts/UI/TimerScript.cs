@@ -15,6 +15,7 @@ public class TimerScript : MonoBehaviour
     public static bool pauseState = false;
     public GameObject canvasClock;
     public GameObject winUI;
+    public GameObject lossUI;
     void Start()
     {
         textClock.text = ("00:00");
@@ -53,6 +54,12 @@ public class TimerScript : MonoBehaviour
             pauseState = true;
             canvasClock.SetActive(false);
             winUI.SetActive(true);
+        }
+        else if (GameObject.FindWithTag("Wall") == null)
+        {
+            pauseState = true;
+            canvasClock.SetActive(false);
+            lossUI.SetActive(true);
         }
     }
 }
