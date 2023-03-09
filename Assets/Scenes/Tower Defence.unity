@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -577,6 +577,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1097198970}
+  - {fileID: 1098108418}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1252,6 +1253,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 261909021}
+    - target: {fileID: 939295167907585801, guid: 3d9980f8f6f9fa149bd1b715e25dd0b4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000028609938
+      objectReference: {fileID: 0}
     - target: {fileID: 939295167966726439, guid: 3d9980f8f6f9fa149bd1b715e25dd0b4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6257,6 +6263,82 @@ RectTransform:
   m_AnchoredPosition: {x: 55, y: 180}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1098108417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098108418}
+  - component: {fileID: 1098108420}
+  - component: {fileID: 1098108419}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1098108418
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098108417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 455263916}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 110.6, y: -159.2}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1098108419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098108417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 568e4c9fce0ffbc48ad12e6f886054fb, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1098108420
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098108417}
+  m_CullTransparentMesh: 1
 --- !u!1 &1211207366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1976900373394496373, guid: e78b09f0abc51c642ae1bdd314514395,
@@ -7970,7 +8052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  controllerSetting: 1
+  controllerSetting: 0
 --- !u!1 &1900599198
 GameObject:
   m_ObjectHideFlags: 0
@@ -8174,7 +8256,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8315,7 +8397,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8354,13 +8436,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
+      propertyPath: bulletImage
+      value: 
+      objectReference: {fileID: 1098108419}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
       propertyPath: reloadTimer
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8370,27 +8457,27 @@ PrefabInstance:
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
-      value: 0
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
-      value: 0
+      value: 3.22
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.border.y
-      value: 0
+      value: 7.1499996
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.border.z
-      value: 0
+      value: 2.6599998
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8405,12 +8492,12 @@ PrefabInstance:
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.15
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.18
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496382, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8445,7 +8532,7 @@ PrefabInstance:
     - target: {fileID: 8065244115877224953, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

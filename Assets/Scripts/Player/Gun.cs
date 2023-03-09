@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 
 public class Gun : MonoBehaviour
@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
     public bool ControllerControls;
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     // public float launchVelocity = 700f;
-
+    public Image bulletImage;
 
     private void Start()
     {
@@ -71,6 +71,7 @@ public class Gun : MonoBehaviour
                 reloading = true;
                 Debug.Log("Player " + PlayerNo + " has reloaded");
                 Capacity = MaxCapacity;
+                bulletImage.fillAmount = 1;
             }
         }
 
@@ -113,10 +114,11 @@ public class Gun : MonoBehaviour
                 }
                 Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
             }
-            Debug.Log("Player " + PlayerNo + " has shot");
-            Capacity--;
-            Debug.Log(Capacity);
-            StartCoroutine(Countdown());
+        Debug.Log("Player " + PlayerNo + " has shot");
+        Capacity--;
+        Debug.Log(Capacity);
+        bulletImage.fillAmount = Capacity / MaxCapacity;
+        StartCoroutine(Countdown());
         }
 
         IEnumerator Countdown()
