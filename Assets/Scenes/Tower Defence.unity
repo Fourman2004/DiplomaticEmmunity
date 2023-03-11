@@ -598,6 +598,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 157930836954663870, guid: 603d27dacde81e24dbfe1115016c41b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6385821623191793299, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
       propertyPath: m_Name
@@ -1283,6 +1288,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 261909021}
+    - target: {fileID: 939295168422240025, guid: 3d9980f8f6f9fa149bd1b715e25dd0b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 939295168422240026, guid: 3d9980f8f6f9fa149bd1b715e25dd0b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6493,6 +6503,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 157930836954663870, guid: 603d27dacde81e24dbfe1115016c41b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6385821623191793299, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
       propertyPath: m_Name
@@ -8052,7 +8067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  controllerSetting: 0
+  controllerSetting: 1
 --- !u!1 &1900599198
 GameObject:
   m_ObjectHideFlags: 0
@@ -8149,6 +8164,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 157930836954663870, guid: 603d27dacde81e24dbfe1115016c41b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6385821623191793299, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
       propertyPath: m_Name
@@ -8161,8 +8181,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8682827810989364152, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9668
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682827810989364152, guid: 603d27dacde81e24dbfe1115016c41b3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682827810989364152, guid: 603d27dacde81e24dbfe1115016c41b3,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.53
+      value: -2.5134
       objectReference: {fileID: 0}
     - target: {fileID: 8682827810989364152, guid: 603d27dacde81e24dbfe1115016c41b3,
         type: 3}
@@ -8256,7 +8286,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496375, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8397,7 +8427,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496378, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8447,7 +8477,7 @@ PrefabInstance:
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -8532,7 +8562,7 @@ PrefabInstance:
     - target: {fileID: 8065244115877224953, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
