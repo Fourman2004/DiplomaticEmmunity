@@ -49,17 +49,21 @@ public class TimerScript : MonoBehaviour
         }
     }
 
-    public void checkEnd() {
+    public string checkEnd() {
+        string hasWon = "idk";
         if (GameObject.FindWithTag("Emu")==null) {
             pauseState = true;
             canvasClock.SetActive(false);
             winUI.SetActive(true);
+            hasWon = "won";
         }
         else if (GameObject.FindWithTag("Wall") == null)
         {
             pauseState = true;
             canvasClock.SetActive(false);
             lossUI.SetActive(true);
+            hasWon = "lose";
         }
+        return hasWon;
     }
 }
