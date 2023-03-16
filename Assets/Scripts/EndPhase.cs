@@ -15,12 +15,14 @@ public class EndPhase : MonoBehaviour
         if (Input.GetAxisRaw("Submit") == 1)
         {
          SbB = true;
+         Qb = false;
             UINAV();
 
         }
-        else if (Input.GetAxisRaw("Submit") == -1)
+        else
         {
             Qb = true;
+            SbB = false;
             UINAV();
         }
     }
