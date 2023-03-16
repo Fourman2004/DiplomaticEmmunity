@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System;
+
 public class MainMenu : MonoBehaviour
 {
     public GameObject Playbutton;
     public GameObject OptionsButton;
     public GameObject QuitButton;
     bool PB,OP,QB;
+    public bool controllerSetting = false;
     public void PlayButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -25,17 +28,39 @@ public class MainMenu : MonoBehaviour
         if (PB)
         {
             EventSystem.current.SetSelectedGameObject(Playbutton);
-            ButtonPress();
+            if (controllerSetting == false)
+            {
+                PlayButton();
+            }
+            else
+            {
+                ButtonPress();
+            }
+            
         }
         else if (OP)
         {
             EventSystem.current.SetSelectedGameObject(OptionsButton);
-            ButtonPress();
+            if (controllerSetting == false)
+            {
+
+            }
+            else
+            {
+                ButtonPress();
+            }
         }
         else if (QB)
         {
             EventSystem.current.SetSelectedGameObject(QuitButton);
-            ButtonPress();
+            if (controllerSetting == false)
+            {
+                QuitGame();
+            }
+            else
+            {
+                ButtonPress();
+            }
         }
     }
 
