@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
             QB = false;
             UINavigation();
         }
-        else if (Input.GetAxisRaw("Submit") == 0)
+        else if (Input.GetAxisRaw("Submit") == -1)
         {
             PB = true;
             OP = false;
