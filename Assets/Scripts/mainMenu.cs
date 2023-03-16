@@ -79,28 +79,35 @@ public class MainMenu : MonoBehaviour
 
     public void Update()
     {
+        if (controllerSetting == true)
+        {
+            if (Input.GetAxisRaw("Submit") == 1)
+            {
+                PB = false;
+                OP = true;
+                QB = false;
+                UINavigation();
+            }
+            else if (Input.GetAxisRaw("Submit") == -1)
+            {
+                PB = true;
+                OP = false;
+                QB = false;
+                UINavigation();
+            }
+            else
+            {
+                PB = false;
+                OP = false;
+                QB = true;
+                UINavigation();
+            }
+        }
+        else
+        {
 
-        if (Input.GetAxisRaw("Submit") == 1)
-        {
-            PB = false;
-            OP = true;
-            QB = false;
-            UINavigation();
         }
-        else if (Input.GetAxisRaw("Submit") == -1)
-        {
-            PB = true;
-            OP = false;
-            QB = false;
-            UINavigation();
-        }
-       else
-        {
-            PB = false;
-            OP = false;
-            QB = true;
-            UINavigation();
-        }
+       
     }
 
 }

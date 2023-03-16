@@ -1758,6 +1758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490d844a8755ba44cb70fbff9c51615b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreboardbutton: {fileID: 0}
+  Quitbutton: {fileID: 0}
 --- !u!114 &979437372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6268,6 +6270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490d844a8755ba44cb70fbff9c51615b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreboardbutton: {fileID: 0}
+  Quitbutton: {fileID: 0}
 --- !u!114 &1219555036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7756,7 +7760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec42be7888e26144e93db1ca56d21b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 100
   controllerSetting: 0
 --- !u!1 &1900599198
 GameObject:
