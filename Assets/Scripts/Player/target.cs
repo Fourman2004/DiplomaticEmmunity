@@ -45,7 +45,6 @@ public class target : MonoBehaviour
         {
             Vector3 mousePosition = Input.mousePosition;
             transform.position = Vector2.MoveTowards(transform.position, mousePosition, moveSpeed * Time.deltaTime);
-            Debug.Log(mousePosition);
         }
     }
     private void FixedUpdate()
