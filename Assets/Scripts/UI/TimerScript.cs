@@ -19,6 +19,7 @@ public class TimerScript : MonoBehaviour
     void Start()
     {
         textClock.text = ("00:00");
+        pauseState = false;
     }
 
     // Update is called once per frame
