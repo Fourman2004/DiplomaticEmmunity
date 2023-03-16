@@ -13,8 +13,6 @@ public class Scoreboard : MonoBehaviour {
     public Text score1;
     public Text score2;
     public Text score3;
-    public Text score4;
-    public Text score5;
     
     //Sets up a field for the indiidual parts of data
     [System.Serializable]
@@ -34,6 +32,8 @@ public class Scoreboard : MonoBehaviour {
     void Start()
     {
         myScoreList = JsonUtility.FromJson<ScoreList>(ScoreHolder.text);
+        displayScores();
+        
     }
     public ScoreBoardDataEntry newScore = new ScoreBoardDataEntry();
     public void addScore()
@@ -48,9 +48,24 @@ public class Scoreboard : MonoBehaviour {
 
     public void displayScores() {
         //string tempString;
+        int count = 1;
         foreach (var scores in myScoreList.scores)
         {
-            score1.text =(scores.name);
+            if (count == 1) {
+                score1.text = ("1. "+(scores.name)+" with "+ (scores.score)+" points");
+                
+            }
+            if (count == 2)
+            {
+                score2.text = ("2. " + (scores.name) + " with " + (scores.score) + " points");
+                
+            }
+            if (count == 3)
+            {
+                score3.text = ("3. " + (scores.name) + " with " + (scores.score) + " points");
+                
+            }
+            count++;
         }
     }
 
