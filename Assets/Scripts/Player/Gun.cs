@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     // public float launchVelocity = 700f;
     public Image bulletImage;
-
+    public GameObject explosion;
     private void Start()
     {
         //makes the capacity the amount "MaxCapacity", which can be edited within engine. 
@@ -97,6 +97,7 @@ public class Gun : MonoBehaviour
             {
                 // casts a ray at game object and if it has the tag "Emu", destroy it
                 RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
+                Vector3 temp = hit2D.point;
                 if (hit2D)
                 {
                     laserLine.SetPosition(0, hit2D.point);
@@ -113,6 +114,7 @@ public class Gun : MonoBehaviour
                     laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
                 }
                 Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
+            Instantiate(explosion, hit2D.transform);
             }
         Debug.Log("Player " + PlayerNo + " has shot");
         Capacity--;
