@@ -32,7 +32,7 @@ public class EndPhase : MonoBehaviour
     }
 
     public static void exitGame() {
-        Application.Quit();
+        SceneManager.LoadScene("UI");
     }
 
     void UINAV()
