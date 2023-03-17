@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
   bulletPos: {fileID: 405938771736830496}
+  attackDamge: 10
+  force: 5
 --- !u!1001 &8462679563796155257
 PrefabInstance:
   m_ObjectHideFlags: 0

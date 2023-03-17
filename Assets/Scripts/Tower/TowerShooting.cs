@@ -9,6 +9,9 @@ public class TowerShooting : MonoBehaviour
 
     private float timer;
     private GameObject Emu;
+
+    public float attackDamge = 10;
+    public float force = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +52,8 @@ public class TowerShooting : MonoBehaviour
     {
         GameObject Bullet = Instantiate(bullet, bulletPos.position, Quaternion.identity);
         Bullet.AddComponent<bulletScript>();
+        bulletScript bulletScript = Bullet.GetComponent<bulletScript>();
+        bulletScript.force = force;
+        bulletScript.towerDamage = attackDamge;
     }
 }
