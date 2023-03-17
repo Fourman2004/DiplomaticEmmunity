@@ -23,6 +23,7 @@ public class Interact : MonoBehaviour
     {  
         if (Input.GetButton(InputKey[Convert.ToInt32(ControllerControls)])) // false = keyboard interact, true = controller interact
         {
+            Cursor.visible = true;
             if (collisionInfo.gameObject.tag == "Tower Spot")
             {
                 int PlayerNum = (int)Char.GetNumericValue(transform.name[transform.name.Length-1]);

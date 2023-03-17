@@ -119,6 +119,7 @@ public class PlayerUIInterface : MonoBehaviour
         PlayerMovement.enabled = true;
         PlayerAim.enabled = true;
         Gun.enabled = true;
+        Cursor.visible = false;
 
         return;
     }

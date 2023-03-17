@@ -22,6 +22,8 @@ public class Gun : MonoBehaviour
     // public float launchVelocity = 700f;
     public Image bulletImage;
     public GameObject explosion;
+    private bool canShoot = true;
+    public float recoilTimer = 2;
     private void Start()
     {
         //makes the capacity the amount "MaxCapacity", which can be edited within engine. 
@@ -41,7 +43,10 @@ public class Gun : MonoBehaviour
                     // GetShootInput("Fire1"); // F to shoot
                     if (Input.GetButton("Fire1") && Capacity != 0)
                     {
-                        GetShootInput();
+                        if (canShoot == true)
+                        {
+                            StartCoroutine(GetShootRoutine());
+                        }
                     }
                     GetReloadInput("Reload1"); // R to reload
                 }
@@ -62,7 +67,15 @@ public class Gun : MonoBehaviour
         }
     }
 
-        private void GetReloadInput(string button)
+    private IEnumerator GetShootRoutine()
+    {
+        GetShootInput();
+        canShoot = false;
+        yield return new WaitForSeconds(recoilTimer);
+        canShoot = true;
+    }
+
+    private void GetReloadInput(string button)
         {
             // If Reload button pressed and the Capacity int from before is 0.
             if (Input.GetButton(button) && Capacity == 0)
