@@ -21,7 +21,6 @@ public class Gun : MonoBehaviour
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     // public float launchVelocity = 700f;
     public Image bulletImage;
-    public GameObject explosion;
     private bool canShoot = true;
     public float recoilTimer = 2;
     private void Start()
@@ -127,7 +126,6 @@ public class Gun : MonoBehaviour
                     laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
                 }
                 Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
-            Instantiate(explosion, hit2D.transform);
             }
         Debug.Log("Player " + PlayerNo + " has shot");
         Capacity--;

@@ -9,10 +9,11 @@ public class EmuDamage : MonoBehaviour
     public Wallhealth wallhealth;
     public float cooldown;
     float lastHit;
+    private Collider2D collider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -34,6 +35,13 @@ public class EmuDamage : MonoBehaviour
             lastHit = Time.time;
             //calling on the public void in Wallhealth script
             wallhealth.takeDamage(damage);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Emu")
+        {
+            Physics2D.IgnoreCollision(collision.collider, collider);
         }
     }
 }

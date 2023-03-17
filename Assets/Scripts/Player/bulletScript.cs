@@ -10,6 +10,7 @@ public class bulletScript : MonoBehaviour
     private float timer;
     private EmuTakeDamage damageScript;
     public int pierce;
+    public float towerDamage = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,7 @@ public class bulletScript : MonoBehaviour
         {
             Debug.Log("A tower hit an emu");
             damageScript = other.transform.gameObject.GetComponent<EmuTakeDamage>();
-            damageScript.TakeDamge(10);
+            damageScript.TakeDamge(towerDamage);
             pierce -= 1;
         }
         
