@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class target : MonoBehaviour
 {
-    private Rigidbody2D playerBody;
+    private Rigidbody2D playerBody; // rigidbody of the mouse cursor
     private bool facingRight = true;
     private Transform firePoint;
     private SpriteRenderer spriteRenderer;
-    public float moveSpeed = 1f;
+    // (1 = right on the mouse, 0.1 being barely moving at all, 2 being still following but less controllable)
+    public float moveSpeed = 1f; // the speed the cursor should move at
     public bool controllerSetting = false;
-    private Vector3 position;
-
+    public Camera cam; // should reference the main camera
+    Vector2 currentVelocity; // tracks the velocity of the object between frames
     void Start()
     {
         playerBody = this.GetComponent<Rigidbody2D>();
@@ -19,7 +20,7 @@ public class target : MonoBehaviour
         spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    void Update()
     {
         Vector2 movement = Vector2.zero;
         if (controllerSetting == true)
@@ -43,8 +44,8 @@ public class target : MonoBehaviour
         }
         else
         {
-            Vector3 mousePosition = Input.mousePosition;
-            transform.position = Vector2.MoveTowards(transform.position, mousePosition, moveSpeed * Time.deltaTime);
+            Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition) * moveSpeed; // gets position of mouse relative to screen position
+            firePoint.transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, moveSpeed * Time.deltaTime);  // moves cursor using mouse
         }
     }
     private void FixedUpdate()

@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
     public GameObject QuitButton;
     bool PB,OP,QB;
     public bool controllerSetting = false;
+    private void Start()
+    {
+        Cursor.visible= true;
+    }
     public void PlayButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

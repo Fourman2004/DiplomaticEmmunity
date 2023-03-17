@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        Cursor.visible= false;
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         else if (gameRunning == false)
         {
             Time.timeScale = 0;
+            Cursor.visible = true;
         }
         
     }
