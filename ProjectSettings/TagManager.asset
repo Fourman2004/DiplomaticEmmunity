@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Tower Spot
   - Target
+  - Farm
   layers:
   - Default
   - TransparentFX

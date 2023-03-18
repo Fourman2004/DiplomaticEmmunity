@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class EmuTakeDamage : MonoBehaviour
 {
-    public float health;
+    public float Maxhealth;
+   public float health;
+
+    public void Start()
+    {
+        health = Maxhealth;
+    }
 
     public void TakeDamge(float damage)
     {
