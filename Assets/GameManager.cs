@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public TimerScript timerScript;
     public string hasWon = "idk";
     private bool gameRunning = true;
+    
     // Start is called before the first frame update
     void Start()
     {

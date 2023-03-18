@@ -21,9 +21,20 @@ public class Pathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //sets the first point of travel
         x = 1;
         Player = GameObject.FindGameObjectWithTag("Player");
+        if (pathPoints[0] == null)
+        {
+            GameObject pathPointsObject = GameObject.Find("PathPoints");
+            numberOfPoints = pathPointsObject.transform.childCount;
+            for (int i = 0; i < numberOfPoints; i++)
+            {
+                
+                pathPoints[i] = pathPointsObject.transform.GetChild(i).gameObject;
+            }
+        }
     }
 
     // Update is called once per frame
