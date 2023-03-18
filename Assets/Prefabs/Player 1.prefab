@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1976900372045675784}
   - component: {fileID: 2914955536938273163}
   - component: {fileID: 6454725786026381692}
-  - component: {fileID: 2126460029961736953}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -108,20 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2126460029961736953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976900372045675783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e9d7c3610646294096a585fe531cdc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RB2: {fileID: 6454725786026381692}
-  Movement: 2
 --- !u!1 &1976900373394496373
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +126,7 @@ GameObject:
   - component: {fileID: 1976900373394496376}
   - component: {fileID: 1976900373394496383}
   - component: {fileID: 1211207378}
+  - component: {fileID: 3462319810312863668}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -211,6 +197,8 @@ MonoBehaviour:
   ThirdDimensionEnviroment: 0
   ControllerControls: 0
   FirePoint: {fileID: 1976900372045675784}
+  bulletImage: {fileID: 0}
+  recoilTimer: 2
 --- !u!114 &1976900373394496382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,3 +444,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3462319810312863668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976900373394496373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d6918bff1de094db0fbbd8f4e09e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxhealth: 10

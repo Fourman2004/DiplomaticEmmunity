@@ -7,6 +7,7 @@ public class EmuDamage : MonoBehaviour
     public int damage;
     //creating an instance of the Wallhealth script
     public Wallhealth wallhealth;
+    public PlayerHealth playerhealth;
     public float cooldown;
     float lastHit;
     private Collider2D collider;
@@ -35,6 +36,16 @@ public class EmuDamage : MonoBehaviour
             lastHit = Time.time;
             //calling on the public void in Wallhealth script
             wallhealth.takeDamage(damage);
+
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            if (Time.time - lastHit < cooldown)
+            {
+                return;
+            }
+            lastHit = Time.time;
+            playerhealth.Damaged(damage);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

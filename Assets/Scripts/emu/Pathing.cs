@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.PlayerLoop;
 
 public class Pathing : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Pathing : MonoBehaviour
     public GameObject[] pathPoints;
     public int numberOfPoints;
     public bool ThirdDimensionEnvironment;
-    private GameObject Player;
+    private GameObject Player,farm;
 
     private Vector3 actualPosition;
     private int x;
@@ -31,10 +32,11 @@ public class Pathing : MonoBehaviour
             numberOfPoints = pathPointsObject.transform.childCount;
             for (int i = 0; i < numberOfPoints; i++)
             {
-                
+
                 pathPoints[i] = pathPointsObject.transform.GetChild(i).gameObject;
             }
         }
+        farm = GameObject.FindGameObjectWithTag("Wall");
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class Pathing : MonoBehaviour
     {
         if (ETD.health == ETD.Maxhealth)
         {
-            PtP_pathing();
+            gotofarm();
         }
         else
         {
@@ -56,7 +58,7 @@ public class Pathing : MonoBehaviour
 
      Vector2 actualPosition2D = (Vector2)obj.transform.position;
      obj.transform.position = Vector2.MoveTowards(actualPosition2D, Player.transform.position, speed * Time.deltaTime);
-        Debug.Log("Emu move to player");
+        //Debug.Log("Emu move to player");
     }
 
     public void PtP_pathing()
@@ -91,5 +93,16 @@ public class Pathing : MonoBehaviour
 
             }
         }
+
+
+    }
+    void gotofarm()
+    {
+
+
+        Vector2 actualPosition2D = (Vector2)obj.transform.position;
+        obj.transform.position = Vector2.MoveTowards(actualPosition2D, farm.transform.position, speed * Time.deltaTime);
+        //Debug.Log("Emu move to player");
+
     }
 }
