@@ -1485,7 +1485,7 @@ MonoBehaviour:
   emuPrefab: {fileID: 6099049432262584537, guid: ba110fc3a1387a746bb87a6a82e69bf4,
     type: 3}
   timeBetweenWaves: 5
-  waveNumber: 1
+  waveNumber: 3
   timeBetweenEmuSpawn: 0.5
 --- !u!1 &967149462
 GameObject:
