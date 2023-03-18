@@ -58,7 +58,7 @@ public class TimerScript : MonoBehaviour
             winUI.SetActive(true);
             hasWon = "won";
         }
-        else if (GameObject.FindWithTag("Wall") == null)
+        else if (GameObject.FindWithTag("Wall") == null || GameObject.FindGameObjectWithTag("Player") == null)
         {
             pauseState = true;
             canvasClock.SetActive(false);
