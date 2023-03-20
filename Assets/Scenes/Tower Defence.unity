@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -166,6 +166,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946230be96dff1b4397f08ea17a103c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &357353833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6099049431639069771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &357353841
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357353833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 227085c85580a4147b31a2f6d3d1d61d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &451768169
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,6 +7253,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1211207379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3462319810312863668, guid: e78b09f0abc51c642ae1bdd314514395,
+    type: 3}
+  m_PrefabInstance: {fileID: 1976900373724047440}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211207366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d6918bff1de094db0fbbd8f4e09e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219555034
 GameObject:
   m_ObjectHideFlags: 0
@@ -9541,7 +9579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerhealth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1211207379}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba110fc3a1387a746bb87a6a82e69bf4, type: 3}
 --- !u!1001 &6573806728466984537
