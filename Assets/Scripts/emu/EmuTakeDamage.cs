@@ -6,6 +6,8 @@ public class EmuTakeDamage : MonoBehaviour
 {
     public float Maxhealth;
    public float health;
+    public UIMoneyDisplay Money;
+    public int Moneydropped;
 
     public void Start()
     {
@@ -21,6 +23,8 @@ public class EmuTakeDamage : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            Money.Internalmoney = Money.Internalmoney + Moneydropped;
+            Debug.Log(Money.Internalmoney);
         }
     }
 }

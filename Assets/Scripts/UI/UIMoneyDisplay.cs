@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UIMoneyDisplay : MonoBehaviour
 {
-    int Internalmoney;
+    public int Internalmoney;
     Text Moneydisplay;
     public int StartMoney;
     // Integer's will be used for money

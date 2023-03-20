@@ -5,7 +5,6 @@ using UnityEngine;
 public class EmuDamage : MonoBehaviour
 {
     public int Walldamage;
-    public int PlayerDamage;
     //creating an instance of the Wallhealth script
     public Wallhealth wallhealth;
     public PlayerHealth playerhealth;
@@ -20,7 +19,7 @@ public class EmuDamage : MonoBehaviour
     }
 
     //accessing OnCollisionStay as we intend to stay in contact with the object until it is destroyed
-    private void OnCollisionStay2D(Collision2D collision)
+   public void OnCollisionStay2D(Collision2D collision)
     {
         //making it differentiate collision based on tag
         if(collision.gameObject.tag == "Wall")
@@ -42,7 +41,8 @@ public class EmuDamage : MonoBehaviour
                 return;
             }
             lastHit = Time.time;
-            playerhealth.Damaged(PlayerDamage);
+            //calling on the public void in Wallhealth script
+            playerhealth.TakeDamage(Walldamage);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
