@@ -7,6 +7,8 @@ public class WaveSpawner : MonoBehaviour
 {
     public Transform emuPrefab;
 
+    public Transform[] spawnPoints;
+
     public float timeBetweenWaves = 5f;
     private float countdown = 5f;
 
@@ -40,6 +42,9 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEmu()
     {
-        Instantiate(emuPrefab);
+        int spawnIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+        Transform spawnPoint = spawnPoints[spawnIndex];
+
+        Instantiate(emuPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }
