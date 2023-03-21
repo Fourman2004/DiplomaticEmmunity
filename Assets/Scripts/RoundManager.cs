@@ -6,6 +6,7 @@ public class RoundManager : MonoBehaviour
 {
     public int numberOfRounds = 3;
     public int numberOfEmus;
+    public int numberOfWaves;
     public GameObject emuType;
     private bool roundStart = true;
     private bool roundEnd = false;

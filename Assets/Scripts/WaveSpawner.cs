@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [NonReorderable]
+    public Round[] rounds;
+
     public Transform emuPrefab;
 
     public Transform[] spawnPoints;
@@ -13,11 +16,16 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 5f;
 
     public int waveNumber = 3;
+    
     public float timeBetweenEmuSpawn = 0.5f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        for (int i = 0; i < rounds.Length; i++)
+        {
+            rounds[i].roundNumber = i;
+
+        }
     }
 
     // Update is called once per frame
