@@ -152,8 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhealth: 50
+  Maxhealth: 10
   health: 0
+  Moneydropped: 0
+  moneydisplay: {fileID: 801265761856552913, guid: efcee831fb52b3e4daf405ca8d9a990b,
+    type: 3}
 --- !u!114 &6099049432262584542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Walldamage: 0
-  PlayerDamage: 0
   wallhealth: {fileID: 0}
   playerhealth: {fileID: 0}
   cooldown: 2

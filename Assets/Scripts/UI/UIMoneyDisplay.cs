@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class UIMoneyDisplay : MonoBehaviour
 {
-    public int Internalmoney;
-    Text Moneydisplay;
+    public float Internalmoney;
+    public Text Moneydisplay;
     public int StartMoney;
     // Integer's will be used for money
 
@@ -23,12 +23,12 @@ public class UIMoneyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Moneydisplay.text =(Internalmoney.ToString());
+        Moneydisplay.text = ("Money:" + Internalmoney.ToString());
     }
     public void emuIncrement()
     {
         Internalmoney = Internalmoney + 10;
-        Moneydisplay.text = ("Money :" + Internalmoney);
+        Moneydisplay.text = ("Money :" + Internalmoney.ToString());
     }
 
     // script to remove money for towers and if not enough money then it does not purchase the towers
@@ -37,7 +37,7 @@ public class UIMoneyDisplay : MonoBehaviour
         Internalmoney = Internalmoney - price;
         if (Internalmoney >= 0)
         {
-            Moneydisplay.text = ("Money :" + Internalmoney);
+            Moneydisplay.text = ("Money :" + Internalmoney.ToString());
         }
         else
         {
@@ -50,6 +50,6 @@ public class UIMoneyDisplay : MonoBehaviour
     public void roundIncrement()
     {
         Internalmoney = Internalmoney + 100;
-        Moneydisplay.text = ("Money :" + Internalmoney);
+        Moneydisplay.text = ("Money :" + Internalmoney.ToString());
     }
 }

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EmuTakeDamage : MonoBehaviour
 {
-    public float Maxhealth;
+   public float Maxhealth;
    public float health;
-    public UIMoneyDisplay Money;
-    public int Moneydropped;
+    public float Moneydropped;
+    public UIMoneyDisplay moneydisplay;
 
     public void Start()
     {
         health = Maxhealth;
+        Moneydropped = Maxhealth / 10;
     }
 
     public void TakeDamge(float damage)
@@ -23,8 +24,9 @@ public class EmuTakeDamage : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            Money.Internalmoney = Money.Internalmoney + Moneydropped;
-            Debug.Log(Money.Internalmoney);
+            moneydisplay.Internalmoney = moneydisplay.Internalmoney + Moneydropped;
+            Debug.Log("Money:" + moneydisplay.Internalmoney);
         }
     }
+
 }

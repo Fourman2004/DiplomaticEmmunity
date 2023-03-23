@@ -9,6 +9,7 @@ TagManager:
   - Tower Spot
   - Target
   - Farm
+  - MoneyUI
   layers:
   - Default
   - TransparentFX
