@@ -22,6 +22,7 @@ public class EmuTakeDamage : MonoBehaviour
     {
         if (health <= 0)
         {
+            WaveSpawner.emusAlive--;
             Destroy(this.gameObject);
             Money.Internalmoney = Money.Internalmoney + Moneydropped;
             Debug.Log(Money.Internalmoney);

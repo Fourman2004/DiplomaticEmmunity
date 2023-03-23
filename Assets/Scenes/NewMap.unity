@@ -11265,10 +11265,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933ec0111ac335d4a84dd28dc12ffebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRounds: 3
-  numberOfEmus: 0
-  numberOfWaves: 0
-  emuType: {fileID: 0}
+  rounds:
+  - roundNumber: 0
+    numberOfWaves: 1
+    emuType: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
+      type: 3}
+    numberOfEmus: 1
+  - roundNumber: 1
+    numberOfWaves: 1
+    emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
+      type: 3}
+    numberOfEmus: 1
+  - roundNumber: 2
+    numberOfWaves: 1
+    emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
+      type: 3}
+    numberOfEmus: 1
+  roundRunning: 1
+  currentRound: 0
+  timeBetweenRounds: 10
 --- !u!1 &816466492
 GameObject:
   m_ObjectHideFlags: 0
@@ -12056,6 +12071,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736943037709191551, guid: 7a4e7f089a3e5f0448a312e318863672,
+        type: 3}
+      propertyPath: emuNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736943037709191551, guid: 7a4e7f089a3e5f0448a312e318863672,
+        type: 3}
+      propertyPath: emuPrefab
+      value: 
+      objectReference: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
+        type: 3}
+    - target: {fileID: 8736943037709191551, guid: 7a4e7f089a3e5f0448a312e318863672,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736943037709191551, guid: 7a4e7f089a3e5f0448a312e318863672,
+        type: 3}
+      propertyPath: currentRound
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736943037709191551, guid: 7a4e7f089a3e5f0448a312e318863672,
+        type: 3}
+      propertyPath: numberOfWaves
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8736943037709191551, guid: 7a4e7f089a3e5f0448a312e318863672,
         type: 3}
