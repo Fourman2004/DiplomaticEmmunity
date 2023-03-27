@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2747690628134850419, guid: 0aaca7c9e2b39474795543ffa29fe739,
     type: 3}
   m_Color: {r: 1, g: 0, b: 0.81603193, a: 1}
@@ -102,6 +102,8 @@ MonoBehaviour:
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
   bulletPos: {fileID: 8129935281184418137, guid: 9c4f38fa32d7f3b4585813a1534f0373,
     type: 3}
+  attackDamge: 10
+  force: 5
 --- !u!1001 &6931656639697717932
 PrefabInstance:
   m_ObjectHideFlags: 0
