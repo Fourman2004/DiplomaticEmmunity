@@ -16,6 +16,7 @@ public class TimerScript : MonoBehaviour
     public GameObject canvasClock;
     public GameObject winUI;
     public GameObject lossUI;
+    public RoundManager roundManager;
     void Start()
     {
         textClock.text = ("00:00");
@@ -52,7 +53,7 @@ public class TimerScript : MonoBehaviour
 
     public string checkEnd() {
         string hasWon = "idk";
-        if (GameObject.FindWithTag("Emu")==null) {
+        if (GameObject.FindWithTag("Emu")==null && roundManager.currentRound == roundManager.rounds.Length) {
             pauseState = true;
             canvasClock.SetActive(false);
             winUI.SetActive(true);
