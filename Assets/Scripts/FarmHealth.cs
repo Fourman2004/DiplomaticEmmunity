@@ -10,6 +10,7 @@ public class FarmHealth : MonoBehaviour
     public Slider slider;
     public GameObject sliderCanvas;
     public GameObject endText;
+    public GameManager gameManager;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -25,6 +26,7 @@ public class FarmHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Destroy(this.gameObject);
             currentHealth = 0;
             EndGame();
         }
@@ -37,6 +39,7 @@ public class FarmHealth : MonoBehaviour
     public void EndGame() {
         endText.SetActive(true);
         sliderCanvas.SetActive(false);
+        
         // currently stops slider bar and appears text
         //to do :emus stop along with time clock
     }

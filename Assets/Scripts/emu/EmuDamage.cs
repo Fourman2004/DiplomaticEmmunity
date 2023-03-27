@@ -17,34 +17,6 @@ public class EmuDamage : MonoBehaviour
     }
 
     //accessing OnCollisionStay as we intend to stay in contact with the object until it is destroyed
-   //public void OnCollisionStay2D(Collision2D collision)
-   // {
-   //     //making it differentiate collision based on tag
-   //     if(collision.gameObject.tag == "Wall")
-   //     {
-   //         //attack delay as to not instantly kill everything
-   //         if (Time.time - lastHit < cooldown)
-   //         {
-   //             return;
-   //         }
-   //         lastHit = Time.time;
-   //         //calling on the public void in Wallhealth script
-   //         wallhealth.takeDamage(Walldamage);
-   //         Debug.Log("emu hit wall");
-
-   //     }
-   //     else if (collision.gameObject.tag == "Player")
-   //     {
-   //         if (Time.time - lastHit < cooldown)
-   //         {
-   //             return;
-   //         }
-   //         lastHit = Time.time;
-   //         //calling on the public void in Wallhealth script
-   //         playerhealth.TakeDamage(Walldamage);
-   //         Debug.Log("emu hit health");
-   //     }
-   // }
     private void OnTriggerStay2D(Collider2D collision)
     {
         //making it differentiate collision based on tag

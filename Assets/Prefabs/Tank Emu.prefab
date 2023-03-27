@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Walldamage: 5
-  cooldown: 2
+  cooldown: 1
 --- !u!50 &1125608841356966258
 Rigidbody2D:
   serializedVersion: 4
