@@ -27,7 +27,7 @@ public class Interact : MonoBehaviour
             if (collisionInfo.gameObject.tag == "Tower Spot")
             {
                 int PlayerNum = (int)Char.GetNumericValue(transform.name[transform.name.Length-1]);
-                int TowerNum = (int)Char.GetNumericValue(collisionInfo.transform.name[collisionInfo.transform.name.Length-1]);
+                int TowerNum = Int32.Parse(collisionInfo.name.Substring(12, collisionInfo.name.Length-12));
                 UIManager.StartInteraction(PlayerNum-1, TowerNum);
             }
         }
