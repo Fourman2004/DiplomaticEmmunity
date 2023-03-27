@@ -49,7 +49,7 @@ public class RoundManager : MonoBehaviour
                 Debug.Log("Wave spawner should be reactivated on round " + currentRound);
                 timer = 0;
             }
-            
+
         }
 
     }

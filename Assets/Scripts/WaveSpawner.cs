@@ -8,7 +8,7 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
     public static int emusAlive = 0;
     public GameObject emuPrefab;
-    private RoundManager roundManager;
+    public RoundManager roundManager;
     public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 5f;
@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     public int currentRound = -1;
     private void Start()
     {
-        roundManager = GetComponent<RoundManager>();
+
     }
     // Update is called once per frame
     void Update()
@@ -37,9 +37,9 @@ public class WaveSpawner : MonoBehaviour
         else if (numberOfWaves == currentWave)
         {
             roundManager.roundRunning = false;
-            this.enabled = false;
+            StopCoroutine(SpawnWave());
         }
-        
+
         countdown -= Time.deltaTime;
     }
 
@@ -52,6 +52,9 @@ public class WaveSpawner : MonoBehaviour
             SpawnEmu();
             yield return new WaitForSeconds(timeBetweenEmuSpawn);
         }
+        roundManager.roundRunning = true;
+        yield return new WaitForSeconds(roundManager.timeBetweenRounds);
+        StartCoroutine(SpawnWave());
     }
 
     // Spawns an emu at a random spawn point
