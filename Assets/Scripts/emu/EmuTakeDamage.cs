@@ -6,26 +6,26 @@ public class EmuTakeDamage : MonoBehaviour
 {
    public float Maxhealth;
    public float health;
-    public float Moneydropped;
+    public int Moneydropped;
     public UIMoneyDisplay moneydisplay;
 
     public void Start()
     {
         health = Maxhealth;
-        Moneydropped = Maxhealth / 10;
+        //Moneydropped = Maxhealth / 10;
     }
 
     public void TakeDamge(float damage)
     {
         health -= damage;
     }
-    private void Update()
+    public void Update()
     {
         if (health <= 0)
         {
-            WaveSpawner.emusAlive--;
+            WaveSpawner.emusAlive--; 
+            moneydisplay.Internalmoney += Moneydropped;
             Destroy(this.gameObject);
-            moneydisplay.Internalmoney = moneydisplay.Internalmoney + Moneydropped;
             Debug.Log("Money:" + moneydisplay.Internalmoney);
         }
     }
