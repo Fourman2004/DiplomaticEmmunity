@@ -169,9 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f29312a04ae2f449a54738300294ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walldamage: 0
-  wallhealth: {fileID: 0}
-  playerhealth: {fileID: 0}
+  Walldamage: 2
   cooldown: 2
 --- !u!50 &6099049432262584541
 Rigidbody2D:

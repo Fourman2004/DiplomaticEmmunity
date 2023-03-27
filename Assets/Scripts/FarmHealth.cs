@@ -10,6 +10,10 @@ public class FarmHealth : MonoBehaviour
     public Slider slider;
     public GameObject sliderCanvas;
     public GameObject endText;
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
     public void setMaxHealth(int health)
     {
         slider.maxValue = health;
