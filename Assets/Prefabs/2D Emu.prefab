@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 10
   health: 0
-  Moneydropped: 0
+  Moneydropped: 5
   moneydisplay: {fileID: 801265761856552913, guid: efcee831fb52b3e4daf405ca8d9a990b,
     type: 3}
 --- !u!114 &6099049432262584542

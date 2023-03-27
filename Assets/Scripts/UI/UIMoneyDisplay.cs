@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class UIMoneyDisplay : MonoBehaviour
 {
-    public float Internalmoney;
+    public int Internalmoney;
     public Text Moneydisplay;
+    public GameObject moneyCanvas;
     public int StartMoney;
     // Integer's will be used for money
 
@@ -16,14 +17,14 @@ public class UIMoneyDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Internalmoney = StartMoney;
-        Moneydisplay = GetComponent<Text>();
+        //Internalmoney = StartMoney;
+        Moneydisplay = moneyCanvas.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Moneydisplay.text = ("Money:" + Internalmoney.ToString());
+        Moneydisplay.text = ("Money:" + Internalmoney);
     }
     public void emuIncrement()
     {
