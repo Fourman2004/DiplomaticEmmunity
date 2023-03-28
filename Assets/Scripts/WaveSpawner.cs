@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Wave[] waves;
+    public Wave[] waves; // does nothing for now
     public static int emusAlive = 0;
     public GameObject emuPrefab;
     public RoundManager roundManager;
@@ -30,6 +30,7 @@ public class WaveSpawner : MonoBehaviour
         if (countdown <= 0f && numberOfWaves != currentWave)
         {
             StartCoroutine(SpawnWave());
+            Debug.LogWarning("Wave Incoming!");
             currentWave++;
             countdown = timeBetweenWaves;
         }
@@ -46,20 +47,21 @@ public class WaveSpawner : MonoBehaviour
     // spawns waves
     IEnumerator SpawnWave()
     {
-        Debug.Log("Wave Incoming!");
+        // Debug.Log("Wave Incoming!");
         for (int i = 0; i < emuNumber; i++)
         {
             SpawnEmu();
             yield return new WaitForSeconds(timeBetweenEmuSpawn);
         }
         roundManager.roundRunning = true;
-        yield return new WaitForSeconds(roundManager.timeBetweenRounds);
-        StartCoroutine(SpawnWave());
+        // yield return new WaitForSeconds(roundManager.timeBetweenRounds);
+        //StartCoroutine(SpawnWave()); // repeats wave
     }
 
     // Spawns an emu at a random spawn point
     private void SpawnEmu()
     {
+        // randomly chooses a place for the emu to spawn
         int spawnIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
         Transform spawnPoint = spawnPoints[spawnIndex];
 

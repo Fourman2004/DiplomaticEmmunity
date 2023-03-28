@@ -29,28 +29,38 @@ public class RoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (roundRunning == true)
+        if (currentRound != rounds.Length)
         {
-            Debug.Log("Round is running");
-            waveSpawner.currentRound = currentRound;
-            waveSpawner.enabled = true;
-            waveSpawner.emuPrefab = rounds[currentRound].emuType;
-            waveSpawner.emuNumber = rounds[currentRound].numberOfEmus;
-            waveSpawner.numberOfWaves = rounds[currentRound].numberOfWaves;
-        }
-        else if (roundRunning == false)
-        {
-            timer += Time.deltaTime;
-            if (timer > timeBetweenRounds)
+            if (roundRunning == true)
             {
-                roundRunning = true;
+                Debug.Log("Round is running");
+                // sends wave spawner parameters to spawn emus
+                waveSpawner.currentRound = currentRound;
                 waveSpawner.enabled = true;
-                currentRound++;
-                Debug.Log("Wave spawner should be reactivated on round " + currentRound);
-                timer = 0;
+                waveSpawner.emuPrefab = rounds[currentRound].emuType;
+                waveSpawner.emuNumber = rounds[currentRound].numberOfEmus;
+                waveSpawner.numberOfWaves = rounds[currentRound].numberOfWaves;
             }
+            else if (roundRunning == false)
+            {
+                // disables wave spawner
+                waveSpawner.enabled = false;
+                // delay set before renabling wave spawner
+                timer += Time.deltaTime;
+                if (timer > timeBetweenRounds)
+                {
+                    roundRunning = true;
+                    waveSpawner.enabled = true;
+                    currentRound++;
+                    Debug.Log("Wave spawner should be reactivated on round " + currentRound);
+                    timer = 0;
+                }
 
+            }
         }
-
+        else if (currentRound == rounds.Length)
+        {
+            Debug.Log("no more rounds to run");
+        }
     }
 }

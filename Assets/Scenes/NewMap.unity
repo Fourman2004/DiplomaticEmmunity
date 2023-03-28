@@ -11940,10 +11940,10 @@ MonoBehaviour:
       type: 3}
     numberOfEmus: 2
   - roundNumber: 2
-    numberOfWaves: 1
+    numberOfWaves: 3
     emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
       type: 3}
-    numberOfEmus: 3
+    numberOfEmus: 2
   roundRunning: 1
   currentRound: 0
   timeBetweenRounds: 10
@@ -12182,7 +12182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &978499677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12968,7 +12968,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4300251}
@@ -14497,6 +14497,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: bulletImage
+      value: 
+      objectReference: {fileID: 1279946967}
     - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Size.x

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EmuDamage : MonoBehaviour
 {
-    public int Walldamage;
+    public int emuDamage;
     //creating an instance of the Wallhealth script
     public float cooldown;
     float lastHit;
@@ -17,7 +17,7 @@ public class EmuDamage : MonoBehaviour
     }
 
     //accessing OnCollisionStay as we intend to stay in contact with the object until it is destroyed
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         //making it differentiate collision based on tag
         if (collision.gameObject.tag == "Wall")
@@ -29,8 +29,8 @@ public class EmuDamage : MonoBehaviour
                 return;
             }
             lastHit = Time.time;
-            //calling on the public void in Wallhealth script
-            farm.DammageFarm(Walldamage);
+            //calling on the public void in farm health script
+            farm.DammageFarm(emuDamage);
             Debug.Log("emu hit wall");
 
         }
@@ -42,14 +42,15 @@ public class EmuDamage : MonoBehaviour
                 return;
             }
             lastHit = Time.time;
-            //calling on the public void in Wallhealth script
+            //calling on the public void in player health script
             
-            player.TakeDamage(Walldamage);
+            player.TakeDamage(emuDamage);
             Debug.Log("emu hit player");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // ignores colliding with other emus
         if (collision.gameObject.tag == "Emu")
         {
             Physics2D.IgnoreCollision(collision.collider, collider);
