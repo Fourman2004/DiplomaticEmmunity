@@ -139,6 +139,7 @@ MonoBehaviour:
   - {fileID: 0}
   numberOfPoints: 6
   ThirdDimensionEnvironment: 0
+  hitByPlayer: 0
 --- !u!114 &1125608841356966256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhealth: 150
+  Maxhealth: 20
   health: 0
   Moneydropped: 0
   moneydisplay: {fileID: 0}
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f29312a04ae2f449a54738300294ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walldamage: 5
+  emuDamage: 0
   cooldown: 1
 --- !u!50 &1125608841356966258
 Rigidbody2D:

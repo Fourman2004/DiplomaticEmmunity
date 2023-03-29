@@ -31,7 +31,6 @@ public class EmuDamage : MonoBehaviour
             lastHit = Time.time;
             //calling on the public void in farm health script
             farm.DammageFarm(emuDamage);
-            Debug.Log("emu hit wall");
 
         }
         else if (collision.gameObject.tag == "Player")
@@ -45,7 +44,6 @@ public class EmuDamage : MonoBehaviour
             //calling on the public void in player health script
             
             player.TakeDamage(emuDamage);
-            Debug.Log("emu hit player");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -24,9 +24,9 @@ public class EmuTakeDamage : MonoBehaviour
         if (health <= 0)
         {
             WaveSpawner.emusAlive--; 
-            moneydisplay.Internalmoney += Moneydropped;
+            //moneydisplay.Internalmoney += Moneydropped; // commented for now as it stopped the emus being destroyed
             Destroy(this.gameObject);
-            Debug.Log("Money:" + moneydisplay.Internalmoney);
+            //Debug.Log("Money:" + moneydisplay.Internalmoney);
         }
     }
 

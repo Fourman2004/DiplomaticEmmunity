@@ -26,35 +26,38 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // countdown before a new round starts
-        if (countdown <= 0f && numberOfWaves != currentWave)
+        if (roundManager.roundRunning == true)
         {
-            StartCoroutine(SpawnWave());
-            Debug.LogWarning("Wave Incoming!");
-            currentWave++;
-            countdown = timeBetweenWaves;
+            if (currentWave != numberOfWaves)
+            {
+                Debug.Log("Round " + currentRound + " should be running");
+                StartCoroutine(SpawnWave());
+                currentWave++;
+            }
+            else
+            {
+                countdown -= Time.deltaTime;
+                StopCoroutine(SpawnWave());
+                if (countdown <= 0)
+                {
+                    roundManager.roundRunning = false;
+                    countdown = 5f;
+                    currentWave = 0;
+                }
+            }
         }
-        // ends the round when all emus have spawned
-        else if (numberOfWaves == currentWave)
-        {
-            roundManager.roundRunning = false;
-            StopCoroutine(SpawnWave());
-        }
-
-        countdown -= Time.deltaTime;
     }
 
     // spawns waves
-    IEnumerator SpawnWave()
+     public IEnumerator SpawnWave()
     {
-        // Debug.Log("Wave Incoming!");
         for (int i = 0; i < emuNumber; i++)
         {
             SpawnEmu();
             yield return new WaitForSeconds(timeBetweenEmuSpawn);
         }
         roundManager.roundRunning = true;
-        // yield return new WaitForSeconds(roundManager.timeBetweenRounds);
+        //yield return new WaitForSeconds(roundManager.timeBetweenRounds);
         //StartCoroutine(SpawnWave()); // repeats wave
     }
 

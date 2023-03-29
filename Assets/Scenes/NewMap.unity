@@ -11944,6 +11944,11 @@ MonoBehaviour:
     emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
       type: 3}
     numberOfEmus: 2
+  - roundNumber: 3
+    numberOfWaves: 3
+    emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
+      type: 3}
+    numberOfEmus: 2
   roundRunning: 1
   currentRound: 0
   timeBetweenRounds: 10

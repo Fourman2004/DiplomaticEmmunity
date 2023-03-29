@@ -47,7 +47,7 @@ public class RoundManager : MonoBehaviour
                 waveSpawner.enabled = false;
                 // delay set before renabling wave spawner
                 timer += Time.deltaTime;
-                if (timer > timeBetweenRounds)
+                if (timer >= timeBetweenRounds)
                 {
                     roundRunning = true;
                     waveSpawner.enabled = true;
@@ -55,12 +55,12 @@ public class RoundManager : MonoBehaviour
                     Debug.Log("Wave spawner should be reactivated on round " + currentRound);
                     timer = 0;
                 }
-
             }
         }
         else if (currentRound == rounds.Length)
         {
             Debug.Log("no more rounds to run");
+            waveSpawner.enabled = false;
         }
     }
 }
