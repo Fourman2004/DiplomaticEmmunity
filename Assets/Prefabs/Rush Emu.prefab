@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f29312a04ae2f449a54738300294ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walldamage: 1
+  emuDamage: 1
   cooldown: 1
 --- !u!50 &8236293912633263341
 Rigidbody2D:

@@ -11933,22 +11933,17 @@ MonoBehaviour:
     numberOfWaves: 1
     emuType: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
       type: 3}
-    numberOfEmus: 1
-  - roundNumber: 1
+    numberOfEmus: 3
+  - roundNumber: 0
     numberOfWaves: 1
     emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
       type: 3}
-    numberOfEmus: 2
-  - roundNumber: 2
-    numberOfWaves: 3
+    numberOfEmus: 3
+  - roundNumber: 0
+    numberOfWaves: 1
     emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
       type: 3}
-    numberOfEmus: 2
-  - roundNumber: 3
-    numberOfWaves: 3
-    emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
-      type: 3}
-    numberOfEmus: 2
+    numberOfEmus: 3
   roundRunning: 1
   currentRound: 0
   timeBetweenRounds: 10
@@ -14507,26 +14502,6 @@ PrefabInstance:
       propertyPath: bulletImage
       value: 
       objectReference: {fileID: 1279946967}
-    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 4.188304
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 8.380766
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.019207
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976900373394496381, guid: e78b09f0abc51c642ae1bdd314514395,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 1.8212274
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
 --- !u!1 &2140776328

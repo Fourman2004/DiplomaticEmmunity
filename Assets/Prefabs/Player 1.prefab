@@ -214,7 +214,7 @@ MonoBehaviour:
   ControllerControls: 0
   FirePoint: {fileID: 1976900372045675784}
   bulletImage: {fileID: 0}
-  recoilTimer: 1
+  recoilTimer: 0.1
 --- !u!114 &1976900373394496382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,10 +273,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.019207, y: 1.8212274}
   m_SpriteTilingProperty:
     border: {x: 3.22, y: 7.1499996, z: 2.6599998, w: 3.52}
     pivot: {x: 0.5, y: 0.5}
@@ -287,7 +287,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.188304, y: 8.380766}
   m_EdgeRadius: 0
 --- !u!212 &1976900373394496376
 SpriteRenderer:
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d6918bff1de094db0fbbd8f4e09e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhealth: 10
+  Maxhealth: 50
   health: 0
 --- !u!95 &1211207378
 Animator:

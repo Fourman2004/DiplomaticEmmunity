@@ -15,7 +15,14 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Untagged")
+        {
+            Physics2D.IgnoreCollision(collision.collider, Collider2D);
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;

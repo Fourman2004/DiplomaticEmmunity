@@ -35,6 +35,7 @@ public class EmuDamage : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Player")
         {
+            Physics2D.IgnoreCollision(collision.collider, collider);
             PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
             if (Time.time - lastHit < cooldown)
             {
