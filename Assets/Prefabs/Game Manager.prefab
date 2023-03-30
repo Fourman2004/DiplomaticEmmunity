@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8736943037709191544}
   - component: {fileID: 8736943037709191545}
   - component: {fileID: 8736943037709191551}
+  - component: {fileID: 8600402968729234559}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -61,9 +62,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adbcea638c36d5409f282049c2ef3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waves: []
   emuPrefab: {fileID: 6099049432262584537, guid: ba110fc3a1387a746bb87a6a82e69bf4,
     type: 3}
+  roundManager: {fileID: 0}
   spawnPoints: []
   timeBetweenWaves: 5
-  waveNumber: 3
+  emuNumber: 3
+  numberOfWaves: 5
   timeBetweenEmuSpawn: 0.5
+  currentRound: -1
+--- !u!114 &8600402968729234559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736943037709191546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0808ad971cb8c408c0c7eb222499a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCash: 0
+  currentCash: 0
+  emuDeathCash: 0
+  tim: {fileID: 0}
