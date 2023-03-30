@@ -11933,14 +11933,24 @@ MonoBehaviour:
     numberOfWaves: 1
     emuType: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
       type: 3}
-    numberOfEmus: 3
+    numberOfEmus: 5
   - roundNumber: 0
-    numberOfWaves: 1
+    numberOfWaves: 2
     emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
       type: 3}
     numberOfEmus: 3
   - roundNumber: 0
     numberOfWaves: 1
+    emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
+      type: 3}
+    numberOfEmus: 3
+  - roundNumber: 0
+    numberOfWaves: 3
+    emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
+      type: 3}
+    numberOfEmus: 3
+  - roundNumber: 0
+    numberOfWaves: 2
     emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
       type: 3}
     numberOfEmus: 3
@@ -12691,7 +12701,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 797223380}
   m_FillRect: {fileID: 1175249123}
   m_HandleRect: {fileID: 797223379}
@@ -14437,10 +14447,19 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1131394147}
+    - target: {fileID: 1845033311, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496373, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496374, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496377, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
@@ -14502,6 +14521,46 @@ PrefabInstance:
       propertyPath: bulletImage
       value: 
       objectReference: {fileID: 1279946967}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: recoilTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496383, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496383, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976900373394496383, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1125003531
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914955536938273163, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914955536938273163, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914955536938273163, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914955536938273163, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
 --- !u!1 &2140776328
