@@ -21,7 +21,7 @@ public class EmuTakeDamage : MonoBehaviour
         if (health <= 0)
         {
             WaveSpawner.emusAlive--;     
-            Destroy(this.gameObject);         
+            Destroy(this.gameObject);        
         }
     }
 

@@ -153,8 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 10
   health: 0
-  Moneydropped: 0
-  moneydisplay: {fileID: 0}
+  moneymanager: {fileID: 0}
 --- !u!114 &8236293912633263342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emuDamage: 1
-  cooldown: 1
+  cooldown: 0.5
 --- !u!50 &8236293912633263341
 Rigidbody2D:
   serializedVersion: 4
