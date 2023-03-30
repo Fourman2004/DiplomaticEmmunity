@@ -10,8 +10,8 @@ public class TimerScript : MonoBehaviour
     // pausestate refers to the condition that if a pause button is added then the timer stops
     public Text textClock;
     float cooldown;
-    int minutes = 0;
-    int seconds = 1;
+    public int minutes = 0;
+    public int seconds = 1;
     public static bool pauseState = false;
     public GameObject canvasClock;
     public GameObject winUI;
