@@ -77,13 +77,13 @@ public class Gun : MonoBehaviour
     private void GetReloadInput(string button)
         {
             // If Reload button pressed and the Capacity int from before is 0.
-            if (Input.GetButton(button) && Capacity == 0)
+            if (Input.GetButton(button) || Capacity == 0)
             {
                 // Sets capacity back to MaxCapacity. UI for Ammo needs to be made. Debug Log for Dev work.
                 reloading = true;
               //  Debug.Log("Player " + PlayerNo + " has reloaded");
                 Capacity = MaxCapacity;
-                //bulletImage.fillAmount = 1;
+                bulletImage.fillAmount = 1;
             }
         }
 
@@ -125,7 +125,7 @@ public class Gun : MonoBehaviour
                 {
                     laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
                 }
-                Debug.DrawRay(FirePoint.transform.position, FirePoint.transform.right);
+                Debug.DrawLine(transform.position, hit2D.point);
             }
         Capacity--;
         bulletImage.fillAmount = Capacity / MaxCapacity;

@@ -103,7 +103,7 @@ MonoBehaviour:
   bulletPos: {fileID: 8129935281184418137, guid: 9c4f38fa32d7f3b4585813a1534f0373,
     type: 3}
   attackDamge: 10
-  force: 5
+  force: 30
 --- !u!1001 &6931656639697717932
 PrefabInstance:
   m_ObjectHideFlags: 0
