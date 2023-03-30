@@ -51,9 +51,9 @@ public class TowerShooting : MonoBehaviour
     void shoot()
     {
         GameObject Bullet = Instantiate(bullet, bulletPos.position, Quaternion.identity);
-        Bullet.AddComponent<bulletScript>();
-        bulletScript bulletScript = Bullet.GetComponent<bulletScript>();
-        bulletScript.force = force;
-        bulletScript.towerDamage = attackDamge;
+        //Bullet.AddComponent<bulletScript>();
+       // bulletScript bulletScript = Bullet.GetComponent<bulletScript>();
+        //bulletScript.force = force;
+       // bulletScript.towerDamage = attackDamge;
     }
 }

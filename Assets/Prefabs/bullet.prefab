@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249f04e2a4799e54dbc9b6dfb3490047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
+  force: 10
   pierce: 0
   towerDamage: 10

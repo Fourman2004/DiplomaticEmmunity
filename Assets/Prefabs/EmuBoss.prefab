@@ -12,13 +12,15 @@ GameObject:
   - component: {fileID: 2628327171344202263}
   - component: {fileID: 2628327171344202265}
   - component: {fileID: 2628327171344202264}
+  - component: {fileID: 9024648137604221887}
+  - component: {fileID: 6266810381487493734}
   m_Layer: 0
   m_Name: EmuBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2628327171344202262
 Transform:
   m_ObjectHideFlags: 0
@@ -49,8 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotateSpeed: 1
   Radius: 5
-  crops: {fileID: 0}
-  centre: {x: 0, y: 0}
 --- !u!50 &2628327171344202265
 Rigidbody2D:
   serializedVersion: 4
@@ -87,6 +87,48 @@ MonoBehaviour:
   egg: {fileID: 2322115627087756238, guid: dd845c2b82ac4dc4a804018f9a59629d, type: 3}
   attackDamge: 10
   force: 5
+--- !u!114 &9024648137604221887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628327171344202260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxhealth: 100
+  health: 0
+  Moneydropped: 100
+  moneydisplay: {fileID: 0}
+--- !u!61 &6266810381487493734
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628327171344202260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2628327171496434218
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,8 +199,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1125003531
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8010e6cf6e880914ca999c6bef6ed356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

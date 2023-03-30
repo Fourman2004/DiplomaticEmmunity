@@ -6,7 +6,7 @@ public class bulletScript : MonoBehaviour
 {
     private GameObject Emu;
     private Rigidbody2D rb;
-    public float force = 5;
+    public float force;
     private float timer;
     private EmuTakeDamage damageScript;
     public int pierce;

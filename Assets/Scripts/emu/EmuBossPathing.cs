@@ -7,14 +7,15 @@ public class EmuBossPathing : MonoBehaviour
     public float RotateSpeed = 5f;
     public float Radius = 0.1f;
 
-    public GameObject crops;
-    public Vector2 centre;
+    private GameObject crops;
+    private Vector2 centre;
     private float angle;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        crops = GameObject.FindGameObjectWithTag(("Wall"));
+        centre = crops.transform.position;
     }
 
     // Update is called once per frame
