@@ -48,6 +48,7 @@ public class Gun : MonoBehaviour
                         if (canShoot == true)
                         {
                             StartCoroutine(GetShootRoutine());
+                            
                         }
                     }
                     GetReloadInput("Reload1"); // R to reload
@@ -80,11 +81,11 @@ public class Gun : MonoBehaviour
     private void GetReloadInput(string button)
         {
             // If Reload button pressed and the Capacity int from before is 0.
-            if (Input.GetButton(button) || Capacity == 0)
+            if (Input.GetButton(button) && Capacity == 0)
             {
                 // Sets capacity back to MaxCapacity. UI for Ammo needs to be made. Debug Log for Dev work.
                 reloading = true;
-            StartCoroutine(Countdown());
+            StartCoroutine(ReloadCountdown());
               //  Debug.Log("Player " + PlayerNo + " has reloaded");
                 Capacity = MaxCapacity;
                 //bulletImage.fillAmount = 1;
@@ -115,8 +116,7 @@ public class Gun : MonoBehaviour
             {
                 // casts a ray at game object and if it has the tag "Emu", destroy it
                 RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
-                Vector3 temp = hit2D.point;
-            laserLine.SetPosition(0, gun.transform.position /*+ new Vector3(0, 0, -1)*/);
+                laserLine.SetPosition(0, gun.transform.position /*+ new Vector3(0, 0, -1)*/);
                 if (hit2D)
                 {
                     laserLine.SetPosition(1, (Vector3) hit2D.point /*+ new Vector3(0, 0, -1)*/);
@@ -135,10 +135,16 @@ public class Gun : MonoBehaviour
             }
         Capacity--;
         ammoText.text = "Ammo: " + Capacity + " / " + MaxCapacity;
-        StartCoroutine(Countdown());
+        StartCoroutine(LaserCountdown());
         }
 
-        IEnumerator Countdown()
+    IEnumerator LaserCountdown()
+    {
+        yield return new WaitForSeconds(0.2f);
+        laserLine.enabled = false;
+    }
+
+    IEnumerator ReloadCountdown()
         {
             //Creates a delay for "reloadTimer" seconds (currently 2 seconds)
             yield return new WaitForSeconds(reloadTimer);

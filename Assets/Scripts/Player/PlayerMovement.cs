@@ -58,11 +58,4 @@ public class PlayerMovement : MonoBehaviour
 
         playerBody.MovePosition(playerBody.position + movement * moveSpeed * Time.deltaTime);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Emu")
-        {
-            Physics2D.IgnoreCollision(collision.collider, collider);
-        }
-    }
 }

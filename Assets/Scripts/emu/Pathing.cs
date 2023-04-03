@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
@@ -18,6 +19,7 @@ public class Pathing : MonoBehaviour
 
     private Vector3 actualPosition;
     private int x;
+    public bool facingRight = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,12 +47,36 @@ public class Pathing : MonoBehaviour
         if (ETD.health == ETD.Maxhealth)
         {
             gotofarm();
+            if (farm.transform.position.x < gameObject.transform.position.x && facingRight)
+            {
+                Flip();
+            }
+            else if (farm.transform.position.x > gameObject.transform.position.x && !facingRight)
+            {
+                Flip();
+            }
         }
         else
         {
-
          Shot();
+            if (Player.transform.position.x < gameObject.transform.position.x && facingRight)
+            {
+                Flip();
+            }
+            else if (Player.transform.position.x > gameObject.transform.position.x && !facingRight)
+            {
+                Flip();
+            }
         }
+        
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 tmpScale = gameObject.transform.localScale;
+        tmpScale.x *= -1;
+        gameObject.transform.localScale = tmpScale;
     }
 
     void Shot()
