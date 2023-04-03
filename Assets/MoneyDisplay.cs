@@ -16,6 +16,6 @@ public class MoneyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Money.text("Money:", Moneymanager.currentCash);
+        Money.text = "Money:" + Moneymanager.currentCash;
     }
 }
