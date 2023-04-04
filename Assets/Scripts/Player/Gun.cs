@@ -20,15 +20,18 @@ public class Gun : MonoBehaviour
     public bool ControllerControls;
     public Transform FirePoint; // the point on the player where the bullet is spawned, we'll need this once we get proper character sprites
     // public float launchVelocity = 700f;
-    public Image bulletImage;
+    public Text ammoText;
     private bool canShoot = true;
     public float recoilTimer = 2;
+    public GameObject gun;
     private void Start()
     {
         //makes the capacity the amount "MaxCapacity", which can be edited within engine. 
         Capacity = MaxCapacity;
         laserLine = GetComponent<LineRenderer>();
         PlayerNo = (int)Char.GetNumericValue(transform.name[transform.name.Length - 1]);
+        ammoText.text = "Ammo: " + Capacity + " / " + MaxCapacity;
+        
     }
 
     void FixedUpdate()
@@ -45,6 +48,7 @@ public class Gun : MonoBehaviour
                         if (canShoot == true)
                         {
                             StartCoroutine(GetShootRoutine());
+                            
                         }
                     }
                     GetReloadInput("Reload1"); // R to reload
@@ -77,18 +81,21 @@ public class Gun : MonoBehaviour
     private void GetReloadInput(string button)
         {
             // If Reload button pressed and the Capacity int from before is 0.
-            if (Input.GetButton(button) || Capacity == 0)
+            if (Input.GetButton(button) && Capacity == 0)
             {
                 // Sets capacity back to MaxCapacity. UI for Ammo needs to be made. Debug Log for Dev work.
                 reloading = true;
+            StartCoroutine(ReloadCountdown());
               //  Debug.Log("Player " + PlayerNo + " has reloaded");
                 Capacity = MaxCapacity;
-                bulletImage.fillAmount = 1;
+                //bulletImage.fillAmount = 1;
             }
         }
 
         private void GetShootInput()
         {
+        laserLine.enabled = true;
+        laserLine.sortingLayerName = "Object";
             //when it gets the input button and the int is not 0, it will spawn the projectile - Andrew: TODO comment needs to be updated
             //spawns the projectile and removes 1 from the capacity. Requires rigidbody on Projectile.  - Andrew: TODO comment needs to be updated
             if (ThirdDimensionEnviroment == true)
@@ -96,7 +103,7 @@ public class Gun : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(FirePoint.transform.position, FirePoint.transform.right, out hit, HitRange))
                 {
-                    laserLine.SetPosition(0, hit.point);
+                    laserLine.SetPosition(0, hit.point /*+ new Vector3(0,0,-1)*/);
                     Debug.Log("I hit " + hit.transform.name);
                     if (hit.transform.tag == "Emu")
                     {
@@ -109,10 +116,10 @@ public class Gun : MonoBehaviour
             {
                 // casts a ray at game object and if it has the tag "Emu", destroy it
                 RaycastHit2D hit2D = Physics2D.Raycast(FirePoint.transform.position, FirePoint.transform.right, HitRange);
-                Vector3 temp = hit2D.point;
+                laserLine.SetPosition(0, gun.transform.position /*+ new Vector3(0, 0, -1)*/);
                 if (hit2D)
                 {
-                    laserLine.SetPosition(0, hit2D.point);
+                    laserLine.SetPosition(1, (Vector3) hit2D.point /*+ new Vector3(0, 0, -1)*/);
 
                     Debug.Log("I hit " + hit2D.transform.name);
                     if (hit2D.transform.tag == "Emu")
@@ -123,16 +130,21 @@ public class Gun : MonoBehaviour
                 }
                 else
                 {
-                    laserLine.SetPosition(0, FirePoint.transform.position + (FirePoint.transform.right * HitRange));
+                    laserLine.SetPosition(1, FirePoint.transform.position /*+ new Vector3(0,0,-1)*/);
                 }
-                Debug.DrawLine(transform.position, hit2D.point);
             }
         Capacity--;
-        bulletImage.fillAmount = Capacity / MaxCapacity;
-        StartCoroutine(Countdown());
+        ammoText.text = "Ammo: " + Capacity + " / " + MaxCapacity;
+        StartCoroutine(LaserCountdown());
         }
 
-        IEnumerator Countdown()
+    IEnumerator LaserCountdown()
+    {
+        yield return new WaitForSeconds(0.2f);
+        laserLine.enabled = false;
+    }
+
+    IEnumerator ReloadCountdown()
         {
             //Creates a delay for "reloadTimer" seconds (currently 2 seconds)
             yield return new WaitForSeconds(reloadTimer);

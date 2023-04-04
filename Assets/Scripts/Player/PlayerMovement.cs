@@ -8,17 +8,18 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
     private bool facingRight = true; // checks if player is facing right
-    private GameObject firePoint;
+    private GameObject gun;
     private SpriteRenderer spriteRenderer;
     public float moveSpeed = 1f; // movement speed
     public int controllerSettings = 0;
-
+    private Collider2D collider;
 
     // Start is called before the first frame update
     void Start()
     {
         playerBody = this.GetComponent<Rigidbody2D>();
         spriteRenderer = this.GetComponent<SpriteRenderer>();
+        collider = this.GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
@@ -44,13 +45,15 @@ public class PlayerMovement : MonoBehaviour
 
         if ((movement.x < 0) && (facingRight == true))
         {
-            spriteRenderer.flipX = true;
+            //spriteRenderer.flipX = true;
             facingRight = false;
+            this.transform.Rotate(0, 180f, 0f);
         }
         else if ((movement.x > 0) && (facingRight == false))
         {
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
             facingRight = true;
+            this.transform.Rotate(0,180f,0f);
         }
 
         playerBody.MovePosition(playerBody.position + movement * moveSpeed * Time.deltaTime);
