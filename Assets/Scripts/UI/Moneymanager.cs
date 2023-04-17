@@ -33,4 +33,9 @@ public class Moneymanager : MonoBehaviour
     {
         currentCash = currentCash + cashEarned;
     }
+    public void TowerBought(int cost)
+    {
+        currentCash = currentCash - cost;
+        Debug.Log("a tower has been bought");
+    }
 }

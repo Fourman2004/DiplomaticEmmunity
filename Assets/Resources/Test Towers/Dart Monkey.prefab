@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 267928741396475401}
   - component: {fileID: 7923244378480843115}
   - component: {fileID: -3578885974867998396}
+  - component: {fileID: 8306690478339249583}
   m_Layer: 0
   m_Name: Dart Monkey
   m_TagString: Untagged
@@ -102,6 +103,19 @@ MonoBehaviour:
   bulletPos: {fileID: 405938771736830496}
   attackDamge: 5
   force: 5
+--- !u!114 &8306690478339249583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273307679557007748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9094466d9e565074e8abb62277844a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 50
 --- !u!1001 &8462679563796155257
 PrefabInstance:
   m_ObjectHideFlags: 0
