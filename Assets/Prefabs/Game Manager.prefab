@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8736943037709191545}
   - component: {fileID: 8736943037709191551}
   - component: {fileID: 8600402968729234559}
+  - component: {fileID: 812230861}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -57,19 +58,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8736943037709191546}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3adbcea638c36d5409f282049c2ef3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  emuPrefab: {fileID: 6099049432262584537, guid: ba110fc3a1387a746bb87a6a82e69bf4,
+  emuPrefab: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
     type: 3}
-  roundManager: {fileID: 0}
-  spawnPoints: []
-  timeBetweenWaves: 5
-  emuNumber: 3
-  numberOfWaves: 5
+  roundManager: {fileID: 812230861}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeBetweenWaves: 2
+  emuNumber: 0
+  numberOfWaves: 0
   timeBetweenEmuSpawn: 0.5
   currentRound: -1
 --- !u!114 &8600402968729234559
@@ -86,5 +91,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCash: 0
   currentCash: 0
-  emuDeathCash: 0
+  roundCash: 0
   tim: {fileID: 0}
+--- !u!114 &812230861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736943037709191546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933ec0111ac335d4a84dd28dc12ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rounds:
+  - roundNumber: 0
+    numberOfWaves: 1
+    emuType: {fileID: 6099049432262584516, guid: ba110fc3a1387a746bb87a6a82e69bf4,
+      type: 3}
+    numberOfEmus: 5
+  - roundNumber: 0
+    numberOfWaves: 2
+    emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
+      type: 3}
+    numberOfEmus: 2
+  - roundNumber: 0
+    numberOfWaves: 3
+    emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
+      type: 3}
+    numberOfEmus: 3
+  - roundNumber: 0
+    numberOfWaves: 3
+    emuType: {fileID: 1125608841356966251, guid: ec806ce213d35ff4b950d4f544d1e6a4,
+      type: 3}
+    numberOfEmus: 2
+  - roundNumber: 0
+    numberOfWaves: 3
+    emuType: {fileID: 8236293912633263348, guid: 339c29ba7be96f14d81feec658c95761,
+      type: 3}
+    numberOfEmus: 5
+  roundRunning: 1
+  currentRound: 0
+  timeBetweenRounds: 10

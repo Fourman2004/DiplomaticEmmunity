@@ -29,5 +29,8 @@ public class Moneymanager : MonoBehaviour
             Debug.Log(currentCash);
         }
     }
-    
+    public void EmuCash(int cashEarned)
+    {
+        currentCash = currentCash + cashEarned;
+    }
 }

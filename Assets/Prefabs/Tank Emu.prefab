@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 20
   health: 0
-  moneymanager: {fileID: 0}
+  emuWorth: 50
 --- !u!114 &1125608841356966257
 MonoBehaviour:
   m_ObjectHideFlags: 0

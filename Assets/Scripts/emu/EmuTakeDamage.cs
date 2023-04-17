@@ -6,9 +6,12 @@ public class EmuTakeDamage : MonoBehaviour
 {
    public float Maxhealth;
    public float health;
-   public Moneymanager moneymanager;
+   private Moneymanager moneymanager;
+    public int emuWorth;
     public void Start()
     {
+        GameObject gameManager = GameObject.Find("Game Manager");
+        moneymanager = gameManager.GetComponent<Moneymanager>();
         health = Maxhealth;
     }
 
@@ -20,7 +23,8 @@ public class EmuTakeDamage : MonoBehaviour
     {
         if (health <= 0)
         {
-            WaveSpawner.emusAlive--;     
+            WaveSpawner.emusAlive--;
+            moneymanager.EmuCash(emuWorth);
             Destroy(this.gameObject);        
         }
     }

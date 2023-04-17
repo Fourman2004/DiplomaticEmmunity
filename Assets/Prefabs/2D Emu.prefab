@@ -157,6 +157,7 @@ MonoBehaviour:
   Maxhealth: 10
   health: 0
   moneymanager: {fileID: 0}
+  emuWorth: 10
 --- !u!114 &6099049432262584542
 MonoBehaviour:
   m_ObjectHideFlags: 0
