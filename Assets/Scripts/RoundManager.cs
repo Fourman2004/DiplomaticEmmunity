@@ -10,6 +10,7 @@ public class RoundManager : MonoBehaviour
     public bool roundRunning = true;
     public int currentRound = 0;
     private WaveSpawner waveSpawner;
+    private Moneymanager moneymanager;
     public float timeBetweenRounds = 10f;
     float timer;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class RoundManager : MonoBehaviour
     private void Start()
     {
         waveSpawner = GetComponent<WaveSpawner>();
+        moneymanager = GetComponent<Moneymanager>();
         waveSpawner.enabled = false;
     }
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class RoundManager : MonoBehaviour
                     roundRunning = true;
                     waveSpawner.enabled = true;
                     currentRound++;
+                    moneymanager.Roundcash();
                     Debug.Log("Wave spawner should be reactivated on round " + currentRound);
                     timer = 0;
                 }

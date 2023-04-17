@@ -13517,6 +13517,11 @@ PrefabInstance:
       objectReference: {fileID: 245252880}
     - target: {fileID: 8600402968729234559, guid: 7a4e7f089a3e5f0448a312e318863672,
         type: 3}
+      propertyPath: roundCash
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600402968729234559, guid: 7a4e7f089a3e5f0448a312e318863672,
+        type: 3}
       propertyPath: startCash
       value: 100
       objectReference: {fileID: 0}

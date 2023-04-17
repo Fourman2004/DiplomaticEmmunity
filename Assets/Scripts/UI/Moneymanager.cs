@@ -18,16 +18,12 @@ public class Moneymanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Roundcash();
+
     }
 
     public void Roundcash()
     {
-        if (tim.seconds == 0 && tim.minutes != 0)
-        {
-            currentCash += roundCash;
-            Debug.Log(currentCash);
-        }
+        currentCash = currentCash + roundCash;
     }
     public void EmuCash(int cashEarned)
     {

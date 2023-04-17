@@ -19,10 +19,8 @@ public class TowerCost : MonoBehaviour
     {
         if (bought == false)
         {
-            Debug.Log("tower bought");
             moneymanager.TowerBought(cost);
             bought = true;
         }
-        Debug.Log(bought);
     }
 }
