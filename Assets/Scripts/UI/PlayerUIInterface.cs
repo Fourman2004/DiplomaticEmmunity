@@ -15,9 +15,14 @@ public class PlayerUIInterface : MonoBehaviour
     private TowerDataSet Towers;
     public Button TowerButton;
 
+    private Moneymanager moneyManager;
 
     private void Start()
     {
+        // finds the game manager containing the money manager from the scene
+        GameObject gameManager = GameObject.Find("Game Manager");
+        moneyManager = gameManager.GetComponent<Moneymanager>();
+
         // Gets all the UI elememts it needs before turning off the UI
         GameObject PlayerOneUI = GameObject.Find("Player 1 Panel");
         GameObject PlayerTwoUI = GameObject.Find("Player 2 Panel");
@@ -64,26 +69,97 @@ public class PlayerUIInterface : MonoBehaviour
     }
 
 
-    private void SpawnTower(string TowerName, int Player, string WhichUI)
+    private void SpawnTower(string TowerName, int Player, string WhichUI, bool baseTower)
     {
-        GameObject TowerSpot = GameObject.Find("Tower place " + PlayersInteract[Player]);
-
-        if (TowerSpot.transform.childCount != 0)
+        bool enoughCash = CheckCurrentCash(TowerName);
+        if (enoughCash == true)
         {
-            Destroy(TowerSpot.transform.GetChild(0).gameObject);
+            GameObject TowerSpot = GameObject.Find("Tower place " + PlayersInteract[Player]);
+
+            if (TowerSpot.transform.childCount != 0)
+            {
+                Destroy(TowerSpot.transform.GetChild(0).gameObject);
+            }
+
+            GameObject NewTower = Instantiate(Resources.Load("Test Towers/" + TowerName)) as GameObject;
+            NewTower.name = NewTower.name.Replace("(Clone)", "");
+            NewTower.transform.SetParent(TowerSpot.transform, false);
+            NewTower.transform.position = TowerSpot.transform.position;
+
+            TowerData tower = new TowerData();
+            if (baseTower == true)
+            {
+                // searches for the base tower the player is trying to buy
+                foreach (TowerData Data in Towers.BaseTowers)
+                {
+                    if (Data.Name == TowerName)
+                    {
+                        tower = new TowerData()
+                        {
+                            Name = Data.Name,
+                            Price = Data.Price,
+                            // may have to add image, path and upgrades list later
+                        };
+                    }
+                }
+            }
+            else
+            {
+                // searches for the upgraded tower the player is trying to buy
+                foreach (TowerData Data in Towers.UpgradedTowers)
+                {
+                    if (Data.Name == TowerName)
+                    {
+                        tower = new TowerData()
+                        {
+                            Name = Data.Name,
+                            Price = Data.Price,
+                            // may have to add image, path and upgrades list later
+                        };
+                    }
+                }
+            }
+            moneyManager.TowerBought((int)tower.Price);
         }
-
-        GameObject NewTower = Instantiate(Resources.Load("Test Towers/" + TowerName)) as GameObject;
-        NewTower.name = NewTower.name.Replace("(Clone)", "");
-        NewTower.transform.SetParent(TowerSpot.transform, false);
-        NewTower.transform.position = TowerSpot.transform.position;
-
+        else
+        {
+            Debug.Log("too poor bozo");
+        }
         GameObject.Find(WhichUI + " Player " + (Player + 1) + " Panel").SetActive(false);
         EndInteraction(Player);
 
         return;
     }
 
+    // checks whether the player has enough money to buy the tower
+    private bool CheckCurrentCash(string towerName)
+    {
+        bool canBuy = false;
+        int currentCash = moneyManager.currentCash;
+        TowerData tower = new TowerData();
+        // searches for the tower the player is trying to buy
+        foreach (TowerData Data in Towers.BaseTowers)
+        {
+            if (Data.Name == towerName)
+            {
+                tower = new TowerData()
+                {
+                    Name = Data.Name,
+                    Price = Data.Price,
+                    // may have to add image, path and upgrades list later
+                };
+            }
+        }
+        if (currentCash - tower.Price >= 0)
+        {
+            canBuy = true;
+        }
+        else if (currentCash - tower.Price < 0)
+        {
+            canBuy = false;
+        }
+        return canBuy;
+    }
 
     public void StartInteraction(int Player, int TowerSpotNum) 
     {
@@ -139,13 +215,14 @@ public class PlayerUIInterface : MonoBehaviour
         int ButtonNumber = 0;
         foreach (TowerData Data in Towers.BaseTowers)
         {
+            bool baseTower = true;
             ButtonNumber++;
             Button SpecificTowerButton = Instantiate(TowerButton);
             SpecificTowerButton.transform.SetParent(TowerPanel, false);
             SpecificTowerButton.transform.position = new Vector2(SpecificTowerButton.transform.position.x, StartingPoint - (ButtonNumber * 60));
             SpecificTowerButton.transform.Find("Name").gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = Data.Name;
             SpecificTowerButton.transform.Find("Cost").gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "A$" + Data.Price;
-            SpecificTowerButton.onClick.AddListener(delegate{SpawnTower(Data.Name, Player, "Set Tower");});
+            SpecificTowerButton.onClick.AddListener(delegate{SpawnTower(Data.Name, Player, "Set Tower", baseTower);});
         }
 
         return;
@@ -184,13 +261,14 @@ public class PlayerUIInterface : MonoBehaviour
         {
             if (CurrentTowerUpgrades.Contains(UpgradedTower.Name))
             {
+                bool baseTower = false;
                 ButtonNumber++;
                 Button SpecificTowerButton = Instantiate(TowerButton);
                 SpecificTowerButton.transform.SetParent(TowerPanel, false);
                 SpecificTowerButton.transform.position = new Vector2(SpecificTowerButton.transform.position.x, StartingPoint - (ButtonNumber * 60));
                 SpecificTowerButton.transform.Find("Name").gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = UpgradedTower.Name;
                 SpecificTowerButton.transform.Find("Cost").gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "A$" + UpgradedTower.Price;
-                SpecificTowerButton.onClick.AddListener(delegate{SpawnTower(UpgradedTower.Name, Player, "Upgrade Tower");});
+                SpecificTowerButton.onClick.AddListener(delegate{SpawnTower(UpgradedTower.Name, Player, "Upgrade Tower", baseTower);});
             }
         }
     }
