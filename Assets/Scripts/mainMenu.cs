@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System;
 
-public class MainMenu : MonoBehaviour
+public class mainMenu : MonoBehaviour
 {
     public GameObject Playbutton;
     public GameObject OptionsButton;
     public GameObject QuitButton;
+    public GameObject PauseMenu;
     bool PB,OP,QB;
     public bool controllerSetting = false;
     private void Start()
@@ -111,7 +112,22 @@ public class MainMenu : MonoBehaviour
         {
 
         }
-       
+        pause(PauseMenu);
     }
-
+    private void pause(GameObject PauseMenu)
+    {
+        Debug.Log("hello");
+        if(Input.GetKeyDown("p"))
+        {
+            PauseMenu.SetActive(true);
+            while(PauseMenu.activeSelf == true)
+            {
+                Time.timeScale = 0f;
+                if (Input.GetKeyDown("p"))
+                {
+                    PauseMenu.SetActive(false);
+                }
+            } 
+        }
+    }
 }
