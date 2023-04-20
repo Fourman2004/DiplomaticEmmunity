@@ -8,7 +8,7 @@ public class eggScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force = 5;
     private float timer;
-    private Wallhealth damageScript;
+    private FarmHealth damageScript;
     public int pierce;
     public int eggDamage = 10;
     void Start()
@@ -39,13 +39,14 @@ public class eggScript : MonoBehaviour
         }
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            damageScript = other.transform.gameObject.GetComponent<Wallhealth>();
-            damageScript.takeDamage(eggDamage);
+            damageScript = other.transform.gameObject.GetComponent<FarmHealth>();
+            damageScript.DamageFarm(eggDamage);
             pierce -= 1;
+            Destroy(this.gameObject);
         }
 
     }

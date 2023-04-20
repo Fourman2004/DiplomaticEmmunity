@@ -20,7 +20,7 @@ public class FarmHealth : MonoBehaviour
         slider.maxValue = health;
         slider.value = health;
     }
-    public void DammageFarm(int damage) {
+    public void DamageFarm(int damage) {
         currentHealth -= damage;
         SetHealth(currentHealth);
 

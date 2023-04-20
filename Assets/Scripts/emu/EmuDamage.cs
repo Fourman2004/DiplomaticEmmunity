@@ -53,7 +53,7 @@ public class EmuDamage : MonoBehaviour
             else if (hit2D.transform.tag == "Wall")
             {
                 FarmHealth damageScript = hit2D.transform.gameObject.GetComponent<FarmHealth>();
-                damageScript.DammageFarm(emuDamage);
+                damageScript.DamageFarm(emuDamage);
             }
             timer = 0;
         }

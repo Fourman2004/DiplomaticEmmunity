@@ -10,6 +10,7 @@ TagManager:
   - Target
   - Farm
   - MoneyUI
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - Human
   - Environment
-  - 
+  - Tower
   - 
   - 
   - 

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 267928741396475401}
   - component: {fileID: 7923244378480843115}
   - component: {fileID: -3578885974867998396}
-  m_Layer: 0
+  - component: {fileID: 5604679936293222832}
+  m_Layer: 8
   m_Name: Dart Monkey
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +103,19 @@ MonoBehaviour:
   bulletPos: {fileID: 405938771736830496}
   attackDamge: 5
   force: 5
+--- !u!65 &5604679936293222832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273307679557007748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.79, y: 0.53, z: 0.2}
+  m_Center: {x: -0.17003632, y: -0.028620958, z: 0}
 --- !u!1001 &8462679563796155257
 PrefabInstance:
   m_ObjectHideFlags: 0

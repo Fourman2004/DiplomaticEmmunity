@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8594267135150089687}
   - component: {fileID: 7382322346156753060}
   - component: {fileID: 281530406681805108}
-  m_Layer: 0
+  - component: {fileID: 7156480378775705734}
+  m_Layer: 8
   m_Name: Dart Monkey Ace
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +103,19 @@ MonoBehaviour:
   bulletPos: {fileID: 4139034545211549515}
   attackDamge: 10
   force: 10
+--- !u!65 &7156480378775705734
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098571907303139493}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6058929, y: 0.38243142, z: 0.2}
+  m_Center: {x: -0.16573365, y: -0.035381414, z: 0}
 --- !u!1001 &5306252930277314066
 PrefabInstance:
   m_ObjectHideFlags: 0

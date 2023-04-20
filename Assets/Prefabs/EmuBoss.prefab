@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   egg: {fileID: 2322115627087756238, guid: dd845c2b82ac4dc4a804018f9a59629d, type: 3}
   attackDamge: 10
-  force: 5
+  force: 50
 --- !u!114 &9024648137604221887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,8 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 100
   health: 0
-  Moneydropped: 100
-  moneydisplay: {fileID: 0}
+  emuWorth: 100
 --- !u!61 &6266810381487493734
 BoxCollider2D:
   m_ObjectHideFlags: 0

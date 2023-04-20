@@ -24,7 +24,7 @@ public class EmuBossBehaviour : MonoBehaviour
         try
         {
             float distance = Vector2.Distance(transform.position, crop.transform.position);
-            //Debug.Log(distance);
+            
             if (distance > 2)
             {
                 //Debug.Log(timer);
@@ -45,12 +45,18 @@ public class EmuBossBehaviour : MonoBehaviour
 
 
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // ignores colliding with other emus
+        if (collision.gameObject.tag == "Emu")
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+    }
     void shoot()
     {
         eggPos = transform.position;
         GameObject Egg = Instantiate(egg, eggPos, Quaternion.identity);
-        Debug.Log(eggPos);
         Egg.AddComponent<eggScript>();
         eggScript eggScript = Egg.GetComponent<eggScript>();
         eggScript.force = force;

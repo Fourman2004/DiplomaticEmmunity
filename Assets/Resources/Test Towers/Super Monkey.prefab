@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4733004282939241111}
   - component: {fileID: 6663245246788406542}
   - component: {fileID: 3299751467511698819}
-  m_Layer: 0
+  - component: {fileID: 7347184358283917736}
+  m_Layer: 8
   m_Name: Super Monkey
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +104,19 @@ MonoBehaviour:
   bulletPos: {fileID: 6346382038141924479}
   attackDamge: 30
   force: 10
+--- !u!65 &7347184358283917736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705436587466430486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2936828297012043046
 PrefabInstance:
   m_ObjectHideFlags: 0
