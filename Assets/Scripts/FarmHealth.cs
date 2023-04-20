@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FarmHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float currentHealth = 0;
+    public float currentHealth = 0;
     public Slider slider;
     public GameObject sliderCanvas;
     public GameObject endText;
