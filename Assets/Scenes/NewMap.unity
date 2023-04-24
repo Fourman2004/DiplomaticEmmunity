@@ -13807,7 +13807,7 @@ GameObject:
   - component: {fileID: 1257516326}
   - component: {fileID: 1257516327}
   m_Layer: 5
-  m_Name: SliderBarn Health
+  m_Name: Barn Health Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16439,7 +16439,7 @@ GameObject:
   - component: {fileID: 1886341827}
   - component: {fileID: 1886341828}
   m_Layer: 5
-  m_Name: SliderBarn Health (1)
+  m_Name: Player Health Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16514,9 +16514,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1867387100}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 50
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -17272,6 +17272,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3462319810312863668, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 1886341828}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
 --- !u!1 &2140776328

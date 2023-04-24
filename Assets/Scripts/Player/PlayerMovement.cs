@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
@@ -16,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerBody = this.GetComponent<Rigidbody2D>();
     }
-
 
     private void FixedUpdate()
     {
