@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,16 +17,10 @@ public class EmuRooBehaviour : MonoBehaviour
     private List<GameObject> towers = new List<GameObject>();
     private GameObject targetTower;
     public float speed = 1;
-    private int layerMask;
     // Start is called before the first frame update
     void Start()
     {
-        // Bit shift the index of the layer (13) to get a bit mask
-        layerMask = 1 << 8;
-
-        // This would cast rays only against colliders in layer 13.
-        // But instead we want to collide against everything except layer 13. The ~ operator does this, it inverts a bitmask.
-        layerMask = ~layerMask;
+        collider= GetComponent<Collider2D>();
 
         player = GameObject.FindWithTag("Player");
     }
@@ -37,9 +32,8 @@ public class EmuRooBehaviour : MonoBehaviour
         for (int i = 0; i < temp.Length; i++)
         {
             towers.Add(temp[i]);
-            Debug.Log("EmuRoo found a tower to attack");
         }
-        AttackTower();
+        TargetTower();
         timer += Time.deltaTime;
         if (timer > cooldown)
         {
@@ -48,7 +42,7 @@ public class EmuRooBehaviour : MonoBehaviour
     }
     private void KickAttack()
     {
-        RaycastHit2D hit2D = Physics2D.Raycast(feet.transform.position, feet.transform.right, range, layerMask);
+        RaycastHit2D hit2D = Physics2D.Raycast(feet.transform.position, new Vector2(0,-1), range);
         if (hit2D)
         {
             Debug.Log("EmuRoo hit " + hit2D.transform.name);
@@ -57,35 +51,58 @@ public class EmuRooBehaviour : MonoBehaviour
                 PlayerHealth damageScript = hit2D.transform.gameObject.GetComponent<PlayerHealth>();
                 damageScript.TakeDamage(emuDamage);
             }
-            else if (hit2D.transform.tag == "Wall")
+            //else if (hit2D.transform.tag == "Wall")
+            //{
+            //    FarmHealth damageScript = hit2D.transform.gameObject.GetComponent<FarmHealth>();
+            //    damageScript.DamageFarm(emuDamage);
+            //}
+            else if (hit2D.transform.name == targetTower.name)
             {
-                FarmHealth damageScript = hit2D.transform.gameObject.GetComponent<FarmHealth>();
-                damageScript.DamageFarm(emuDamage);
-            }
-            else if (hit2D.transform.tag == "Tower")
-            {
-                Debug.Log("Tower destroyed!");
+                StartCoroutine(DelayTowerDestroy());
                 GameObject tower = hit2D.transform.gameObject;
+                Debug.Log(tower.name);
+                towers.Remove(tower);
                 Destroy(tower);
+
             }
             timer = 0;
             Debug.DrawRay(feet.transform.position, feet.transform.right);
         }
     }
-    void AttackTower()
+
+    private IEnumerator DelayTowerDestroy()
+    {
+        yield return new WaitForSeconds(cooldown);
+    }
+
+    void TargetTower()
     {
         try
         {
-            int randomTowerIndex = UnityEngine.Random.Range(0, towers.Count);
-            GameObject tower = towers[randomTowerIndex];
+            if (targetTower == null)
+            {
+                int randomTowerIndex = UnityEngine.Random.Range(0, towers.Count);
+                targetTower = towers[randomTowerIndex];
+            }
             Vector2 actualPosition2D = (Vector2)this.transform.position;
-            this.transform.position = Vector2.MoveTowards(actualPosition2D, tower.transform.position, speed * Time.deltaTime);
-            towers.Clear();
-            targetTower = tower;
+            this.transform.position = Vector2.MoveTowards(actualPosition2D, targetTower.transform.position, speed * Time.deltaTime);
+            Debug.Log(targetTower.name);
         }
         catch (System.ArgumentOutOfRangeException)
         {
             Debug.Log("no towers to attack");
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // ignores colliding with other emus
+        if (collision.gameObject.tag == "Emu")
+        {
+            Physics2D.IgnoreCollision(collision.collider, collider);
+        }
+        //else if (collision.gameObject.tag == "Tower Spot")
+        //{
+        //    Physics2D.IgnoreCollision(collision.collider, collider);
+        //}
     }
 }
