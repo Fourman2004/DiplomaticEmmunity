@@ -13,15 +13,16 @@ public class EmuRooBehaviour : MonoBehaviour
     private Collider2D collider;
     public GameObject feet;
     public float range = 10f;
-    private GameObject player;
     private List<GameObject> towers = new List<GameObject>();
     private GameObject targetTower;
     public float speed = 1;
+    private GameObject obj;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         collider= GetComponent<Collider2D>();
-
+        obj = this.gameObject;
         player = GameObject.FindWithTag("Player");
     }
 
@@ -91,6 +92,7 @@ public class EmuRooBehaviour : MonoBehaviour
         catch (System.ArgumentOutOfRangeException)
         {
             Debug.Log("no towers to attack");
+            ChasePlayer();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -104,5 +106,12 @@ public class EmuRooBehaviour : MonoBehaviour
         //{
         //    Physics2D.IgnoreCollision(collision.collider, collider);
         //}
+    }
+    void ChasePlayer()
+    {
+
+        Vector2 actualPosition2D = (Vector2)obj.transform.position;
+        obj.transform.position = Vector2.MoveTowards(actualPosition2D, player.transform.position, speed * Time.deltaTime);
+        Debug.Log("EmuRoo move to player");
     }
 }
