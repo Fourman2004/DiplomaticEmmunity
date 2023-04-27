@@ -12,11 +12,12 @@ public class TowerShooting : MonoBehaviour
 
     public float attackDamge = 10;
     public float force = 5;
+    public float range = 10;
     // Start is called before the first frame update
     void Start()
     {
         ///Emu = GameObject.FindGameObjectWithTag("Emu");
-        
+        //centre = transform.position;
     }
 
     // Update is called once per frame
@@ -25,17 +26,21 @@ public class TowerShooting : MonoBehaviour
         Emu = GameObject.FindGameObjectWithTag("Emu");
         try
         {
+            Debug.Log("Tower trying to shoot " + Emu);
             float distance = Vector2.Distance(transform.position, Emu.transform.position);
-            //Debug.Log(distance);
-            if (distance > 2)
+            if (distance < range)
             {
-                //Debug.Log(timer);
-                timer += Time.deltaTime;
-
-                if (timer > 2)
+                Debug.Log("Emu in range of tower");
+                if (distance > 2)
                 {
-                    timer = 0;
-                    shoot();
+                    //Debug.Log(timer);
+                    timer += Time.deltaTime;
+
+                    if (timer > 2)
+                    {
+                        timer = 0;
+                        shoot();
+                    }
                 }
             }
         }

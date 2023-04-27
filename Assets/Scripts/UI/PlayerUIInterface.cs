@@ -71,7 +71,7 @@ public class PlayerUIInterface : MonoBehaviour
 
     private void SpawnTower(string TowerName, int Player, string WhichUI, bool baseTower)
     {
-        bool enoughCash = CheckCurrentCash(TowerName);
+        bool enoughCash = CheckCurrentCash(TowerName, baseTower);
         if (enoughCash == true)
         {
             GameObject TowerSpot = GameObject.Find("Tower place " + PlayersInteract[Player]);
@@ -103,7 +103,7 @@ public class PlayerUIInterface : MonoBehaviour
                     }
                 }
             }
-            else
+            else if (baseTower == false)
             {
                 // searches for the upgraded tower the player is trying to buy
                 foreach (TowerData Data in Towers.UpgradedTowers)
@@ -132,22 +132,41 @@ public class PlayerUIInterface : MonoBehaviour
     }
 
     // checks whether the player has enough money to buy the tower
-    private bool CheckCurrentCash(string towerName)
+    private bool CheckCurrentCash(string towerName, bool baseTower)
     {
         bool canBuy = false;
         int currentCash = moneyManager.currentCash;
         TowerData tower = new TowerData();
-        // searches for the tower the player is trying to buy
-        foreach (TowerData Data in Towers.BaseTowers)
+        if (baseTower == true)
         {
-            if (Data.Name == towerName)
+            // searches for the base tower the player is trying to buy
+            foreach (TowerData Data in Towers.BaseTowers)
             {
-                tower = new TowerData()
+                if (Data.Name == towerName)
                 {
-                    Name = Data.Name,
-                    Price = Data.Price,
-                    // may have to add image, path and upgrades list later
-                };
+                    tower = new TowerData()
+                    {
+                        Name = Data.Name,
+                        Price = Data.Price,
+                        // may have to add image, path and upgrades list later
+                    };
+                }
+            }
+        }
+        else if (baseTower == false)
+        {
+            // searches for the upgraded tower the player is trying to buy
+            foreach (TowerData Data in Towers.UpgradedTowers)
+            {
+                if (Data.Name == towerName)
+                {
+                    tower = new TowerData()
+                    {
+                        Name = Data.Name,
+                        Price = Data.Price,
+                        // may have to add image, path and upgrades list later
+                    };
+                }
             }
         }
         if (currentCash - tower.Price >= 0)
