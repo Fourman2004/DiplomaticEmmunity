@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class RoundManager : MonoBehaviour
     private WaveSpawner waveSpawner;
     private Moneymanager moneymanager;
     public float timeBetweenRounds = 10f;
+    public GameObject roundBanner;
+    public Text roundText;
     float timer;
     // Start is called before the first frame update
     void Awake()
@@ -42,13 +45,21 @@ public class RoundManager : MonoBehaviour
                 waveSpawner.emuPrefab = rounds[currentRound].emuType;
                 waveSpawner.emuNumber = rounds[currentRound].numberOfEmus;
                 waveSpawner.numberOfWaves = rounds[currentRound].numberOfWaves;
+                //sets the round manager to active and changes the text to the round number plus 1
+                roundBanner.SetActive(true);
+                roundText.text = ("round " + (currentRound + 1));
+                timer += Time.deltaTime;
+                roundBanner.SetActive(false);
             }
             else if (roundRunning == false)
             {
                 // disables wave spawner
                 waveSpawner.enabled = false;
+                
                 // delay set before renabling wave spawner
                 timer += Time.deltaTime;
+                //for that time sets the round banners to inactive when round is working
+                //roundBanner.SetActive(false);
                 if (timer >= timeBetweenRounds)
                 {
                     roundRunning = true;
