@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9bd64fc0254eb448d9373bf6395780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 2
   pierce: 1
-  force: 10
+  force: 15
