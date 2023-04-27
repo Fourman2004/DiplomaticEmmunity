@@ -105,6 +105,7 @@ MonoBehaviour:
     type: 3}
   attackDamge: 10
   force: 30
+  range: 100
 --- !u!65 &4992227405026955293
 BoxCollider:
   m_ObjectHideFlags: 0

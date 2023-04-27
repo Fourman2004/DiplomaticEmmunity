@@ -27,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
         {
             Physics2D.IgnoreCollision(collision.collider, Collider2D);
         }
+        else if (collision.transform.tag == "Tower")
+        {
+            Physics2D.IgnoreCollision(collision.collider, Collider2D);
+        }
     }
 
     public void TakeDamage(int damage)
