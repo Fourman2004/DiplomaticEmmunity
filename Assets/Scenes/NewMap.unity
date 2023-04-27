@@ -13151,6 +13151,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2092729643}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1054335085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054335062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18faf60ddbcd8b243a3a1258d6a81c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8355519371429777720, guid: b77bf16b93985d84da5424b0f4416d57, type: 3}
+  player: {fileID: 1054335074}
+  reloadTimer: 2
+  maxCapacity: 49
+  canShoot: 1
+  reloading: 0
+  shootCooldown: 0.5
+  ControllerControls: 0
+  ammoText: {fileID: 1877533015}
 --- !u!1001 &1056968454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16166,7 +16187,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Ammo:   / 47'
+  m_Text: 'Ammo:   / 49'
 --- !u!222 &1877533016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16823,6 +16844,11 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1877533015}
+    - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1976900373394496379, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: bulletImage

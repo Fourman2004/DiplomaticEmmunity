@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6266810381487493734}
   m_Layer: 0
   m_Name: EmuBoss
-  m_TagString: Untagged
+  m_TagString: Emu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
