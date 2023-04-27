@@ -104,6 +104,8 @@ MonoBehaviour:
   bulletPos: {fileID: 1662654301623189476}
   attackDamge: 5
   force: 20
+  range: 10
+  target: {fileID: 0}
 --- !u!65 &-9123646141705707183
 BoxCollider:
   m_ObjectHideFlags: 0
