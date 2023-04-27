@@ -116,18 +116,22 @@ public class mainMenu : MonoBehaviour
     }
     private void pause(GameObject PauseMenu)
     {
-        Debug.Log("hello");
+        
         if(Input.GetKeyDown("p"))
         {
             PauseMenu.SetActive(true);
-            while(PauseMenu.activeSelf == true)
+            if(PauseMenu.activeSelf == true)
             {
                 Time.timeScale = 0f;
                 if (Input.GetKeyDown("p"))
                 {
                     PauseMenu.SetActive(false);
                 }
-            } 
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
     }
 }
