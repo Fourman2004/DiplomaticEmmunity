@@ -30,6 +30,7 @@ public class RoundManager : MonoBehaviour
         waveSpawner = GetComponent<WaveSpawner>();
         moneymanager = GetComponent<Moneymanager>();
         waveSpawner.enabled = false;
+        roundBanner.SetActive(false);
     }
     // Update is called once per frame
     void Update()
