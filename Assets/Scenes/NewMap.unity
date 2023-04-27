@@ -13242,7 +13242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1025708876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14708,6 +14708,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
+      propertyPath: roundText
+      value: 
+      objectReference: {fileID: 1996760666}
+    - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
+      propertyPath: roundBanner
+      value: 
+      objectReference: {fileID: 1025708875}
     - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
       propertyPath: rounds.Array.size
       value: 10

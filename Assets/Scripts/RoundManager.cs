@@ -48,8 +48,6 @@ public class RoundManager : MonoBehaviour
                 //sets the round manager to active and changes the text to the round number plus 1
                 roundBanner.SetActive(true);
                 roundText.text = ("round " + (currentRound + 1));
-                timer += Time.deltaTime;
-                roundBanner.SetActive(false);
             }
             else if (roundRunning == false)
             {
@@ -59,7 +57,7 @@ public class RoundManager : MonoBehaviour
                 // delay set before renabling wave spawner
                 timer += Time.deltaTime;
                 //for that time sets the round banners to inactive when round is working
-                //roundBanner.SetActive(false);
+                roundBanner.SetActive(false);
                 if (timer >= timeBetweenRounds)
                 {
                     roundRunning = true;
