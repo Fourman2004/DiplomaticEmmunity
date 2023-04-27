@@ -19,6 +19,8 @@ public class WaveSpawner : MonoBehaviour
     private int currentWave = 0;
     public float timeBetweenEmuSpawn = 0.5f;
     public int currentRound = -1;
+
+    private int temp = 0;
     private void Start()
     {
 
@@ -67,8 +69,9 @@ public class WaveSpawner : MonoBehaviour
         // randomly chooses a place for the emu to spawn
         int spawnIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
         Transform spawnPoint = spawnPoints[spawnIndex];
-
-        Instantiate(emuPrefab, spawnPoint.position, spawnPoint.rotation);
+        var emu = (GameObject) Instantiate(emuPrefab, spawnPoint.position, spawnPoint.rotation);
+        emu.name = emuPrefab.name + " " + temp;
+        temp++;
         emusAlive++;
     }
 }

@@ -14770,7 +14770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
       propertyPath: rounds.Array.data[6].numberOfEmus
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
       propertyPath: rounds.Array.data[7].numberOfEmus
@@ -14794,7 +14794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
       propertyPath: rounds.Array.data[6].numberOfWaves
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 812230861, guid: 7a4e7f089a3e5f0448a312e318863672, type: 3}
       propertyPath: rounds.Array.data[7].numberOfWaves

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    private GameObject Emu;
+    public GameObject Emu;
     private Rigidbody2D rb;
     public float force;
     private float timer;
@@ -16,7 +16,7 @@ public class bulletScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Emu = GameObject.FindGameObjectWithTag("Emu");
+        //Emu = GameObject.FindGameObjectWithTag("Emu");
 
         Vector3 direction = Emu.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
