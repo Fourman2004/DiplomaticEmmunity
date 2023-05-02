@@ -191,7 +191,7 @@ public class PlayerUIInterface : MonoBehaviour
         PlayersInteract[Player] = TowerSpotNum;
         Behaviour PlayerMovement = GameObject.Find("Player " + (Player+1)).GetComponent<PlayerMovement>();
         Behaviour PlayerAim = GameObject.Find("Player " + (Player+1)).GetComponent<PlayerAim>();
-        Behaviour Gun = GameObject.Find("Player " + (Player+1)).GetComponent<Gun>();
+        Behaviour Gun = GameObject.Find("Player " + (Player+1)).GetComponent<PlayerShoot>();
         PlayerMovement.enabled = false;
         PlayerAim.enabled = false;
         Gun.enabled = false;
@@ -210,7 +210,7 @@ public class PlayerUIInterface : MonoBehaviour
 
         Behaviour PlayerMovement = GameObject.Find("Player " + (Player+1)).GetComponent<PlayerMovement>();
         Behaviour PlayerAim = GameObject.Find("Player " + (Player+1)).GetComponent<PlayerAim>();
-        Behaviour Gun = GameObject.Find("Player " + (Player+1)).GetComponent<Gun>();
+        Behaviour Gun = GameObject.Find("Player " + (Player+1)).GetComponent<PlayerShoot>();
         PlayerMovement.enabled = true;
         PlayerAim.enabled = true;
         Gun.enabled = true;
