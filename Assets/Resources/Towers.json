@@ -23,7 +23,7 @@
 
         {
             "Name" : "Super Monkey",
-            "Price" : 9999.0,
+            "Price" : 0.0,
             "Image" : "",
             "Path" : "",
             "Upgrades" : []
