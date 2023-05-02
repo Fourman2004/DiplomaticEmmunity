@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6099049432262584542}
   - component: {fileID: 6099049432262584541}
   - component: {fileID: 7042370433297784797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2D Emu
   m_TagString: Emu
   m_Icon: {fileID: 0}
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 10
   health: 0
-  moneymanager: {fileID: 0}
   emuWorth: 10
 --- !u!114 &6099049432262584542
 MonoBehaviour:
@@ -224,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3340258034115059314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beak
   m_TagString: Untagged
   m_Icon: {fileID: 0}

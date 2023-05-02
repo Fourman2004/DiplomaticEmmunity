@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1125608841356966256}
   - component: {fileID: 1125608841356966257}
   - component: {fileID: 1125608841356966258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tank Emu
   m_TagString: Emu
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1945286452803912096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beak
   m_TagString: Untagged
   m_Icon: {fileID: 0}

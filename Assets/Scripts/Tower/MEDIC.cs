@@ -13,8 +13,6 @@ public class MEDIC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player");
-        farm = GameObject.FindGameObjectWithTag("Farm");
     }
 
     // Update is called once per frame
@@ -23,11 +21,12 @@ public class MEDIC : MonoBehaviour
       if(PH.health > FH.currentHealth)
         {
             HealPlayer();
+            Debug.Log("Player heals");
         }  
-      else if (PH.health < FH.currentHealth)
+     /** else if (PH.health > FH.currentHealth)
         {
             Healfarm();
-        }
+        }**/
       else
         {
             Debug.Log("Nothing to heal");
@@ -36,8 +35,7 @@ public class MEDIC : MonoBehaviour
 
     public void HealPlayer()
     {
-        Debug.Log("Player heals");
-        projectile = Instantiate(projectile, projectileMove.position, Quaternion.identity);
+        Instantiate(projectile, this.transform);
     }  
     public void Healfarm()
     {
