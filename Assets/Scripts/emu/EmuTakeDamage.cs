@@ -17,12 +17,15 @@ public class EmuTakeDamage : MonoBehaviour
 
     public void TakeDamge(float damage)
     {
+        
         health -= damage;
     }
     public void Update()
     {
         if (health <= 0)
         {
+            AudioClip deathClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().emuDeath;
+            GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(deathClip);
             WaveSpawner.emusAlive--;
             moneymanager.EmuCash(emuWorth);
             Destroy(this.gameObject);        

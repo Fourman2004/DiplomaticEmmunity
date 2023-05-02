@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
             {
                 hasWon = "won";
                 gameRunning = false;
+                // Audio
+                AudioClip winClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().gameWon;
+                GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(winClip);
             }
             else if (timerScript.checkEnd() == "lose")
             {

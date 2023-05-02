@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerShoot : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource source;
+    public AudioManager audioManager;
+
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform player;
 
@@ -33,7 +37,7 @@ public class PlayerShoot : MonoBehaviour
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) && currentCapacity != maxCapacity)
+        if (Input.GetKeyDown(KeyCode.R) && currentCapacity != maxCapacity && reloading == false)
         {
             StartCoroutine(Reload());
         }
@@ -50,6 +54,7 @@ public class PlayerShoot : MonoBehaviour
             GameObject currentBullet = Instantiate(bullet, player.position, rotation);
             canShoot = false;
             StartCoroutine(ShootCooldown());
+            source.PlayOneShot(audioManager.playerShoot);
 
             currentCapacity--;
             ammoText.text = "Ammo: " + currentCapacity + " / " + maxCapacity;
@@ -59,6 +64,8 @@ public class PlayerShoot : MonoBehaviour
     {
         reloading = true;
         canShoot = false;
+        source.PlayOneShot(audioManager.playerReload);
+
         yield return new WaitForSeconds(reloadTimer);
         currentCapacity = maxCapacity;
         ammoText.text = "Ammo: " + currentCapacity + " / " + maxCapacity;

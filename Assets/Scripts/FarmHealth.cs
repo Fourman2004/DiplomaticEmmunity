@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class FarmHealth : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioManager audioManager;
+    [Header("Health")]
     public float maxHealth = 100;
     public float currentHealth;
     public Slider slider;
@@ -26,6 +30,8 @@ public class FarmHealth : MonoBehaviour
     {
         currentHealth -= damage;
         slider.value = currentHealth;
+        source.PlayOneShot(audioManager.barnDamaged);
+
 
         if (currentHealth <= 0)
         {

@@ -87,6 +87,8 @@ public class TowerShooting : MonoBehaviour
     void shoot(Transform target)
     {
         GameObject Bullet = Instantiate(bullet, bulletPos.position, Quaternion.identity);
+        AudioClip shootClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().turretShoot;
+        GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(shootClip);
         //Bullet.AddComponent<bulletScript>();
         bulletScript bulletScript = Bullet.GetComponent<bulletScript>();
         bulletScript.Emu = target.gameObject;
