@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7543056373796325608}
   - component: {fileID: 7543056373796325609}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: farming-chicken_0
   m_TagString: Emu
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7543056374253001256}
   - component: {fileID: 7543056374253001271}
   - component: {fileID: 7543056374253001258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EmuRoo
   m_TagString: Emu
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7543056374899680394}
   - component: {fileID: 7543056374899680395}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feet
   m_TagString: Emu
   m_Icon: {fileID: 0}
