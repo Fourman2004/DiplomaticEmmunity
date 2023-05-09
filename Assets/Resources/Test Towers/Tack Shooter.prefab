@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPos: {fileID: 1662654301623189476}
   attackDamge: 10
-  force: 5
+  force: 15
   range: 10
   target: {fileID: 0}
 --- !u!120 &-133024865607823998

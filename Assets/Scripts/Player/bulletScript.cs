@@ -9,7 +9,7 @@ public class bulletScript : MonoBehaviour
     public float force;
     private float timer;
     private EmuTakeDamage damageScript;
-    public int pierce;
+    public int pierce; // how many emus can it go through
     public float towerDamage = 10;
     
     // Start is called before the first frame update
@@ -29,11 +29,11 @@ public class bulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer =+ Time.deltaTime;
+        timer += Time.deltaTime;
 
         if(timer > 10)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         if (pierce == 0)
         {

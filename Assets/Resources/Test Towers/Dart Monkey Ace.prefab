@@ -102,7 +102,7 @@ MonoBehaviour:
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
   bulletPos: {fileID: 4139034545211549515}
   attackDamge: 10
-  force: 10
+  force: 20
   range: 10
   target: {fileID: 0}
 --- !u!65 &7156480378775705734

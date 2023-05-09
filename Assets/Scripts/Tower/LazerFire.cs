@@ -88,6 +88,7 @@ public class LazerFire : MonoBehaviour
     }
     void shoot(Transform target)
     {
+        laserLine.enabled = true;
         Vector3 temp = target.transform.position  - this.transform.position;
         temp.Normalize();
         LayerMask mask = LayerMask.GetMask("Emu");

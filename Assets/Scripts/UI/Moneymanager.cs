@@ -21,8 +21,9 @@ public class Moneymanager : MonoBehaviour
 
     }
 
-    public void Roundcash()
+    public void Roundcash(int reward)
     {
+        roundCash = reward;
         currentCash = currentCash + roundCash;
     }
     public void EmuCash(int cashEarned)
@@ -32,6 +33,5 @@ public class Moneymanager : MonoBehaviour
     public void TowerBought(int cost)
     {
         currentCash = currentCash - cost;
-        Debug.Log("a tower has been bought");
     }
 }

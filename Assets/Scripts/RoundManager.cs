@@ -39,7 +39,6 @@ public class RoundManager : MonoBehaviour
         {
             if (roundRunning == true)
             {
-                Debug.Log("Round is running");
                 // sends wave spawner parameters to spawn emus
                 waveSpawner.currentRound = currentRound;
                 waveSpawner.enabled = true;
@@ -64,15 +63,13 @@ public class RoundManager : MonoBehaviour
                     roundRunning = true;
                     waveSpawner.enabled = true;
                     currentRound++;
-                    moneymanager.Roundcash();
-                    Debug.Log("Wave spawner should be reactivated on round " + currentRound);
+                    moneymanager.Roundcash(rounds[currentRound].reward);
                     timer = 0;
                 }
             }
         }
         else if (currentRound == rounds.Length)
         {
-            Debug.Log("no more rounds to run");
             waveSpawner.enabled = false;
         }
     }
