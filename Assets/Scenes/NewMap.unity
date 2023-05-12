@@ -25098,6 +25098,11 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1208323382}
+    - target: {fileID: 1054335096, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: be38c8fe4e786f34c86ea3d9d4f3a626,
+        type: 2}
     - target: {fileID: 1845033311, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}
       propertyPath: cam
       value: 
