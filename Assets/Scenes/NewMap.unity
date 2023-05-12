@@ -20746,7 +20746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 1389614171}
   audioManager: {fileID: 1208323382}
-  maxHealth: 1000
+  maxHealth: 100
   currentHealth: 0
   slider: {fileID: 1257516327}
   sliderCanvas: {fileID: 1257516325}
