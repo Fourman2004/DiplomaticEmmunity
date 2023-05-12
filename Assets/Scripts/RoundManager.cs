@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RoundManager : MonoBehaviour
 {
@@ -14,8 +15,9 @@ public class RoundManager : MonoBehaviour
     private Moneymanager moneymanager;
     public float timeBetweenRounds = 10f;
     public GameObject roundBanner;
-    public Text roundText;
+    public TextMeshProUGUI roundText;
     float timer;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,7 +49,7 @@ public class RoundManager : MonoBehaviour
                 waveSpawner.numberOfWaves = rounds[currentRound].numberOfWaves;
                 //sets the round manager to active and changes the text to the round number plus 1
                 roundBanner.SetActive(true);
-                roundText.text = ("round " + (currentRound + 1));
+                roundText.text = ("Round " + (currentRound + 1));
             }
             else if (roundRunning == false)
             {
