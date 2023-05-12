@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -11,10 +11,15 @@ public class PlayerHealth : MonoBehaviour
     public float Maxhealth;
     public float health;
     public Slider slider;
+    public float lives = 3;
+    public GameObject Lose; 
+    public TextMeshProUGUI livesText;
 
+    
 
     private void Start()
     {
+        livesText.text = "Lives: " + lives;
         health = Maxhealth;
         slider.maxValue = health;
         slider.value = health;
@@ -39,7 +44,12 @@ public class PlayerHealth : MonoBehaviour
         slider.value = health;
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            lives = lives - 1;
+            health = 50;
+            if (lives == 0)
+            {
+                Lose.SetActive(true);
+            }
         }
     }
 }
