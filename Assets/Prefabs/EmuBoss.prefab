@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egg: {fileID: 2322115627087756238, guid: dd845c2b82ac4dc4a804018f9a59629d, type: 3}
-  attackDamge: 10
+  attackDamge: 5
   force: 50
 --- !u!114 &9024648137604221887
 MonoBehaviour:
