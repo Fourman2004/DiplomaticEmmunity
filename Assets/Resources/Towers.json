@@ -1,49 +1,57 @@
 {
     "BaseTowers" : [
         {
-            "Name" : "Dart Monkey",
+            "Name" : "Tank",
             "Price" : 50.0,
             "Image" : "",
             "Path" : "",
             "Upgrades" : [
-                "Super Dart Monkey",
-                "Dart Monkey Ace"
+                "Heavy Tank",
+                "Fighter Ace"
             ]
         },
 
         {
-            "Name": "Tack Shooter",
+            "Name": "Laser Tower",
             "Price" : 100.0,
             "Image" : "",
             "Path" : "",
             "Upgrades" : [
-                "Better Tack Shooter"
+                "Laser Railgun"
             ]
         },
 
-        {
-            "Name" : "Super Monkey",
-            "Price" : 0.0,
-            "Image" : "",
-            "Path" : "",
-            "Upgrades" : []
-        }
+      {
+        "Name": "Medic",
+        "Price": 0.0,
+        "Image": "",
+        "Path": "",
+        "Upgrades": []
+      },
+
+      {
+        "Name": "Engineer",
+        "Price": 300.0,
+        "Image": "",
+        "Path": "",
+        "Upgrades": []
+      }
     ],
 
 
     "UpgradedTowers" : [
         {
-            "Name" : "Super Dart Monkey",
+            "Name" : "Heavy Tank",
             "Price" : 90.0,
             "Image" : "",
             "Path" : "",
             "Upgrades" : [
-                "Ultimate Dart Monkey"
+                "Super Heavy Tank"
             ]
         },
 
         {
-            "Name" : "Dart Monkey Ace",
+            "Name" : "Fighter Ace",
             "Price" : 125.0,
             "Image" : "",
             "Path" : "",
@@ -51,7 +59,7 @@
         },
 
         {
-            "Name" : "Ultimate Dart Monkey",
+            "Name" : "Super Heavy Tank",
             "Price" : 600.0,
             "Image" : "",
             "Path" : "",
@@ -59,7 +67,7 @@
         },
         
         {
-            "Name" : "Better Tack Shooter",
+            "Name" : "Laser Railgun",
             "Price" : 425.0,
             "Image" : "",
             "Path" : "",
