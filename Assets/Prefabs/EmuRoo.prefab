@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7543056373796325608}
   - component: {fileID: 7543056373796325609}
   m_Layer: 9
-  m_Name: farming-chicken_0
+  m_Name: Sprite
   m_TagString: Emu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_SortingLayerID: -1125003531
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1577f106ceccd624895112215c69960a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e00f2bb943ba8174f89d029e305b59ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.32}
@@ -165,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002415277, y: 0.00032565743}
+  m_Offset: {x: 0.000531435, y: -0.0043840557}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -176,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24160911, y: 0.22163565}
+  m_Size: {x: 0.53925896, y: 0.41190562}
   m_EdgeRadius: 0
 --- !u!1 &7543056374899680393
 GameObject:
@@ -203,8 +203,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7543056374899680393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007, y: -0.1208, z: 0}
-  m_LocalScale: {x: 0.0875, y: 0.0092917625, z: 1}
+  m_LocalPosition: {x: -0.02352, y: -0.27294, z: 0}
+  m_LocalScale: {x: 0.4794135, y: 0.10424893, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7543056374253001257}
