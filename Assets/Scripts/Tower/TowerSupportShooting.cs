@@ -5,10 +5,10 @@ using UnityEngine;
 public class TowerSupportShooting : MonoBehaviour
 {
     public Transform bulletPos;
-    public GameObject Target;
+    public GameObject Target, Projectile;
 
-    public float delay, heal, range;
-
+    public float delay, heal, range, getTime;
+    Transform targetLocation;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +29,25 @@ public class TowerSupportShooting : MonoBehaviour
         if (targetDistance < towerDistance)
         {
             towerDistance = targetDistance;
-            if(Target != null && towerDistance < range)
+            Injured = Target;
+            if( Injured != null && towerDistance < range)
             {
-
+                targetLocation = Injured.transform;
+                getTime += Time.deltaTime;
+                if (getTime > 0.01)
+                {
+                    getTime = 0;
+                    Fire(targetLocation);
+                }
             }
         }
+    }
+
+    void Fire(Transform targetTrans)
+    {
+        GameObject Bullet = Instantiate(Projectile, bulletPos.position, Quaternion.identity);
+        AudioClip shootClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().turretShoot;
+        GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(shootClip);
     }
 
     private void OnDrawGizmosSelected()
