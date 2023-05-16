@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TimerScript timerScript;
     public string hasWon = "idk";
     private bool gameRunning = true;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -24,16 +27,11 @@ public class GameManager : MonoBehaviour
         {
             if (timerScript.checkEnd() == "won")
             {
-                hasWon = "won";
-                gameRunning = false;
-                // Audio
-                AudioClip winClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().gameWon;
-                GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(winClip);
+                GameWon();
             }
             else if (timerScript.checkEnd() == "lose")
             {
-                hasWon = "lose";
-                gameRunning = false;
+                GameLose();
             }
         }
         else if (gameRunning == false)
@@ -42,5 +40,25 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
         }
         
+    }
+
+    public void GameLose()
+    {
+        hasWon = "lose";
+        gameRunning = false;
+    }
+
+    public void GameWon()
+    {
+        hasWon = "won";
+        gameRunning = false;
+        // Audio
+        AudioClip winClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().gameWon;
+        GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(winClip);
+    }
+
+    public void PlayAgainButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(1).name);
     }
 }

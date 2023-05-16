@@ -49,11 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8355519371429777720, guid: f068731ceb4ed6e4caf83a363a16b9af, type: 3}
   bulletPos: {fileID: 405938771736830496}
-  attackDamge: 10
-  force: 15
+  attackDamge: 5
+  force: 10
   range: 10
-  targetHostiles: 1
-  targetTag: 
   target: {fileID: 0}
 --- !u!61 &6260119359114421751
 BoxCollider2D:

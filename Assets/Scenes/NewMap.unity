@@ -24650,7 +24650,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2019483746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8736943037709191545, guid: 7a4e7f089a3e5f0448a312e318863672,
+          type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgainButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &2019483746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25406,10 +25419,15 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1886341828}
+    - target: {fileID: 3462319810312863668, guid: e78b09f0abc51c642ae1bdd314514395,
+        type: 3}
+      propertyPath: livesText
+      value: 
+      objectReference: {fileID: 1325795080}
     - target: {fileID: 8065244115877224953, guid: e78b09f0abc51c642ae1bdd314514395,
         type: 3}
       propertyPath: ControllerControls
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78b09f0abc51c642ae1bdd314514395, type: 3}

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ceb3881594353409d0a24a041604c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhealth: 100
+  Maxhealth: 150
   health: 0
   emuWorth: 100
 --- !u!61 &6266810381487493734

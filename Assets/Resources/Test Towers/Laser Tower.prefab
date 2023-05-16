@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 1897604632883166262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -215.44308, y: 206.73213, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1662654301623189476}
   m_Father: {fileID: 0}
@@ -78,9 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3625043607559282579, guid: 13aa956d68026e941bdbc27503f88c57,
-    type: 3}
-  m_Color: {r: 1, g: 0, b: 0.6302395, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3e702ba8a6fddc74da5072ac826b0647, type: 3}
+  m_Color: {r: 0, g: 0.92939377, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,8 +106,6 @@ MonoBehaviour:
   attackDamge: 5
   force: 20
   range: 10
-  targetHostiles: 1
-  targetTag: 
   target: {fileID: 0}
 --- !u!65 &-9123646141705707183
 BoxCollider:
@@ -136,9 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPos: {fileID: 1662654301623189476}
-  attackDamge: 10
+  attackDamge: 5
   force: 15
-  range: 10
+  range: 15
   target: {fileID: 0}
 --- !u!120 &-133024865607823998
 LineRenderer:

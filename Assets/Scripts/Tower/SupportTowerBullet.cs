@@ -17,10 +17,10 @@ public class SupportTowerBullet : MonoBehaviour
     
     }
 
-    // Update is called once per frame
-    void OnTriggerEnter(Collider2D other)
-    {
+    //// Update is called once per frame
+    //void OnTriggerEnter(Collider2D other)
+    //{
 
-    }
+    //}
 
 }

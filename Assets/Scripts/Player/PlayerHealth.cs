@@ -48,7 +48,8 @@ public class PlayerHealth : MonoBehaviour
             health = 50;
             if (lives == 0)
             {
-                Lose.SetActive(true);
+                GameManager manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+                manager.GameLose();
             }
         }
     }

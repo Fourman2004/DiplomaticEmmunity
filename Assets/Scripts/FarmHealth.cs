@@ -35,7 +35,8 @@ public class FarmHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            //gameObject.SetActive()
             EndGame();
         }
     }
@@ -44,8 +45,9 @@ public class FarmHealth : MonoBehaviour
     {
         endText.SetActive(true);
         sliderCanvas.SetActive(false);
-        
+
         // currently stops slider bar and appears text
         //to do :emus stop along with time clock
+        Time.timeScale = 0;
     }
 }
