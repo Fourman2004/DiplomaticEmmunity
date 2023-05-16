@@ -727,7 +727,7 @@ MonoBehaviour:
   OptionsButton: {fileID: 2068218571}
   QuitButton: {fileID: 346967014}
   PauseMenu: {fileID: 0}
-  controllerSetting: 0
+  controllerSetting: 1
 --- !u!1 &559740126
 GameObject:
   m_ObjectHideFlags: 0

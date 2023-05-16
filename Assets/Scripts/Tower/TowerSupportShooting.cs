@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class TowerSupportShooting : MonoBehaviour
 {
@@ -48,6 +49,9 @@ public class TowerSupportShooting : MonoBehaviour
         GameObject Bullet = Instantiate(Projectile, bulletPos.position, Quaternion.identity);
         AudioClip shootClip = GameObject.Find("Game Manager").GetComponent<AudioManager>().turretShoot;
         GameObject.Find("Game Manager").GetComponent<AudioManager>().audioSource.PlayOneShot(shootClip);
+        SupportTowerBullet supportTowerBullet = Bullet.GetComponent<SupportTowerBullet>();
+        supportTowerBullet.targetGObj = Target;
+        supportTowerBullet.towerHeal = heal;
     }
 
     private void OnDrawGizmosSelected()

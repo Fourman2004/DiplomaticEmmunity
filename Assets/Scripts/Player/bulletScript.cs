@@ -45,7 +45,7 @@ public class bulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Emu"))
         {
-            Debug.Log("A tower hit an emu");
+            //Debug.Log("A tower hit an emu");
             damageScript = other.transform.gameObject.GetComponent<EmuTakeDamage>();
             damageScript.TakeDamge(towerDamage);
             pierce -= 1;
